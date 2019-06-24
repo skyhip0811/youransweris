@@ -8,10 +8,7 @@
 </head>
 <body>
   <div id="app">
-    <el-button @click="visible = true">Button</el-button>
-    <el-dialog :visible.sync="visible" title="Hello world">
-      <p>Try Element</p>
-    </el-dialog>
+    <headnav></headnav>
   </div>
 </body>
   <script src="/js/element.js"></script>

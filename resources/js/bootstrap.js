@@ -1,5 +1,7 @@
 window._ = require('lodash');
 window.Vue = require('vue');
+require('element-ui');
+
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
