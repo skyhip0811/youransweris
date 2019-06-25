@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('homepage');
 });
+
+Route::get('/chapter', function () {
+    return view('charterdetail');
+});

@@ -1,1 +1,18 @@
-@import 'app';
+.breadcrumb-row	> .el-breadcrumb{
+	margin: 20px 0px;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.chapter-text{
+	font-size: 20px;
+}
+
+.chapter-question{
+	margin-top: 10px;
+	font-size: 25px;
+}
+
+.answer-box{
+	height: 100px;
+}
