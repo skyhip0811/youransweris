@@ -15,42 +15,9 @@
     <el-header  class='head-menu'><headnav></headnav></el-header>
     <el-main>
       <el-row >
-         <el-col :md=2 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
-         <el-col :span=2>
-           <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse=1>
-  <el-submenu index="1">
-    <template slot="title">
-      <i class="el-icon-location"></i>
-      <span slot="title">导航一</span>
-    </template>
-    <el-menu-item-group>
-      <span slot="title">分组一</span>
-      <el-menu-item index="1-1">选项1</el-menu-item>
-      <el-menu-item index="1-2">选项2</el-menu-item>
-    </el-menu-item-group>
-    <el-menu-item-group title="分组2">
-      <el-menu-item index="1-3">选项3</el-menu-item>
-    </el-menu-item-group>
-    <el-submenu index="1-4">
-      <span slot="title">选项4</span>
-      <el-menu-item index="1-4-1">选项1</el-menu-item>
-    </el-submenu>
-  </el-submenu>
-  <el-menu-item index="2">
-    <i class="el-icon-menu"></i>
-    <span slot="title">导航二</span>
-  </el-menu-item>
-  <el-menu-item index="3" disabled>
-    <i class="el-icon-document"></i>
-    <span slot="title">导航三</span>
-  </el-menu-item>
-  <el-menu-item index="4">
-    <i class="el-icon-setting"></i>
-    <span slot="title">导航四</span>
-  </el-menu-item>
-</el-menu>
-         </el-col>
-        <el-col :md=17>
+         <el-col :md=4 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
+      
+        <el-col :md=16>
           <el-row class='breadcrumb-row'>
           <el-breadcrumb separator=">">
             <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -85,32 +52,31 @@
           </el-row>
           <el-row>
             <el-col :md=8 :xs=24>
-              <el-card class="box-card answer-box">
-                "喂..." 是他很溫柔的聲音。
-              </el-card>
+              <answerbox answer='"喂..." 是他很溫柔的聲音!' aurthor='作者二號' love_num=14></answerbox>
             </el-col>
              <el-col :md=8 :xs=24>
-              <el-card class="box-card answer-box">
-                "叫糊叫糊，喂搵邊個呀？"　對面傳來打麻將的聲音。
-              </el-card>
+              <answerbox answer='"叫糊叫糊，喂搵邊個呀？"　對面傳來打麻將的聲音。' aurthor='徐薇薇' love_num=9></answerbox>
             </el-col>
              <el-col :md=8 :xs=24>
-              <el-card class="box-card answer-box">
-                ＂喂...＂ 是一把很溫和的聲音，但是是女的。
-              </el-card>
+
+              <answerbox answer='＂喂...＂ 是一把很溫和的聲音，但是是女的。' aurthor='搞破壞' love_num=98237></answerbox>
             </el-col>
             <el-col :md=8 :xs=24>
-              <el-card class="box-card answer-box">
-                ＂二姑二姑！！＂對面有一個女的一直在找姑媽。
-              </el-card>
+
+              <answerbox answer='＂二姑二姑！！＂對面有一個女的一直在找姑媽。' aurthor='中二生' love_num=98237></answerbox>
             </el-col>
           </el-row>
+
         </el-col>
-      </el-row>    
+      </el-row>  
 
     </el-main>
+
     </el-container>
+    <chapteractionmenu></chapteractionmenu>
   </div>
+
+
 </body>
   <script src="/js/chapterdetail.js"></script>
   <script>
