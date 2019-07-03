@@ -11,6 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.extract();
+
 mix.js('resources/js/homepage.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 

@@ -8,6 +8,8 @@
   <link rel="stylesheet" type="text/css" href="/css/app.css">
   <link rel="stylesheet" type="text/css" href="/css/chapterdetail.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="/js/manifest.js"></script>
+ <script src="/js/vendor.js"></script>
 </head>
 <body>
   <div id="app">
@@ -78,6 +80,7 @@
 
 
 </body>
+
   <script src="/js/chapterdetail.js"></script>
   <script>
 

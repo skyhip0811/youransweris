@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" type="text/css" href="/css/app.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/manifest.js"></script>
+ <script src="/js/vendor.js"></script>
+
+
 </head>
 <body>
   <div id="app">
@@ -15,7 +19,7 @@
     <el-main>
     <el-row>
       <el-col :md=3 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
-      <el-col :lg=12 :sm=24>
+      <el-col :lg=11 :sm=24>
         <el-card class="box-card">
          <div slot="header" class="clearfix">
             <span><h4>最近更新</h4></span>
@@ -34,7 +38,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :lg=6 :sm=24>
+      <el-col :lg=7 :sm=24>
         <el-card class="box-card">
          <div slot="header" class="clearfix">
             <span><h4>最近熱門</h4></span>
@@ -53,42 +57,10 @@
         </el-card>
       </el-col>
     </el-row>
-    <el-row>
-      <el-col :md=4 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
-      <el-col :lg=8 :sm=24>
-        <el-card class="box-card">
-         <div slot="header" class="clearfix">
-            <span><h4>更新最勤</h4></span>
-          </div>
-          <div  class="text item">
-           test
-          </div>
-          <div  class="text item">
-           test
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :lg=8 :sm=24>
-        <el-card class="box-card">
-         <div slot="header" class="clearfix">
-            <span><h4>最多打賞</h4></span>
-          </div>
-          <div  class="text item">
-           test
-          </div>
-          <div  class="text item">
-           test
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
 
     </el-main>
     </el-container>
   </div>
 </body>
   <script src="/js/homepage.js"></script>
-  <script>
-
-  </script>
 </html>
