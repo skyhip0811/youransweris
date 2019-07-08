@@ -25,9 +25,9 @@
             <el-col :md=8 style="padding:10px;"><img src="/placeholder-image.jpg" /></el-col>
             <el-col :md=16 style="padding:10px;" >
             <h4>在世界某處</h4>
-	        <p>第一作者: <a href='#'>作者二號</a><br>
-	        其他聯合作者: <a href='#'>專搞破壞</a>,<a href='#'>中二病</a><br>
-	        總章節數: 172<br>
+	        <p>第一作者: <a href='#'>作者二號 (129)</a><br>
+	        其他聯合作者: <a href='#'>專搞破壞 (28)</a>,<a href='#'>中二病 (72)</a><br>
+	        總章節數: 229<br>
 	        總字數: 98272 
 	    	</p>
 	        <p>這是一個發生在世界某處的故事。而且是一個有無限可能的故事。</p>
