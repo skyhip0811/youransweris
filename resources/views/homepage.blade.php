@@ -17,6 +17,7 @@
     <el-container>
     <el-header  class='head-menu'><headnav></headnav></el-header>
     <el-main>
+
     <el-row>
       <el-col :md=3 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
       <el-col :lg=11 :sm=24>
@@ -47,17 +48,42 @@
            <el-row>
               <el-col :span="14"><h5> 書名 </h5></el-col>
               <el-col :span="6"><h5> 第一作者 </h5></el-col>
-              <el-col :span="4"><h5> 觀看數 </h5></el-col>
+              <el-col :span="4"><h5> 7天觀看數 </h5></el-col>
             </el-row>
             <bookrow book="很久很久以前" aurthor='作者二號' ticket='139'></bookrow>
             <bookrow book="中二病闖世界" aurthor='他她牠' ticket='139'></bookrow>
             <bookrow book="那些年我們一起追的校長" aurthor='專搞破壞' ticket='139'></bookrow>
+            <bookrow book="我是高手" aurthor='作者一號' ticket='139'></bookrow>
           </div>
 
         </el-card>
       </el-col>
     </el-row>
+    <el-row>
+    <el-col :md=3 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
+      <el-col :lg=18>
+        <el-card class="box-card">
+        <div slot="header" class="clearfix">
+            <span><h4>小編精選</h4></span>
+        </div>
+        <el-row>
+          <el-col :md=6>
+            <editorfavourite  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
 
+        </el-row>
+      </el-card>
+      </el-col>
+    </el-row>
     </el-main>
     </el-container>
   </div>

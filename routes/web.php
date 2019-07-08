@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('/chapter', function () {
     return view('charterdetail');
 });
+Route::get('/book', function () {
+    return view('bookdetail');
+});

@@ -1,1 +1,79 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{107:function(t,e,n){n(108),n(194),t.exports=n(197)},108:function(t,e,n){"use strict";n.r(e);var a=n(8),o=n(28),s=n(27),i=n(26);n(41),new Vue({el:"#app",components:{Headnav:o.a,Chapterrow:s.a,Bookrow:i.a,Remotesearch:a.a},data:function(){return{visible:!1}}})},194:function(t,e){},197:function(t,e){},26:function(t,e,n){"use strict";var a={props:["aurthor","book","ticket"],data:function(){return{}}},o=(n(72),n(0)),s=Object(o.a)(a,function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"book-row"},[n("a",{attrs:{href:"#"}},[n("el-row",[n("el-col",{attrs:{span:14}},[t._v(" "+t._s(t.book)+" ")]),t._v(" "),n("el-col",{attrs:{span:6}},[t._v(" "+t._s(t.aurthor)+" ")]),t._v(" "),n("el-col",{attrs:{span:4}},[t._v(" "+t._s(t.ticket)+" ")])],1)],1)])},[],!1,null,null,null);e.a=s.exports},27:function(t,e,n){"use strict";var a={props:["aurthor","book","chapter"],data:function(){return{}}},o=(n(70),n(0)),s=Object(o.a)(a,function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"chapter-row"},[n("a",{attrs:{href:"#"}},[n("el-row",[n("el-col",{attrs:{span:4}},[t._v(" 06/25 14:02 ")]),t._v(" "),n("el-col",{attrs:{span:8}},[t._v(" "+t._s(t.book)+" ")]),t._v(" "),n("el-col",{attrs:{span:8}},[t._v(" "+t._s(t.chapter)+" ")]),t._v(" "),n("el-col",{attrs:{span:4}},[t._v(" "+t._s(t.aurthor)+" ")])],1)],1)])},[],!1,null,null,null);e.a=s.exports},28:function(t,e,n){"use strict";var a={data:function(){return{activeIndex:"1",activeIndex2:"1"}},components:{Remotesearch:n(8).a},methods:{handleSelect:function(t,e){console.log(t,e)}}},o=n(0),s=Object(o.a)(a,function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticStyle:{height:"100%"}},[n("el-row",{staticClass:"hidden-md-and-down"},[n("el-menu",{staticClass:"el-menu-demo",attrs:{"default-active":t.activeIndex,mode:"horizontal"},on:{select:t.handleSelect}},[n("el-menu-item",[n("a",{attrs:{href:"/"}},[n("img",{attrs:{src:"https://www.deluxe.com/sites/www.deluxe.com/files/logo_design/logo/large/logo-samples-28.png"}})])]),t._v(" "),n("el-submenu",{attrs:{index:"1"}},[n("template",{slot:"title"},[t._v("故事分類")]),t._v(" "),n("el-menu-item",{attrs:{index:"1-1"}},[t._v("选项1")]),t._v(" "),n("el-menu-item",{attrs:{index:"1-2"}},[t._v("选项2")]),t._v(" "),n("el-menu-item",{attrs:{index:"1-3"}},[t._v("选项3")])],2),t._v(" "),n("el-submenu",{attrs:{index:"2"}},[n("template",{slot:"title"},[t._v("你追蹤的")]),t._v(" "),n("el-menu-item",{attrs:{index:"2-1"}},[t._v("作者")]),t._v(" "),n("el-menu-item",{attrs:{index:"2-2"}},[t._v("故事進度")])],2),t._v(" "),n("el-menu-item",{attrs:{index:"3"}},[n("a",{attrs:{href:"https://www.ele.me",target:"_blank"}},[t._v("會員管理")])])],1)],1),t._v(" "),n("el-row",{staticClass:"hidden-lg-and-up",staticStyle:{height:"100%"}},[n("el-menu",{staticClass:"el-menu-demo",attrs:{"default-active":t.activeIndex,mode:"horizontal"},on:{select:t.handleSelect}},[n("el-submenu",{attrs:{index:"1"}},[n("template",{slot:"title"},[t._v("菜單")]),t._v(" "),n("el-submenu",{attrs:{index:"1-1"}},[n("template",{slot:"title"},[t._v("故事分類")]),t._v(" "),n("el-menu-item",{attrs:{index:"1-1-1"}},[t._v("选项1")]),t._v(" "),n("el-menu-item",{attrs:{index:"1-1-2"}},[t._v("选项2")]),t._v(" "),n("el-menu-item",{attrs:{index:"1-1-3"}},[t._v("选项3")])],2),t._v(" "),n("el-submenu",{attrs:{index:"1-2"}},[n("template",{slot:"title"},[t._v("你追蹤的")]),t._v(" "),n("el-menu-item",{attrs:{index:"1-2-1"}},[t._v("作者")]),t._v(" "),n("el-menu-item",{attrs:{index:"1-2-2"}},[t._v("故事進度")])],2),t._v(" "),n("el-menu-item",{attrs:{index:"1-3"}},[n("a",{attrs:{href:"https://www.ele.me",target:"_blank"}},[t._v("會員管理")])])],2),t._v(" "),n("el-menu-item",{staticStyle:{width:"50%",padding:"auto"}},[n("div",{staticStyle:{width:"100%","margin-left":"auto","margin-right":"auto",height:"100%","text-aglin":"center"}},[n("a",{staticStyle:{height:"100%"},attrs:{href:"/"}},[n("img",{attrs:{src:"https://www.deluxe.com/sites/www.deluxe.com/files/logo_design/logo/large/logo-samples-28.png"}})])])])],1)],1)],1)},[],!1,null,null,null);e.a=s.exports},41:function(t,e,n){window._=n(74),window.Vue=n(1),n(77);try{window.Popper=n(66).default,window.$=window.jQuery=n(67),n(96)}catch(t){}window.axios=n(97),window.axios.defaults.headers.common["X-Requested-With"]="XMLHttpRequest";var a=document.head.querySelector('meta[name="csrf-token"]');a?window.axios.defaults.headers.common["X-CSRF-TOKEN"]=a.content:console.error("CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token")},5:function(t,e,n){var a=n(69);"string"==typeof a&&(a=[[t.i,a,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(13)(a,o);a.locals&&(t.exports=a.locals)},6:function(t,e,n){var a=n(71);"string"==typeof a&&(a=[[t.i,a,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(13)(a,o);a.locals&&(t.exports=a.locals)},68:function(t,e,n){"use strict";var a=n(5);n.n(a).a},69:function(t,e,n){(t.exports=n(12)(!1)).push([t.i,"\n.book-search>.el-input{\r\n  height: 40px;\n}\r\n",""])},7:function(t,e,n){var a=n(73);"string"==typeof a&&(a=[[t.i,a,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(13)(a,o);a.locals&&(t.exports=a.locals)},70:function(t,e,n){"use strict";var a=n(6);n.n(a).a},71:function(t,e,n){(t.exports=n(12)(!1)).push([t.i,"\n.chapter-row{\r\n    margin:20px 0px;\n}\r\n",""])},72:function(t,e,n){"use strict";var a=n(7);n.n(a).a},73:function(t,e,n){(t.exports=n(12)(!1)).push([t.i,"\n.book-row{\r\n    margin:20px 0px;\n}\r\n",""])},8:function(t,e,n){"use strict";var a={data:function(){return{options:[],value:[],list:[],loading:!1,states:["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]}},mounted:function(){this.list=this.states.map(function(t){return{value:t,label:t}})},methods:{remoteMethod:function(t){var e=this;""!==t?(this.loading=!0,setTimeout(function(){e.loading=!1,e.options=e.list.filter(function(e){return e.label.toLowerCase().indexOf(t.toLowerCase())>-1})},200)):this.options=[]}}},o=(n(68),n(0)),s=Object(o.a)(a,function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("el-select",{staticClass:"book-search",attrs:{multiple:"",filterable:"",remote:"","reserve-keyword":"",placeholder:"请输入关键词","remote-method":t.remoteMethod,loading:t.loading},model:{value:t.value,callback:function(e){t.value=e},expression:"value"}},t._l(t.options,function(t){return n("el-option",{key:t.value,attrs:{label:t.label,value:t.value}})}),1)},[],!1,null,null,null);e.a=s.exports}},[[107,0,1]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["/js/homepage"],{
+
+/***/ "./resources/js/homepage.js":
+/*!**********************************!*\
+  !*** ./resources/js/homepage.js ***!
+  \**********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_Remotesearch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Remotesearch */ "./resources/js/components/Remotesearch.vue");
+/* harmony import */ var _components_Headnav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Headnav */ "./resources/js/components/Headnav.vue");
+/* harmony import */ var _components_Chapterrow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Chapterrow */ "./resources/js/components/Chapterrow.vue");
+/* harmony import */ var _components_Bookrow__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Bookrow */ "./resources/js/components/Bookrow.vue");
+/* harmony import */ var _components_Editorfavourite__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Editorfavourite */ "./resources/js/components/Editorfavourite.vue");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+
+
+
+
+ // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+new Vue({
+  el: '#app',
+  components: {
+    Headnav: _components_Headnav__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Chapterrow: _components_Chapterrow__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Bookrow: _components_Bookrow__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Remotesearch: _components_Remotesearch__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Editorfavourite: _components_Editorfavourite__WEBPACK_IMPORTED_MODULE_4__["default"]
+  },
+  data: function data() {
+    return {
+      visible: false
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/chapterdetail.scss":
+/*!*******************************************!*\
+  !*** ./resources/sass/chapterdetail.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!******************************************************************************************************!*\
+  !*** multi ./resources/js/homepage.js ./resources/sass/app.scss ./resources/sass/chapterdetail.scss ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\homepage.js */"./resources/js/homepage.js");
+__webpack_require__(/*! D:\projects\youransweris\youransweris\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\sass\chapterdetail.scss */"./resources/sass/chapterdetail.scss");
+
+
+/***/ })
+
+},[[0,"/js/manifest","/js/vendor"]]]);
