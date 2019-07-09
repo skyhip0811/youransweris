@@ -29,8 +29,7 @@
 <style>
 .menu_action{
 	width: 100%;
-	position: absolute;
-	bottom: 0;
+	position: fixed;
 	height: 60px;
 	background: white;
 	font-size: 15px;
@@ -38,6 +37,7 @@
 }
 
 .menu_action_content{
+	position: absolute;
 	width: 100%;
 }
 

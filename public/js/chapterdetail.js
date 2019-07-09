@@ -94,7 +94,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.menu_action{\r\n\twidth: 100%;\r\n\tposition: absolute;\r\n\tbottom: 0;\r\n\theight: 60px;\r\n\tbackground: white;\r\n\tfont-size: 15px;\r\n\tpadding-top:15px;\n}\n.menu_action_content{\r\n\twidth: 100%;\n}\n.center {\r\n  margin: auto;\r\n  text-align: center;\n}\n.action_number{\r\n\tmargin-left: 10px;\n}\r\n", ""]);
+exports.push([module.i, "\n.menu_action{\r\n\twidth: 100%;\r\n\tposition: fixed;\r\n\theight: 60px;\r\n\tbackground: white;\r\n\tfont-size: 15px;\r\n\tpadding-top:15px;\n}\n.menu_action_content{\r\n\tposition: absolute;\r\n\twidth: 100%;\n}\n.center {\r\n  margin: auto;\r\n  text-align: center;\n}\n.action_number{\r\n\tmargin-left: 10px;\n}\r\n", ""]);
 
 // exports
 

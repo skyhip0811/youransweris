@@ -1,5 +1,5 @@
 <template>
-<div style="height:100%">
+<div class='head-menu' style="height:100%">
 <el-row class='hidden-md-and-down'>
 <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" >
 
@@ -85,3 +85,13 @@ import Remotesearch from './Remotesearch';
     }
   }
 </script>
+
+<style>
+
+.head-menu{
+  position: sticky;
+  top:0;
+  z-index: 99;
+}
+
+</style>
