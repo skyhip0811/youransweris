@@ -19,8 +19,7 @@
 
 .menu_action {
   width: 100%;
-  position: -webkit-sticky;
-  position: sticky;
+  position: absolute;
   bottom: 0;
 }
 

@@ -29,7 +29,7 @@
 <style>
 .menu_action{
 	width: 100%;
-	position: sticky;
+	position: absolute;
 	bottom: 0;
 	height: 60px;
 	background: white;
