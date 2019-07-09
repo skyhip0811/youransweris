@@ -25,3 +25,7 @@ Route::get('/book', function () {
 Route::get('/category', function () {
     return view('category');
 });
+
+Route::get('/searchbooks', function () {
+    return view('searchbooks');
+});

@@ -1,6 +1,6 @@
 <template>
     <div class='editorfavourite'>
-    <a href="#">
+    <a :href='link'>
         <img src="/placeholder-image.jpg" />
         <br>
         <h4>{{book}}</h4>
@@ -12,7 +12,7 @@
 
 <script>
     export default {
-        props: ['aurthor','book','desc'],
+        props: ['aurthor','book','desc', 'link'],
         data () {
             return {
                

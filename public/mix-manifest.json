@@ -4,5 +4,6 @@
     "/css/app.css": "/css/app.css",
     "/css/chapterdetail.css": "/css/chapterdetail.css",
     "/js/manifest.js": "/js/manifest.js",
+    "/js/searchbook.js": "/js/searchbook.js",
     "/js/vendor.js": "/js/vendor.js"
 }

@@ -68,16 +68,16 @@
         </div>
         <el-row>
           <el-col :md=6>
-            <editorfavourite  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+            <editorfavourite link='book' aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
           </el-col>
           <el-col :md=6>
-            <editorfavourite  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+            <editorfavourite link='book' aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
           </el-col>
           <el-col :md=6>
-            <editorfavourite  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+            <editorfavourite link='book' aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
           </el-col>
           <el-col :md=6>
-            <editorfavourite  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+            <editorfavourite link='book' aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
           </el-col>
 
         </el-row>

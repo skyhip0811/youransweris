@@ -18,3 +18,5 @@ mix.js('resources/js/homepage.js', 'public/js')
 
 mix.js('resources/js/chapterdetail.js', 'public/js')
     .sass('resources/sass/chapterdetail.scss', 'public/css');
+
+mix.js('resources/js/searchbook.js', 'public/js');

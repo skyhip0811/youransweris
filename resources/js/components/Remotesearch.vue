@@ -1,7 +1,7 @@
 <template>
   <el-select class='book-search'
     v-model="value"
-    multiple
+    
     filterable
     remote
     reserve-keyword

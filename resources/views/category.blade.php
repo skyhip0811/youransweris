@@ -6,7 +6,7 @@
   <!-- import CSS -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" type="text/css" href="/css/app.css">
-  <link rel="stylesheet" type="text/css" href="/css/chapterdetail.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/js/manifest.js"></script>
  <script src="/js/vendor.js"></script>
@@ -16,10 +16,53 @@
     <el-container>
     <el-header  class='head-menu'><headnav></headnav></el-header>
     <el-main>
-    ...
+      <el-row >
+        <el-col :md=4 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
+      
+        <el-col :md=16>
+          <el-card class="box-card">
+         <div slot="header" class="clearfix">
+            <span><h4>懸疑故事</h4></span>
+          </div>
+          <el-row>
+          <el-col :md=6>
+            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+          <el-col :md=6>
+            <editorfavourite link='/book' aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+          </el-col>
+
+        </el-row>
+        </el-card>
+        </el-col>
+      </el-row>
     </el-main>
     </el-container>
-    <chapteractionmenu></chapteractionmenu>
+
   </div>
 </body>
   <script src="/js/chapterdetail.js"></script>
