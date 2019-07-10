@@ -27,7 +27,6 @@ var app = new Vue({
   components: {
     Headnav: _components_Headnav__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['bookname', 'periouscontent', 'periouschaptername', 'periousquestion'],
   data: function data() {
     return {
       form: {

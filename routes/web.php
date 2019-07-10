@@ -33,3 +33,7 @@ Route::get('/searchbooks', function () {
 Route::get('/createchapter', function () {
     return view('createchapter');
 });
+
+Route::get('/createbook', function () {
+    return view('createbook');
+});

@@ -24,3 +24,4 @@ mix.js('resources/js/searchbook.js', 'public/js');
 mix.js('resources/js/template.js', 'public/js');
 
 mix.js('resources/js/createchapter.js', 'public/js');
+mix.js('resources/js/createbook.js', 'public/js');

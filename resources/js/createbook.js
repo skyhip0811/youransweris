@@ -1,5 +1,6 @@
 require('./bootstrap');
 import Headnav from './components/Headnav'
+import Imageupload from './components/Imageupload'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHeart , faBookmark, faPlus, faFileAlt} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -11,7 +12,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 var app = new Vue({
   el: '#app',
-  components: { Headnav },
+  components: { Headnav,Imageupload },
   data: function() {
     return { form: {
           name: '',
@@ -36,9 +37,6 @@ var app = new Vue({
       }
   },
   mounted: function () {
-        this.form.name = this.$el.attributes.name.value;
-        this.form.periouscontent = unescape(this.$el.attributes.periouscontent.value);
-        this.form.periouschaptername = this.$el.attributes.periouschaptername.value;
-        this.form.periousquestion = this.$el.attributes.previousquestion.value;
+
   }
 });

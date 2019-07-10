@@ -6,7 +6,6 @@
   <!-- import CSS -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" type="text/css" href="/css/app.css">
-  <link rel="stylesheet" type="text/css" href="/css/chapterdetail.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <script src="/js/manifest.js"></script>
  <script src="/js/vendor.js"></script>
@@ -22,7 +21,7 @@
         <el-col :md=16>
           <el-row class='breadcrumb-row'>
           <el-breadcrumb separator=">">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item :to="{ path: '/' }">首頁</el-breadcrumb-item>
             <el-breadcrumb-item><a href="/">在世界某處</a></el-breadcrumb-item>
             <el-breadcrumb-item>山裡有座廟</el-breadcrumb-item>
             <el-breadcrumb-item>...</el-breadcrumb-item>
