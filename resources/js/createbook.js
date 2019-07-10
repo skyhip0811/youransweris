@@ -24,8 +24,31 @@ var app = new Vue({
           content:'',
           chaptername:'',
           endchapter:false,
-          question:''
-        } 
+          question:'',
+          type:'',
+        },
+        options: [{
+          value: '懸疑故事',
+          label: '懸疑故事'
+        }, {
+          value: '都市社會',
+          label: '都市社會'
+        }, {
+          value: '玄幻奇幻',
+          label: '玄幻奇幻'
+        }, {
+          value: '搞笑故事',
+          label: '搞笑故事'
+        }, {
+          value: '遊戲人生',
+          label: '遊戲人生'
+        }, {
+          value: '浪漫愛情',
+          label: '浪漫愛情'
+        }, {
+          value: '熱血冒險',
+          label: '熱血冒險'
+        }]
     }
   },
   methods:{

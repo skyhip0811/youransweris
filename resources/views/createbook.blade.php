@@ -29,9 +29,19 @@
         <el-form-item label="故事簡介" >
           <el-input v-model="form.desc" placeholder="故事簡介"></el-input>
         </el-form-item>
+        <el-form-item label="故事類型" >
+          <el-select v-model="form.type" placeholder="請選擇">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+        </el-form-item>
          <el-form-item label="故事封面" >
-          <imageupload name='bookcover' width="640" height='360' icon-width="160" icon-height="90"></imageupload>
-          <span>封面必須是jpg format, 1 mb以下, 640 x 360px</span>
+          <imageupload name='bookcover' width="400" height='300' icon-width="200" icon-height="150"></imageupload>
+          <span>封面必須是jpg format, 1 mb以下, 400 x 300px</span>
         </el-form-item>
         <el-form-item label="第一章節">
           <el-input  placeholder="章節名稱"  v-model="form.chaptername"></el-input>
