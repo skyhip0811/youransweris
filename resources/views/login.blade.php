@@ -35,7 +35,7 @@
             </el-form-item>
 
             <el-form-item>
-              <el-button type="primary" @click="onSubmit">遞交</el-button>
+              <el-button type="primary" @click="onSubmit">登入</el-button>
               <a href="#">注冊 </a>
               <a href="#">忘記密碼</a>
             </el-form-item>
