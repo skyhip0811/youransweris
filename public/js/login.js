@@ -35,8 +35,15 @@ new Vue({
     test: function test(bookname) {
       this.form.name = bookname;
     },
-    onSubmit: function onSubmit() {
-      console.log('submit!');
+    onSubmit: function onSubmit(formName) {
+      this.$refs[formName].validate(function (valid) {
+        if (valid) {
+          alert('submit!');
+        } else {
+          console.log('error submit!!');
+          return false;
+        }
+      });
     }
   }
 });
