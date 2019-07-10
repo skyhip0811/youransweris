@@ -24,7 +24,11 @@
   <el-menu-item index="3-1">作者</el-menu-item>
   <el-menu-item index="3-2">故事進度</el-menu-item>
 </el-submenu>
-  <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">會員管理</a></el-menu-item>
+  <el-submenu index="4">
+    <template slot="title">會員管理</template>
+    <el-menu-item index="4-1">你的創作</el-menu-item>
+    <el-menu-item index="4-2">更改會員資料</el-menu-item>
+  </el-submenu>
 
 
 </el-menu>
@@ -50,7 +54,12 @@
 	  <el-menu-item index="1-2-1">作者</el-menu-item>
 	  <el-menu-item index="1-2-2">故事進度</el-menu-item>
 	</el-submenu>
-	<el-menu-item index="1-3"><a href="https://www.ele.me" target="_blank">會員管理</a></el-menu-item>
+  <el-submenu index="1-3">
+    <template slot="title">會員管理</template>
+    <el-menu-item index="1-3-1">你的創作</el-menu-item>
+    <el-menu-item index="1-3-2">更改會員資料</el-menu-item>
+  </el-submenu>
+
   </el-submenu>
 
   <el-menu-item style="width:50%;padding:auto">

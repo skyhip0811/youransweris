@@ -29,3 +29,7 @@ Route::get('/category', function () {
 Route::get('/searchbooks', function () {
     return view('searchbooks');
 });
+
+Route::get('/createchapter', function () {
+    return view('createchapter');
+});
