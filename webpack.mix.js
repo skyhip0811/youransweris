@@ -25,3 +25,4 @@ mix.js('resources/js/template.js', 'public/js');
 
 mix.js('resources/js/createchapter.js', 'public/js');
 mix.js('resources/js/createbook.js', 'public/js');
+mix.js('resources/js/login.js', 'public/js');

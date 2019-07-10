@@ -37,3 +37,7 @@ Route::get('/createchapter', function () {
 Route::get('/createbook', function () {
     return view('createbook');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
