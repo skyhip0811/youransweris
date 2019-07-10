@@ -30,7 +30,8 @@
           <el-input v-model="form.desc" placeholder="故事簡介"></el-input>
         </el-form-item>
          <el-form-item label="故事封面" >
-          <imageupload name='bookcover' width="640" height='360' icon-width="320" icon-height="180"></imageupload>
+          <imageupload name='bookcover' width="640" height='360' icon-width="160" icon-height="90"></imageupload>
+          <span>封面必須是jpg format, 1 mb以下, 640 x 360px</span>
         </el-form-item>
         <el-form-item label="第一章節">
           <el-input  placeholder="章節名稱"  v-model="form.chaptername"></el-input>

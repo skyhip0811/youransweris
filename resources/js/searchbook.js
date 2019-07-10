@@ -1,8 +1,8 @@
 require('./bootstrap');
 import Remotesearch from './components/Remotesearch'
 import Headnav from './components/Headnav'
-// import Chapterrow from './components/Chapterrow'
-// import Bookrow from './components/Bookrow'
+import Chapterrow from './components/Chapterrow'
+import Bookrow from './components/Bookrow'
 import Editorfavourite from './components/Editorfavourite'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHeart , faBookmark, faPlus, faFileAlt} from '@fortawesome/free-solid-svg-icons'
@@ -16,7 +16,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 new Vue({
   el: '#app',
-  components: { Headnav ,Chapterrow,Bookrow,Remotesearch,Chapteractionmenu,Answerbox,Editorfavourite},
+  components: { Headnav ,Chapterrow,Bookrow,Remotesearch,Editorfavourite},
   data: function() {
     return { visible: false }
   }

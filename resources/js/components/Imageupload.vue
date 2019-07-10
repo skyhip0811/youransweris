@@ -10,6 +10,7 @@
   <img v-if="imageUrl" :src="imageUrl" class="avatar" v-bind:style="{ width: iconWidth +'px', height: iconHeight +'px'  }">
   <i v-else class="el-icon-plus avatar-uploader-icon" v-bind:style="{ lineHeight:iconHeight+'px',width: iconWidth +'px', height: iconHeight +'px'  }"></i>
 </el-upload>
+
 </template>
 <style lang='scss'>
   $height: 100px;
