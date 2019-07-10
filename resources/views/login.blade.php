@@ -29,7 +29,8 @@
               <el-input  v-model="form.email"></el-input>
             </el-form-item>
             <el-form-item label="密碼" prop="password" :rules="[
-                { required: true, message: '請輸入密碼', trigger: 'blur' }
+                { required: true, message: '請輸入密碼', trigger: 'blur' },
+                { min: 6,  message: '長度最少 6 個字符', trigger: ['blur','change'] }
               ]">
               <el-input type="password" v-model="form.password"></el-input>
             </el-form-item>
