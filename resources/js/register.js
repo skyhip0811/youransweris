@@ -1,4 +1,5 @@
 require('./bootstrap');
+const axios = require('axios');
 import Registerform from './components/Registerform'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHeart , faBookmark, faPlus, faFileAlt} from '@fortawesome/free-solid-svg-icons'
@@ -7,6 +8,7 @@ library.add(faHeart,faBookmark,faPlus,faFileAlt)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
 
 
 new Vue({

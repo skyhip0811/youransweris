@@ -42,7 +42,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     var validatePass = function validatePass(rule, value, callback) {
-      if (value !== _this.ruleForm.pass) {
+      if (value !== _this.ruleForm.password) {
         callback(new Error('两次輸入密碼不一致!'));
       } else {
         callback();
@@ -50,9 +50,11 @@ __webpack_require__.r(__webpack_exports__);
     };
 
     return {
+      emailerror: '',
+      nameerror: '',
       ruleForm: {
-        pass: '',
-        checkPass: '',
+        password: '',
+        password_confirmation: '',
         email: '',
         name: '',
         gender: ''
@@ -63,9 +65,9 @@ __webpack_require__.r(__webpack_exports__);
           message: '請輸入筆名, 有名有姓才是品質保證',
           trigger: 'blur'
         }, {
-          min: 3,
+          min: 6,
           max: 8,
-          message: '長度必須是3-8位',
+          message: '長度必須是6-8位',
           trigger: 'change'
         }],
         gender: [{
@@ -82,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
           message: '請輸入正确的電郵地址',
           trigger: ['blur', 'change']
         }],
-        pass: [{
+        password: [{
           required: true,
           message: '請輸入密碼',
           trigger: 'blur'
@@ -92,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
           message: '密码长度必须是3-8位',
           trigger: 'change'
         }],
-        checkPass: [{
+        password_confirmation: [{
           required: true,
           message: '請再次輸入密碼',
           trigger: 'blur'
@@ -105,9 +107,19 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submitForm: function submitForm(formName) {
+      var _this2 = this;
+
       this.$refs[formName].validate(function (valid) {
         if (valid) {
-          alert('submit!');
+          var self = _this2;
+          _this2.nameerror = '';
+          _this2.emailerror = '';
+          window.axios.post('/register', _this2.ruleForm).then(function (response) {
+            console.log('success');
+          })["catch"](function (error) {
+            // console.log(error.response.data);
+            self.promptError(error.response.data.errors);
+          });
         } else {
           console.log('error submit!!');
           return false;
@@ -116,6 +128,15 @@ __webpack_require__.r(__webpack_exports__);
     },
     resetForm: function resetForm(formName) {
       this.$refs[formName].resetFields();
+    },
+    promptError: function promptError(msg) {
+      if (msg.email) {
+        this.nameerror = msg.email[0];
+      }
+
+      if (msg.name) {
+        this.nameerror = msg.name[0];
+      }
     }
   }
 });
@@ -142,12 +163,21 @@ var render = function() {
     {
       ref: "ruleForm",
       staticClass: "demo-ruleForm",
-      attrs: { model: _vm.ruleForm, rules: _vm.rules, "label-width": "100px" }
+      attrs: {
+        model: _vm.ruleForm,
+        rules: _vm.rules,
+        "label-width": "100px",
+        action: "register",
+        method: "post"
+      }
     },
     [
       _c(
         "el-form-item",
-        { attrs: { label: "電郵", prop: "email" } },
+        {
+          ref: "email",
+          attrs: { label: "電郵", prop: "email", error: _vm.emailerror }
+        },
         [
           _c("el-input", {
             attrs: { "auto-complete": "off" },
@@ -165,7 +195,10 @@ var render = function() {
       _vm._v(" "),
       _c(
         "el-form-item",
-        { attrs: { label: "筆名", prop: "name" } },
+        {
+          ref: "name",
+          attrs: { label: "筆名", prop: "name", error: _vm.nameerror }
+        },
         [
           _c("el-input", {
             attrs: { "auto-complete": "off" },
@@ -210,16 +243,16 @@ var render = function() {
       _vm._v(" "),
       _c(
         "el-form-item",
-        { attrs: { label: "密碼", prop: "pass" } },
+        { attrs: { label: "密碼", prop: "password" } },
         [
           _c("el-input", {
             attrs: { type: "password", "auto-complete": "off" },
             model: {
-              value: _vm.ruleForm.pass,
+              value: _vm.ruleForm.password,
               callback: function($$v) {
-                _vm.$set(_vm.ruleForm, "pass", $$v)
+                _vm.$set(_vm.ruleForm, "password", $$v)
               },
-              expression: "ruleForm.pass"
+              expression: "ruleForm.password"
             }
           })
         ],
@@ -228,16 +261,16 @@ var render = function() {
       _vm._v(" "),
       _c(
         "el-form-item",
-        { attrs: { label: "確認密碼", prop: "checkPass" } },
+        { attrs: { label: "確認密碼", prop: "password_confirmation" } },
         [
           _c("el-input", {
             attrs: { type: "password", "auto-complete": "off" },
             model: {
-              value: _vm.ruleForm.checkPass,
+              value: _vm.ruleForm.password_confirmation,
               callback: function($$v) {
-                _vm.$set(_vm.ruleForm, "checkPass", $$v)
+                _vm.$set(_vm.ruleForm, "password_confirmation", $$v)
               },
-              expression: "ruleForm.checkPass"
+              expression: "ruleForm.password_confirmation"
             }
           })
         ],
@@ -368,6 +401,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
 /* harmony import */ var _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/vue-fontawesome */ "./node_modules/@fortawesome/vue-fontawesome/index.es.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 
 
