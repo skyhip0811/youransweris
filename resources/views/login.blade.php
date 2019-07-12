@@ -21,34 +21,13 @@
       <el-col :md=6 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
       <el-col :lg=12>
         <el-card>
-          <el-form ref="form" :model="form" label-width="50px" style="margin-top:30px">
-             <el-form-item label="電郵" prop="email" :rules="[
-                { required: true, message: '請輸入電郵地址', trigger: 'blur' },
-                { type: 'email', message: '請輸入正确的電郵地址', trigger: ['blur', 'change'] }
-              ]">
-              <el-input  v-model="form.email"></el-input>
-            </el-form-item>
-            <el-form-item label="密碼" prop="password" :rules="[
-                { required: true, message: '請輸入密碼', trigger: 'blur' },
-                { min: 6,  message: '長度最少 6 個字符', trigger: ['blur','change'] }
-              ]">
-              <el-input type="password" v-model="form.password"></el-input>
-            </el-form-item>
-
-            <el-form-item>
-              <el-button type="primary" @click="onSubmit('form')">登入</el-button>
-              <a href="#">注冊 </a>
-              <a href="#">忘記密碼</a>
-            </el-form-item>
-          </el-form>
+        <Loginform></Loginform>
         </el-card>
       </el-col>
       </el-row>
     </el-main>
     </el-container>
   </div>
-
-
 </body>
 
   <script src="/js/login.js"></script>

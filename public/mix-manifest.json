@@ -7,6 +7,7 @@
     "/css/chapterdetail.css": "/css/chapterdetail.css",
     "/js/login.js": "/js/login.js",
     "/js/manifest.js": "/js/manifest.js",
+    "/js/register.js": "/js/register.js",
     "/js/searchbook.js": "/js/searchbook.js",
     "/js/template.js": "/js/template.js",
     "/js/vendor.js": "/js/vendor.js"

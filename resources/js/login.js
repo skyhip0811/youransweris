@@ -1,4 +1,5 @@
 require('./bootstrap');
+import Loginform from './components/Loginform'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHeart , faBookmark, faPlus, faFileAlt} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -10,29 +11,13 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 new Vue({
   el: '#app',
-  components: { },
+  components: { Loginform },
   data: function() {
     return { 
-    	form: {
-	    	email:'',
-	    	password:''
-    	} 
+
 	}
 
-  },
-methods:{
-  	test:function(bookname){
-  		this.form.name = bookname;
-  	},
-  	onSubmit(formName) {
-        this.$refs[formName].validate((valid) => {
-                if (valid) {
-                    alert('submit!');
-                } else {
-                    console.log('error submit!!');
-                    return false;
-                }
-            });
-      }
-  },
+  }
+
+
 })
