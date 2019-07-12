@@ -65,7 +65,7 @@ __webpack_require__.r(__webpack_exports__);
           message: '請輸入筆名, 有名有姓才是品質保證',
           trigger: 'blur'
         }, {
-          min: 6,
+          min: 3,
           max: 8,
           message: '長度必須是6-8位',
           trigger: 'change'
@@ -89,9 +89,9 @@ __webpack_require__.r(__webpack_exports__);
           message: '請輸入密碼',
           trigger: 'blur'
         }, {
-          min: 3,
+          min: 6,
           max: 8,
-          message: '密码长度必须是3-8位',
+          message: '密码长度必须是6-8位',
           trigger: 'change'
         }],
         password_confirmation: [{
