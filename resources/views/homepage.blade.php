@@ -15,7 +15,11 @@
 <body>
   <div id="app">
     <el-container>
-    <el-header  class='head-menu'><headnav></headnav></el-header>
+    <el-header  class='head-menu'><headnav 
+      @auth
+      loggedin
+      @endauth
+      ></headnav></el-header>
     <el-main>
 
     <el-row>

@@ -131,7 +131,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     promptError: function promptError(msg) {
       if (msg.email) {
-        this.nameerror = msg.email[0];
+        this.emailerror = msg.email[0];
       }
 
       if (msg.name) {
@@ -450,7 +450,7 @@ new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\register.js */"./resources/js/register.js");
+module.exports = __webpack_require__(/*! C:\projects\youransweris\laravel-app\resources\js\register.js */"./resources/js/register.js");
 
 
 /***/ })

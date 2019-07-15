@@ -12,5 +12,8 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
     $router->resource('users', UserController::class);
+    $router->resource('books', BooksController::class);
+    $router->resource('books-types', BooksTypeController::class);
+    $router->resource('chapters', ChaptersController::class);
 
 });

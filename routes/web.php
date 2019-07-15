@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/chapter', function () {
     return view('charterdetail');
@@ -34,16 +32,23 @@ Route::get('/createchapter', function () {
     return view('createchapter');
 });
 
-Route::get('/createbook', function () {
-    return view('createbook');
-});
+// Route::get('/createbook', function () {
+//     return view('createbook');
+// })->middleware('auth');
+
+Route::get('/createbook','MemberController@createbook_get');
+Route::post('/createbook','MemberController@createbook_post');
 
 Route::get('/login', function () {
     return view('login');
-});
+})->middleware('guest');
 
 Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/logout', 'Auth\LoginController@logout');
+
 Route::post('/register', 'Auth\RegisterController@register');
+
+Route::post('/login', 'Auth\LoginController@login')->name('login');

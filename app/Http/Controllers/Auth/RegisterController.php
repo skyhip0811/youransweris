@@ -78,7 +78,7 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         $user = $this->create($request->all());
-        // $this->guard()->login($user);
+        $this->guard()->login($user);
 
         return $user;
     }

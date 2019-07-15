@@ -13166,8 +13166,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    'loggedin': Boolean,
+    'bookTypes': Array
+  },
   data: function data() {
     return {
       activeIndex: '1',
@@ -107353,39 +107365,34 @@ var render = function() {
                 2
               ),
               _vm._v(" "),
-              _c(
-                "el-submenu",
-                { attrs: { index: "3" } },
-                [
-                  _c("template", { slot: "title" }, [_vm._v("你追蹤的")]),
-                  _vm._v(" "),
-                  _c("el-menu-item", { attrs: { index: "3-1" } }, [
-                    _vm._v("作者")
-                  ]),
-                  _vm._v(" "),
-                  _c("el-menu-item", { attrs: { index: "3-2" } }, [
-                    _vm._v("故事進度")
+              _vm.loggedin
+                ? _c(
+                    "el-submenu",
+                    { attrs: { index: "4" } },
+                    [
+                      _c("template", { slot: "title" }, [_vm._v("會員管理")]),
+                      _vm._v(" "),
+                      _c("el-menu-item", { attrs: { index: "4-1" } }, [
+                        _vm._v("你的創作")
+                      ]),
+                      _vm._v(" "),
+                      _c("el-menu-item", { attrs: { index: "4-2" } }, [
+                        _c("a", { attrs: { href: "/createbook" } }, [
+                          _vm._v("創作新故事")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("el-menu-item", { attrs: { index: "4-3" } }, [
+                        _c("a", { attrs: { href: "/logout" } }, [
+                          _vm._v("登出")
+                        ])
+                      ])
+                    ],
+                    2
+                  )
+                : _c("el-menu-item", { attrs: { index: "5" } }, [
+                    _c("a", { attrs: { href: "/login" } }, [_vm._v("會員登入")])
                   ])
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "el-submenu",
-                { attrs: { index: "4" } },
-                [
-                  _c("template", { slot: "title" }, [_vm._v("會員管理")]),
-                  _vm._v(" "),
-                  _c("el-menu-item", { attrs: { index: "4-1" } }, [
-                    _vm._v("你的創作")
-                  ]),
-                  _vm._v(" "),
-                  _c("el-menu-item", { attrs: { index: "4-2" } }, [
-                    _vm._v("更改會員資料")
-                  ])
-                ],
-                2
-              )
             ],
             1
           )

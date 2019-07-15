@@ -19,16 +19,24 @@
   <el-menu-item index="2-1">作者</el-menu-item>
   <el-menu-item index="2-2">故事</el-menu-item>
 </el-submenu>
-  <el-submenu index="3">
+<!--   <el-submenu index="3" v-if='loggedin'>
   <template slot="title">你追蹤的</template>
   <el-menu-item index="3-1">作者</el-menu-item>
   <el-menu-item index="3-2">故事進度</el-menu-item>
-</el-submenu>
-  <el-submenu index="4">
+</el-submenu> -->
+
+  <el-submenu index="4" v-if='loggedin'>
     <template slot="title">會員管理</template>
     <el-menu-item index="4-1">你的創作</el-menu-item>
-    <el-menu-item index="4-2">更改會員資料</el-menu-item>
+    <el-menu-item index="4-2"><a href="/createbook">創作新故事</a></el-menu-item>
+    <!-- <el-menu-item index="4-2">更改會員資料</el-menu-item> -->
+    <el-menu-item index="4-3"><a href="/logout">登出</a></el-menu-item>
   </el-submenu>
+
+  <el-menu-item index ="5" v-else='loggedin'><a href="/login">會員登入</a></el-menu-item>
+
+
+
 
 
 </el-menu>
@@ -78,10 +86,14 @@
 import Remotesearch from './Remotesearch';
 
   export default {
+    props: {
+      'loggedin':Boolean,
+      'bookTypes':Array
+    },
     data() {
       return {
         activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex2: '1',  
       };
     },
     components: {

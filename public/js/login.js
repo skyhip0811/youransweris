@@ -43,9 +43,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onSubmit: function onSubmit(formName) {
+      var _this = this;
+
       this.$refs[formName].validate(function (valid) {
         if (valid) {
           alert('submit!');
+          window.axios.post('/login', _this.form).then(function (response) {
+            window.location.href = '/';
+          })["catch"](function (error) {
+            // console.log(error)
+            // console.log(error.response.data);
+            if (error.response.status == 401) {
+              alert("錯誤的電郵或密碼");
+            } // self.promptError(error.response.data.errors);
+
+          });
         } else {
           console.log('error submit!!');
           return false;
@@ -157,7 +169,7 @@ var render = function() {
             [_vm._v("登入")]
           ),
           _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("注冊 ")]),
+          _c("a", { attrs: { href: "/register" } }, [_vm._v("注冊 ")]),
           _vm._v(" "),
           _c("a", { attrs: { href: "#" } }, [_vm._v("忘記密碼")])
         ],
@@ -284,7 +296,7 @@ new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\login.js */"./resources/js/login.js");
+module.exports = __webpack_require__(/*! C:\projects\youransweris\laravel-app\resources\js\login.js */"./resources/js/login.js");
 
 
 /***/ })

@@ -324,6 +324,9 @@ Vue.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTE
 
 var app = new Vue({
   el: '#app',
+  props: {
+    'test': String
+  },
   components: {
     Headnav: _components_Headnav__WEBPACK_IMPORTED_MODULE_0__["default"],
     Imageupload: _components_Imageupload__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -332,47 +335,98 @@ var app = new Vue({
     return {
       form: {
         name: '',
-        periouscontent: '',
-        periouschaptername: '山上有座廟',
-        periousquestion: '',
-        answer: '',
         additionalinfo: '',
         content: '',
         chaptername: '',
         endchapter: false,
         question: '',
-        type: ''
+        type: '',
+        desc: '',
+        bookcover: ''
       },
-      options: [{
-        value: '懸疑故事',
-        label: '懸疑故事'
-      }, {
-        value: '都市社會',
-        label: '都市社會'
-      }, {
-        value: '玄幻奇幻',
-        label: '玄幻奇幻'
-      }, {
-        value: '搞笑故事',
-        label: '搞笑故事'
-      }, {
-        value: '遊戲人生',
-        label: '遊戲人生'
-      }, {
-        value: '浪漫愛情',
-        label: '浪漫愛情'
-      }, {
-        value: '熱血冒險',
-        label: '熱血冒險'
-      }]
+      rules: {
+        name: [{
+          required: true,
+          message: '請輸入書名',
+          trigger: 'blur'
+        }, {
+          min: 2,
+          max: 8,
+          message: '長度必須是2-8位',
+          trigger: ['change', 'blur']
+        }],
+        desc: [{
+          required: true,
+          message: '請輸入簡介',
+          trigger: 'blur'
+        }, {
+          min: 5,
+          max: 30,
+          message: '長度必須是5-30位',
+          trigger: ['change', 'blur']
+        }],
+        type: [{
+          required: true,
+          message: '請選擇類型',
+          trigger: 'blur'
+        }],
+        bookcover: [],
+        chaptername: [{
+          required: true,
+          message: '請輸入章節名',
+          trigger: 'blur'
+        }, {
+          min: 2,
+          max: 8,
+          message: '長度必須是2-8位',
+          trigger: ['change', 'blur']
+        }],
+        content: [{
+          required: true,
+          message: '請輸入內容',
+          trigger: 'blur'
+        }, {
+          min: 100,
+          max: 3000,
+          message: '長度必須是100-3000',
+          trigger: ['change', 'blur']
+        }],
+        additionalinfo: [],
+        question: [{
+          required: true,
+          message: '請輸入問題',
+          trigger: 'blur'
+        }, {
+          min: 2,
+          max: 50,
+          message: '長度必須是2-50位',
+          trigger: ['change', 'blur']
+        }]
+      },
+      options: options
     };
   },
   methods: {
-    test: function test(bookname) {
-      this.form.name = bookname;
-    },
-    onSubmit: function onSubmit() {
-      console.log('submit!');
+    onSubmit: function onSubmit(formName) {
+      var _this = this;
+
+      this.$refs[formName].validate(function (valid) {
+        if (valid) {
+          var self = _this;
+          var form = _this.$refs['form'].$el;
+          var formData = new FormData(form);
+          formData.append('file', _this.fileList[0]);
+          window.axios.post('/createbook', _this.form).then(function (response) {
+            console.log('success');
+          })["catch"](function (error) {
+            // console.log(error.response.data);
+            self.promptError(error.response.data.errors);
+          });
+        } else {
+          console.log('error submit!!');
+          return false;
+        }
+      });
     }
   },
   mounted: function mounted() {}
@@ -387,7 +441,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\createbook.js */"./resources/js/createbook.js");
+module.exports = __webpack_require__(/*! C:\projects\youransweris\laravel-app\resources\js\createbook.js */"./resources/js/createbook.js");
 
 
 /***/ })

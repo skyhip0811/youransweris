@@ -15,7 +15,7 @@
 
     <el-form-item>
       <el-button type="primary" @click="onSubmit('form')">登入</el-button>
-      <a href="#">注冊 </a>
+      <a href="/register">注冊 </a>
       <a href="#">忘記密碼</a>
     </el-form-item>
   </el-form>
@@ -37,6 +37,19 @@
             this.$refs[formName].validate((valid) => {
                     if (valid) {
                         alert('submit!');
+                        window.axios.post('/login', this.form)
+                      .then(function (response) {
+                        window.location.href = '/';
+                      })
+                      .catch(function (error) {
+                        // console.log(error)
+                        // console.log(error.response.data);
+                        if(error.response.status == 401){
+                          alert("錯誤的電郵或密碼")
+                        }
+                        
+                        // self.promptError(error.response.data.errors);
+                      });
                     } else {
                         console.log('error submit!!');
                         return false;

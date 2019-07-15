@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Modifyuserdb extends Migration
+class CreateBooksTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class Modifyuserdb extends Migration
      */
     public function up()
     {
-        //add gender column
-        Schema::table('users', function (Blueprint $table) {
-            $table->char('gender', 2);
+        Schema::create('books_types', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
+            $table->string('cn_name');
         });
     }
 
@@ -26,9 +27,6 @@ class Modifyuserdb extends Migration
      */
     public function down()
     {
-        //drop gender column
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('gender');
-        });
+        Schema::dropIfExists('books_types');
     }
 }

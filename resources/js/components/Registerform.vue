@@ -95,7 +95,7 @@
             this.$refs[formName].resetFields();
         },
         promptError(msg){
-            if(msg.email){this.nameerror = msg.email[0];}
+            if(msg.email){this.emailerror = msg.email[0];}
             if(msg.name){this.nameerror = msg.name[0];}
             
         }
