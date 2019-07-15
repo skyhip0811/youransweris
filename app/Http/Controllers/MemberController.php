@@ -38,7 +38,8 @@ class MemberController extends Controller
             'name' => $data['name'],
             'author_id' => $id,
             'desc' => $data['desc'],
-            'type_id' => $data['type']
+            'type_id' => $data['type'],
+            'cover' => $data['cover']
         ]);
     }
 
@@ -73,12 +74,12 @@ class MemberController extends Controller
 
     public function createbook_post(Request $request)
     {
-        $data = $request->all();
-        $this->createbbok_validator($request->all())->validate();
-      
-            $request->file('bookcover')->store('bookcovers');
-        
-
+        $data =  (array) $request->form;
+        $file = $request->file->store('public');
+        $filename = $request->file->hashName();
+        return $request->all();
+        $this->createbbok_validator($data)->validate();
+        $data['cover'] = $filename;
         $book = $this->createbook($data);
         $data['book_id'] = $book->id;
         $data['endchapter'] = false;

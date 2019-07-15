@@ -54,13 +54,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      imageUrl: ''
+      imageUrl: '',
+      file: ''
     };
   },
   props: ['name', 'width', 'height', 'iconWidth', 'iconHeight'],
   methods: {
     handleAvatarSuccess: function handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
+      this.$emit('uploaded', file.raw);
     },
     beforeAvatarUpload: function beforeAvatarUpload(file) {
       var _this = this;
@@ -176,7 +178,7 @@ var render = function() {
       staticClass: "avatar-uploader",
       style: { width: _vm.iconWidth + "px", height: _vm.iconHeight + "px" },
       attrs: {
-        action: "https://jsonplaceholder.typicode.com/posts/",
+        action: "upload",
         "show-file-list": false,
         "on-success": _vm.handleAvatarSuccess,
         "before-upload": _vm.beforeAvatarUpload,
@@ -333,6 +335,7 @@ var app = new Vue({
   },
   data: function data() {
     return {
+      imgurl: '',
       form: {
         name: '',
         additionalinfo: '',
@@ -407,16 +410,24 @@ var app = new Vue({
     };
   },
   methods: {
+    onUploaded: function onUploaded(value) {
+      this.imgurl = value;
+    },
     onSubmit: function onSubmit(formName) {
       var _this = this;
 
       this.$refs[formName].validate(function (valid) {
         if (valid) {
           var self = _this;
-          var form = _this.$refs['form'].$el;
+          var form = form = document.getElementById('form');
           var formData = new FormData(form);
-          formData.append('file', _this.fileList[0]);
-          window.axios.post('/createbook', _this.form).then(function (response) {
+          formData.append('file', _this.imgurl);
+          console.log(formData);
+          window.axios.post('/createbook', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          }).then(function (response) {
             console.log('success');
           })["catch"](function (error) {
             // console.log(error.response.data);
@@ -441,7 +452,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\projects\youransweris\laravel-app\resources\js\createbook.js */"./resources/js/createbook.js");
+module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\createbook.js */"./resources/js/createbook.js");
 
 
 /***/ })

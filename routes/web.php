@@ -45,10 +45,14 @@ Route::get('/login', function () {
 
 Route::get('/register', function () {
     return view('register');
-});
+})->middleware('guest');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::post('/register', 'Auth\RegisterController@register');
 
 Route::post('/login', 'Auth\LoginController@login')->name('login');
+
+Route::post('upload',function(){
+	return response()->json(['message'=>"success"]);
+});

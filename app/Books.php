@@ -8,6 +8,6 @@ class Books extends Model
 {
     //
     protected $fillable = [
-        'name','author_id','type_id','desc'
+        'name','author_id','type_id','desc','cover'
     ];
 }

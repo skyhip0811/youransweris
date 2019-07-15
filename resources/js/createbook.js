@@ -20,6 +20,7 @@ var app = new Vue({
 
 
     return { 
+      imgurl:'',
       form: {
           name: '',
           additionalinfo:'',
@@ -30,6 +31,7 @@ var app = new Vue({
           type:'',
           desc:'',
           bookcover:'',
+
         },
         rules: {
           name:[
@@ -66,18 +68,26 @@ var app = new Vue({
     }
   },
   methods:{
-  	onSubmit(formName) {
 
+    onUploaded(value){
+
+      this.imgurl = value;
+    },
+  	onSubmit(formName) {
 
         this.$refs[formName].validate((valid) => {
                 if (valid) {
                     var self = this;
-                    let form = this.$refs['form'].$el
+                    let form = form = document.getElementById('form');
                     let formData = new FormData(form)
-                    formData.append('file', this.fileList[0])
-
-                    window.axios.post('/createbook', this.form)
-                      .then(function (response) {
+                    formData.append('file', this.imgurl)
+                    console.log(formData)
+                    window.axios.post('/createbook', formData,{
+                        headers: {
+                          'Content-Type': 'multipart/form-data'
+                        }
+                      }
+                    ).then(function (response) {
                         console.log('success')
                       })
                       .catch(function (error) {

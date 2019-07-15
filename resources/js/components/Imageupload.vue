@@ -2,7 +2,7 @@
 <el-upload
   class="avatar-uploader" 
 
-  action="https://jsonplaceholder.typicode.com/posts/"
+  action="upload"
   :show-file-list="false"
   :on-success="handleAvatarSuccess"
   :before-upload="beforeAvatarUpload"
@@ -45,12 +45,14 @@
     data() {
       return {
         imageUrl: '',
+        file:''
       };
     },
     props: ['name', 'width', 'height', 'iconWidth','iconHeight'],
     methods: {
       handleAvatarSuccess(res, file) {
         this.imageUrl = URL.createObjectURL(file.raw);
+         this.$emit('uploaded', file.raw);
       },
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';
