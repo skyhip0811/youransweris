@@ -28,16 +28,13 @@ Route::get('/searchbooks', function () {
     return view('searchbooks');
 });
 
-Route::get('/createchapter', function () {
-    return view('createchapter');
-});
-
-// Route::get('/createbook', function () {
-//     return view('createbook');
-// })->middleware('auth');
 
 Route::get('/createbook','MemberController@createbook_get');
 Route::post('/createbook','MemberController@createbook_post');
+
+Route::get('/createchapter/{previous_chapter_id}','MemberController@createchapter_get');
+Route::post('/createchapter/{previous_chapter_id}','MemberController@createchapter_post');
+Route::get('/chapter/{chapter_id}','ChapterController@chapterdetail');
 
 Route::get('/login', function () {
     return view('login');

@@ -31,6 +31,8 @@ class MemberController extends Controller
         ]);
     }
 
+
+
     protected function createbook(array $data)
     {
         $id = Auth::user()->id;
@@ -47,7 +49,7 @@ class MemberController extends Controller
 
         $id = Auth::user()->id;
         return Chapters::create([
-            'name' => $data['name'],
+            'name' => $data['chaptername'],
             'aurthor_id' => $id,
             'content' => $data['content'],
             'question' => $data['question'],
@@ -74,10 +76,9 @@ class MemberController extends Controller
 
     public function createbook_post(Request $request)
     {
-        $data =  (array) $request->form;
+        $data =  $request->all();
         $file = $request->file->store('public');
         $filename = $request->file->hashName();
-        return $request->all();
         $this->createbbok_validator($data)->validate();
         $data['cover'] = $filename;
         $book = $this->createbook($data);
@@ -87,6 +88,51 @@ class MemberController extends Controller
         $data['answer'] = '';
         $chapter = $this->createchapter($data);
         return $chapter;
+
+    }
+
+    public function createchapter_get(Request $request, $previous_chapter_id)
+    {
+        $previous_chapter = Chapters::where('id',$previous_chapter_id)->first();
+        if($previous_chapter){
+            $book = Books::where('id',$previous_chapter->book_id)->first();
+            return response()->view('createchapter', [
+            'previous_chapter' => $previous_chapter,
+            'book_name' => $book->name
+            ]);
+
+        }else{
+            return abort(404);
+        }
+        
+
+        
+    }
+
+    protected function createchapter_validator(array $data){
+        return Validator::make($data, [
+            'chaptername' => ['required', 'string', 'max:8', 'min:2'],
+            'content' => ['required', 'string', 'min:100', 'max:3000'],
+            'answer' => ['required', 'string', 'min:2', 'max:30'],
+        ]);
+    }
+
+    public function createchapter_post(Request $request, $previous_chapter_id)
+    {
+        $previous_chapter = Chapters::where('id',$previous_chapter_id)->first();
+
+        if($previous_chapter){
+            $data = $request->all();
+            $this->createchapter_validator($data)->validate();
+            $data['previous_chapter_id'] = $previous_chapter_id;
+            $data['book_id'] = $previous_chapter->book_id;
+            $chapter = $this->createchapter($data);
+            return $chapter;
+
+        }else{
+             return abort(404);
+        }
+        
 
     }
 }

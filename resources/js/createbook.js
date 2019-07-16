@@ -64,7 +64,8 @@ var app = new Vue({
           ]
 
         },
-        options: options
+        options: options,
+        booknameerror:''
     }
   },
   methods:{
@@ -73,14 +74,27 @@ var app = new Vue({
 
       this.imgurl = value;
     },
+    promptError(msg){
+            if(msg.name){this.booknameerror = msg.name[0];}
+            
+        },
   	onSubmit(formName) {
 
         this.$refs[formName].validate((valid) => {
                 if (valid) {
                     var self = this;
-                    let form = form = document.getElementById('form');
-                    let formData = new FormData(form)
+                    let form = this.$refs['form'].$el
+                    let formData = new FormData()
                     formData.append('file', this.imgurl)
+
+                    formData.append('additionalinfo', this.form.additionalinfo)
+                    formData.append('content', this.form.content)
+                    formData.append('chaptername', this.form.chaptername)
+                    formData.append('endchapter', this.form.endchapter)
+                    formData.append('question',this.form.question)
+                    formData.append('type',this.form.type)
+                    formData.append('desc',this.form.desc)
+                    formData.append('name',this.form.name)
                     console.log(formData)
                     window.axios.post('/createbook', formData,{
                         headers: {

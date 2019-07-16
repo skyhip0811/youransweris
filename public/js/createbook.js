@@ -406,12 +406,18 @@ var app = new Vue({
           trigger: ['change', 'blur']
         }]
       },
-      options: options
+      options: options,
+      booknameerror: ''
     };
   },
   methods: {
     onUploaded: function onUploaded(value) {
       this.imgurl = value;
+    },
+    promptError: function promptError(msg) {
+      if (msg.name) {
+        this.booknameerror = msg.name[0];
+      }
     },
     onSubmit: function onSubmit(formName) {
       var _this = this;
@@ -419,9 +425,17 @@ var app = new Vue({
       this.$refs[formName].validate(function (valid) {
         if (valid) {
           var self = _this;
-          var form = form = document.getElementById('form');
-          var formData = new FormData(form);
+          var form = _this.$refs['form'].$el;
+          var formData = new FormData();
           formData.append('file', _this.imgurl);
+          formData.append('additionalinfo', _this.form.additionalinfo);
+          formData.append('content', _this.form.content);
+          formData.append('chaptername', _this.form.chaptername);
+          formData.append('endchapter', _this.form.endchapter);
+          formData.append('question', _this.form.question);
+          formData.append('type', _this.form.type);
+          formData.append('desc', _this.form.desc);
+          formData.append('name', _this.form.name);
           console.log(formData);
           window.axios.post('/createbook', formData, {
             headers: {

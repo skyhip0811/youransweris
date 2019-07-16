@@ -19,7 +19,7 @@ class Changebookcolumns extends Migration
         });
 
         Schema::table('chapters', function (Blueprint $table) {
-            $table->string('question')->default('')->change();
+            $table->string('question')->default('')->nullable()->change();
             $table->string('additionalinfo')->default('')->nullable()->change();
             $table->string('previous_chapter_id')->nullable()->change();
             $table->string('answer')->default('')->nullable()->change();

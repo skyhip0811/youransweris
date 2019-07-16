@@ -28,7 +28,7 @@
             <span><h4>故事創作</h4></span>
           </div>
       <el-form id='form' label-width="90px" ref="form" :rules="rules"  :model="form" label-width="80px">
-        <el-form-item label="故事名稱"  prop="name">
+        <el-form-item label="故事名稱"  prop="name" :error='booknameerror'>
           <el-input v-model="form.name" placeholder="故事名稱"></el-input>
         </el-form-item>
         <el-form-item label="故事簡介" prop='desc' >
