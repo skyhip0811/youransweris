@@ -34,6 +34,9 @@ Route::get('/createchapter/{previous_chapter_id}','MemberController@createchapte
 Route::post('/createchapter/{previous_chapter_id}','MemberController@createchapter_post');
 Route::get('/chapter/{chapter_id}','ChapterController@chapterdetail');
 
+Route::get('/book/{book_id}','ChapterController@bookdetail');
+
+
 Route::get('/login', function () {
     return view('login');
 })->middleware('guest');

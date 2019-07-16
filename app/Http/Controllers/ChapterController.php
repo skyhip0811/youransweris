@@ -32,5 +32,21 @@ class ChapterController extends Controller
     	}else{
     		return abort(404);
     	}
-    	}
+	}
+
+	public function bookdetail(Request $request,$book_id){
+		$book = Books::where('id',$book_id)->first();
+		if($book){
+			$aurthor = User::where('id',$book->aurthor_id)->first();
+			$first_chapter = Chapters::where('previous_chapter_id',0)->where('book_id',$book->id)->first();
+			$answers = [];
+			if(!$first_chapter->endchapter){
+	    		$answers = Chapters::where('previous_chapter_id',$first_chapter->id)->get();
+	    	}
+
+	    	return response()->view('bookdetail',['answers'=>$answers,'chapter'=>$first_chapter, 'book'=>$book,'aurthor'=>$aurthor]);
+		}else{
+			return abort(404);
+		}
+	}
 }

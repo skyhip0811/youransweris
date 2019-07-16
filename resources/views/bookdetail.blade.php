@@ -24,7 +24,7 @@
             <el-row>
             <el-col :md=8 style="padding:10px;"><img src="/placeholder-image.jpg" /></el-col>
             <el-col :md=16 style="padding:10px;" >
-            <h4>在世界某處</h4>
+            <h4>{{$book->name}}</h4>
 	        <p>第一作者: <a href='#'>作者二號 (129)</a><br>
 	        其他聯合作者: <a href='#'>專搞破壞 (28)</a>,<a href='#'>中二病 (72)</a><br>
 	        總章節數: 229<br>

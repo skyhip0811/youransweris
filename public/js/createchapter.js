@@ -140,7 +140,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\createchapter.js */"./resources/js/createchapter.js");
+module.exports = __webpack_require__(/*! C:\projects\youransweris\laravel-app\resources\js\createchapter.js */"./resources/js/createchapter.js");
 
 
 /***/ })
