@@ -110,7 +110,7 @@ var app = new Vue({
         if (valid) {
           console.log('submit!');
           window.axios.post('/createchapter/' + _this2.form.previouschapterid, _this2.form).then(function (response) {
-            console.log('success');
+            window.history.back();
           })["catch"](function (error) {
             // console.log(error.response.data);
             self.promptError(error.response.data.errors);
@@ -127,6 +127,7 @@ var app = new Vue({
     this.form.periouscontent = unescape(this.$el.attributes.periouscontent.value);
     this.form.periouschaptername = this.$el.attributes.periouschaptername.value;
     this.form.periousquestion = this.$el.attributes.previousquestion.value;
+    this.form.additionalinfo = this.$el.attributes.additionalinfo.value;
   }
 });
 

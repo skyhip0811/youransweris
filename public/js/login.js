@@ -49,7 +49,7 @@ __webpack_require__.r(__webpack_exports__);
         if (valid) {
           alert('submit!');
           window.axios.post('/login', _this.form).then(function (response) {
-            window.location.href = '/';
+            window.history.back();
           })["catch"](function (error) {
             // console.log(error)
             // console.log(error.response.data);

@@ -4,9 +4,15 @@
 	<el-row class='menu_action_content'>
 		<el-col :md=8 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
 	<el-col :md='8'>
-		<el-col :span='6'><a href='#'><div class='center'><font-awesome-icon icon="heart" /><span class='action_number'>20</span></div></a></el-col>
+	<!-- disable the like function
+		<el-col :span='6'><a href='#'><div class='center'>
+		<font-awesome-icon icon="heart" /><span class='action_number'>20</span>
+		</div></a></el-col>
+	-->
+	<!-- disable the follow function
 		<el-col :span='6'><a href='#'><div class='center'><font-awesome-icon icon="bookmark" /><span class='action_number'>追蹤</span></div></a></el-col>
-		<el-col :span='6'><a href='#'><div class='center'><font-awesome-icon icon="plus" /><span class='action_number'>加分支</span></div></a></el-col>
+	-->
+		<el-col :span='6'><a :href="'/createchapter/'+chapterid"><div class='center'><font-awesome-icon icon="plus" /><span class='action_number'>加分支</span></div></a></el-col>
 		<el-col :span='6'><a href='#'><div class='center'><font-awesome-icon icon="file-alt" /><span class='action_number'>資料</span></div></a></el-col>
 	</el-col>
 	</el-row>
@@ -17,7 +23,7 @@
 
 <script>
     export default {
-        props: [],
+        props: ['chapterid'],
         data () {
             return {
                

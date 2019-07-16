@@ -19,8 +19,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['aurthor', 'answer', 'love_num', 'seen'],
+  props: ['aurthor', 'answer', 'love_num', 'seen', 'chapterid', 'bookaurthor'],
   data: function data() {
     return {};
   }
@@ -54,8 +60,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: [],
+  props: ['chapterid'],
   data: function data() {
     return {};
   }
@@ -178,7 +190,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "a",
-    { attrs: { href: "#" } },
+    { attrs: { href: "/chapter/" + _vm.chapterid } },
     [
       _c(
         "el-card",
@@ -186,20 +198,25 @@ var render = function() {
         [
           _c("el-row", [_vm._v(_vm._s(_vm.answer))]),
           _vm._v(" "),
-          _c(
-            "el-row",
-            { staticClass: "secondrow" },
-            [
-              _c("font-awesome-icon", { attrs: { icon: "heart" } }),
-              _c("span", { staticClass: "love_num" }, [
-                _vm._v(_vm._s(_vm.love_num))
-              ]),
-              _c("span", { staticClass: "ansbox-aurthor" }, [
-                _vm._v(_vm._s(_vm.aurthor))
-              ])
-            ],
-            1
-          )
+          _c("el-row", { staticClass: "secondrow" }, [
+            _c("span", { staticClass: "ansbox-aurthor" }, [
+              _vm._v("作者: " + _vm._s(_vm.aurthor)),
+              _c(
+                "span",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.bookaurthor,
+                      expression: "bookaurthor"
+                    }
+                  ]
+                },
+                [_vm._v(" (第一作者)")]
+              )
+            ])
+          ])
         ],
         1
       )
@@ -252,51 +269,23 @@ var render = function() {
             { attrs: { md: 8 } },
             [
               _c("el-col", { attrs: { span: 6 } }, [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c(
-                    "div",
-                    { staticClass: "center" },
-                    [
-                      _c("font-awesome-icon", { attrs: { icon: "heart" } }),
-                      _c("span", { staticClass: "action_number" }, [
-                        _vm._v("20")
-                      ])
-                    ],
-                    1
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("el-col", { attrs: { span: 6 } }, [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c(
-                    "div",
-                    { staticClass: "center" },
-                    [
-                      _c("font-awesome-icon", { attrs: { icon: "bookmark" } }),
-                      _c("span", { staticClass: "action_number" }, [
-                        _vm._v("追蹤")
-                      ])
-                    ],
-                    1
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("el-col", { attrs: { span: 6 } }, [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c(
-                    "div",
-                    { staticClass: "center" },
-                    [
-                      _c("font-awesome-icon", { attrs: { icon: "plus" } }),
-                      _c("span", { staticClass: "action_number" }, [
-                        _vm._v("加分支")
-                      ])
-                    ],
-                    1
-                  )
-                ])
+                _c(
+                  "a",
+                  { attrs: { href: "/createchapter/" + _vm.chapterid } },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "center" },
+                      [
+                        _c("font-awesome-icon", { attrs: { icon: "plus" } }),
+                        _c("span", { staticClass: "action_number" }, [
+                          _vm._v("加分支")
+                        ])
+                      ],
+                      1
+                    )
+                  ]
+                )
               ]),
               _vm._v(" "),
               _c("el-col", { attrs: { span: 6 } }, [

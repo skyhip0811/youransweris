@@ -15,7 +15,9 @@
   <div id="app" previousquestion='{{$previous_chapter->question}}'  name="{{$book_name}}" 
   periouscontent='{{$previous_chapter->content}}' 
   periouschaptername='{{$previous_chapter->name}}'
-  previouschapterid="{{$previous_chapter->id}}">
+  previouschapterid="{{$previous_chapter->id}}"
+  additionalinfo = "{{ $previous_chapter->additionalinfo }}"
+  >
     <el-container>
     <el-header  class='head-menu'><headnav
       @auth
@@ -43,7 +45,7 @@
         <el-form-item label="前章節問題">
           <el-input  placeholder="沒有前章節問題" disabled  v-model="form.periousquestion" value = ></el-input>
         </el-form-item>
-
+        @if(!$previous_chapter->endchapter)
         <el-form-item label="你的答案" prop="answer">
           <el-input  placeholder="你的答案是..."   v-model="form.answer" value = ></el-input>
         </el-form-item>
@@ -51,10 +53,10 @@
           <el-input  placeholder="章節名稱"  v-model="form.chaptername"></el-input>
         </el-form-item>
         <el-form-item label="章節內容" prop="content">
-          <el-input  type="textarea" :rows="30" placeholder="章節內容"  v-model="form.content" value = ></el-input>
+          <el-input  type="textarea" :rows="30" placeholder="章節內容"  v-model="form.content" value = ''></el-input>
         </el-form-item>
         <el-form-item label="補充資料" prop="additionalinfo">
-          <el-input  type="textarea" :rows="10" placeholder="上一手作者沒有留下補充資料"  v-model="form.additionalinfo" value = ></el-input>
+          <el-input  type="textarea" :rows="10" placeholder="上一手作者沒有留下補充資料"  v-model="form.additionalinfo" value = ''></el-input>
           <span>補充資料是章節作者留給下一章節作者作為劇情提示作用 , 並不會直接顯示給讀者, 下一手作者可基於上手的資料進行更改。<br> 通常是角色資料，故事發展背景大綱要等資料</span>
         </el-form-item>
 
@@ -72,6 +74,10 @@
             <el-button type="primary" @click="onSubmit('form')">遞交</el-button>
             <el-button>取消</el-button>
           </el-form-item>
+          @else
+          <h4>上一章節故事線已完</h4>
+          @endif
+
       </el-form>
       </el-card>
       </el-col>
