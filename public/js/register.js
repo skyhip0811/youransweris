@@ -115,7 +115,7 @@ __webpack_require__.r(__webpack_exports__);
           _this2.nameerror = '';
           _this2.emailerror = '';
           window.axios.post('/register', _this2.ruleForm).then(function (response) {
-            console.log('success');
+            window.location = document.referrer;
           })["catch"](function (error) {
             // console.log(error.response.data);
             self.promptError(error.response.data.errors);

@@ -38,6 +38,7 @@ class ChaptersController extends AdminController
         $grid->column('previous_chapter_id', __('Previous chapter id'));
         $grid->column('endchapter', __('Endchapter'));
         $grid->column('answer', __('Answer'));
+        $grid->column('level', __('Level'));
 
         return $grid;
     }
@@ -64,6 +65,7 @@ class ChaptersController extends AdminController
         $show->field('previous_chapter_id', __('Previous chapter id'));
         $show->field('endchapter', __('Endchapter'));
         $show->field('answer', __('Answer'));
+        $show->field('level', __('level'));
 
         return $show;
     }
@@ -86,6 +88,7 @@ class ChaptersController extends AdminController
         $form->number('previous_chapter_id', __('Previous chapter id'));
         $form->switch('endchapter', __('Endchapter'));
         $form->text('answer', __('Answer'));
+        $form->number('level', __('Level'));
 
         return $form;
     }

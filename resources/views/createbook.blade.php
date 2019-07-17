@@ -44,7 +44,7 @@
           </el-option>
         </el-select>
         </el-form-item>
-         <el-form-item label="故事封面"  prop='bookcover'>
+         <el-form-item label="故事封面"  prop='bookcover' :error='covernameerror'>
           <imageupload @uploaded="onUploaded" ref='image' name='bookcover' width="400" height='300' icon-width="200" icon-height="150"></imageupload>
           <span>封面必須是jpg format, 1 mb以下, 400 x 300px</span>
         </el-form-item>

@@ -79,7 +79,7 @@
                     this.emailerror = '';
                     window.axios.post('/register', this.ruleForm)
                       .then(function (response) {
-                        console.log('success')
+                        window.location=document.referrer;
                       })
                       .catch(function (error) {
                         // console.log(error.response.data);

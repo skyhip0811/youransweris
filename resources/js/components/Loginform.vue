@@ -39,7 +39,7 @@
                         alert('submit!');
                         window.axios.post('/login', this.form)
                       .then(function (response) {
-                        window.history.back();
+                        window.location=document.referrer;
                       })
                       .catch(function (error) {
                         // console.log(error)

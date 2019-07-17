@@ -34,6 +34,8 @@ class BooksController extends AdminController
         $grid->column('desc', __('Desc'));
         $grid->column('cover', __('Cover'));
         $grid->column('type_id', __('Type id'));
+        $grid->column('max_level', __('Max level'));
+        $grid->column('total_chapter_numbers', __('Chapter Counts'));
 
         return $grid;
     }
@@ -56,6 +58,8 @@ class BooksController extends AdminController
         $show->field('desc', __('Desc'));
         $show->field('cover', __('Cover'));
         $show->field('type_id', __('Type id'));
+        $show->field('max_level', __('Max level'));
+        $show->field('total_chapter_numbers', __('Chapter Counts'));
 
         return $show;
     }
@@ -74,6 +78,8 @@ class BooksController extends AdminController
         $form->text('desc', __('Desc'));
         $form->image('cover', __('Cover'));
         $form->number('type_id', __('Type id'));
+        $form->number('max_level', __('Max level'));
+        $form->number('total_chapter_numbers', __('Chapter Counts'));
 
         return $form;
     }

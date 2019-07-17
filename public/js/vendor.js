@@ -13011,7 +13011,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['aurthor', 'book', 'ticket'],
+  props: ['aurthor', 'book', 'ticket', 'book_id'],
   data: function data() {
     return {};
   }
@@ -13041,8 +13041,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['aurthor', 'book', 'chapter'],
+  props: ['aurthor', 'book', 'chapter', 'updatedat', 'previouschapter', 'book_id', 'chapter_id', 'previous_chapter_id'],
   data: function data() {
     return {};
   }
@@ -107151,14 +107154,12 @@ var render = function() {
   return _c("div", { staticClass: "book-row" }, [
     _c(
       "a",
-      { attrs: { href: "#" } },
+      { attrs: { href: "/book/" + _vm.book_id } },
       [
         _c(
           "el-row",
           [
-            _c("el-col", { attrs: { span: 14 } }, [
-              _vm._v(" " + _vm._s(_vm.book) + " ")
-            ]),
+            _c("el-col", { attrs: { span: 14 } }, [_vm._v(_vm._s(_vm.book))]),
             _vm._v(" "),
             _c("el-col", { attrs: { span: 6 } }, [
               _vm._v(" " + _vm._s(_vm.aurthor) + " ")
@@ -107197,34 +107198,46 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "chapter-row" }, [
-    _c(
-      "a",
-      { attrs: { href: "#" } },
-      [
-        _c(
-          "el-row",
-          [
-            _c("el-col", { attrs: { span: 4 } }, [_vm._v(" 06/25 14:02 ")]),
-            _vm._v(" "),
-            _c("el-col", { attrs: { span: 8 } }, [
+  return _c(
+    "div",
+    { staticClass: "chapter-row" },
+    [
+      _c(
+        "el-row",
+        [
+          _c("el-col", { attrs: { span: 6 } }, [
+            _c("a", { attrs: { href: "/book/" + _vm.book_id } }, [
               _vm._v(" " + _vm._s(_vm.book) + " ")
-            ]),
-            _vm._v(" "),
-            _c("el-col", { attrs: { span: 8 } }, [
-              _vm._v(" " + _vm._s(_vm.chapter) + " ")
-            ]),
-            _vm._v(" "),
-            _c("el-col", { attrs: { span: 4 } }, [
-              _vm._v(" " + _vm._s(_vm.aurthor) + " ")
             ])
-          ],
-          1
-        )
-      ],
-      1
-    )
-  ])
+          ]),
+          _vm._v(" "),
+          _c("el-col", { attrs: { span: 7 } }, [
+            _c("a", { attrs: { href: "/chapter/" + _vm.chapter_id } }, [
+              _vm._v(" " + _vm._s(_vm.chapter))
+            ])
+          ]),
+          _vm._v(" "),
+          _vm.previous_chapter_id
+            ? _c("el-col", { attrs: { span: 7 } }, [
+                _c(
+                  "a",
+                  { attrs: { href: "/chapter/" + _vm.previous_chapter_id } },
+                  [_vm._v(" " + _vm._s(_vm.previouschapter))]
+                )
+              ])
+            : _c("el-col", { attrs: { span: 7 } }, [
+                _vm._v(_vm._s(_vm.previouschapter) + " ")
+              ]),
+          _vm._v(" "),
+          _c("el-col", { attrs: { span: 4 } }, [
+            _vm._v(" " + _vm._s(_vm.aurthor) + " ")
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -107302,12 +107315,7 @@ var render = function() {
             [
               _c("el-menu-item", [
                 _c("a", { attrs: { href: "/" } }, [
-                  _c("img", {
-                    attrs: {
-                      src:
-                        "https://www.deluxe.com/sites/www.deluxe.com/files/logo_design/logo/large/logo-samples-28.png"
-                    }
-                  })
+                  _c("img", { attrs: { src: "/logo.png" } })
                 ])
               ]),
               _vm._v(" "),
@@ -107514,14 +107522,7 @@ var render = function() {
                           staticStyle: { height: "100%" },
                           attrs: { href: "/" }
                         },
-                        [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://www.deluxe.com/sites/www.deluxe.com/files/logo_design/logo/large/logo-samples-28.png"
-                            }
-                          })
-                        ]
+                        [_c("img", { attrs: { src: "/logo.png" } })]
                       )
                     ]
                   )

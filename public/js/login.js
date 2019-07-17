@@ -49,7 +49,7 @@ __webpack_require__.r(__webpack_exports__);
         if (valid) {
           alert('submit!');
           window.axios.post('/login', _this.form).then(function (response) {
-            window.history.back();
+            window.location = document.referrer;
           })["catch"](function (error) {
             // console.log(error)
             // console.log(error.response.data);
@@ -296,7 +296,7 @@ new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\projects\youransweris\laravel-app\resources\js\login.js */"./resources/js/login.js");
+module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\login.js */"./resources/js/login.js");
 
 
 /***/ })

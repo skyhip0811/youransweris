@@ -25,8 +25,8 @@
         <el-col :md=16>
           <el-row class='breadcrumb-row'>
           <el-breadcrumb separator=">">
-            <el-breadcrumb-item :to="{ path: '/' }">首頁</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="/">{{$book->name}}</a></el-breadcrumb-item>
+            <el-breadcrumb-item><a href="/">首頁</a></el-breadcrumb-item>
+            <el-breadcrumb-item><a href="/book/{{$book->id}}">{{$book->name}}</a></el-breadcrumb-item>
             @if ($chapter->previous_chapter_id != 0)
             <el-breadcrumb-item>{{$first_chapter_name}}</el-breadcrumb-item>
             @endif

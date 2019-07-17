@@ -8,6 +8,11 @@ class Books extends Model
 {
     //
     protected $fillable = [
-        'name','author_id','type_id','desc','cover'
+        'name','author_id','type_id','desc','cover','total_chapter_numbers','max_level'
     ];
+
+    public function aurthor(){
+    	return $this->belongsTo('App\User','author_id');
+    }
+
 }

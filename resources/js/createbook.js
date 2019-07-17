@@ -46,7 +46,7 @@ var app = new Vue({
                 { required: true, message: '請選擇類型', trigger: 'blur' },
           ],
           bookcover:[
-                
+               
           ],
           chaptername:[
             { required: true, message: '請輸入章節名', trigger: 'blur' },
@@ -65,7 +65,8 @@ var app = new Vue({
 
         },
         options: options,
-        booknameerror:''
+        booknameerror:'',
+        covernameerror:''
     }
   },
   methods:{
@@ -76,6 +77,7 @@ var app = new Vue({
     },
     promptError(msg){
             if(msg.name){this.booknameerror = msg.name[0];}
+            if(msg.cover){this.covernameerror = msg.cover[0];}
             
         },
   	onSubmit(formName) {
@@ -103,6 +105,8 @@ var app = new Vue({
                       }
                     ).then(function (response) {
                         console.log('success')
+                        console.log(response.data)
+                        window.location='/book/'+response.data.id;
                       })
                       .catch(function (error) {
                         // console.log(error.response.data);

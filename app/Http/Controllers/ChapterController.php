@@ -36,15 +36,19 @@ class ChapterController extends Controller
 
 	public function bookdetail(Request $request,$book_id){
 		$book = Books::where('id',$book_id)->first();
+
 		if($book){
-			$aurthor = User::where('id',$book->aurthor_id)->first();
+			$aurthor = User::where('id',$book->author_id)->first();
+			$other_aurthors = Chapters::select('aurthor_id')->where('book_id',$book_id)->groupBy('aurthor_id')->get();
+			$count = Chapters::where('book_id',$book_id)->count();
+			// return $all_chapters;
 			$first_chapter = Chapters::where('previous_chapter_id',0)->where('book_id',$book->id)->first();
 			$answers = [];
 			if(!$first_chapter->endchapter){
 	    		$answers = Chapters::where('previous_chapter_id',$first_chapter->id)->get();
 	    	}
 
-	    	return response()->view('bookdetail',['answers'=>$answers,'chapter'=>$first_chapter, 'book'=>$book,'aurthor'=>$aurthor]);
+	    	return response()->view('bookdetail',['answers'=>$answers,'chapter'=>$first_chapter, 'book'=>$book,'aurthor'=>$aurthor ,'other_aurthors'=>$other_aurthors, 'chapter_count'=>$count]);
 		}else{
 			return abort(404);
 		}

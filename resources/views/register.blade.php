@@ -15,7 +15,7 @@
     <el-container>
     <el-main>
       <el-row >
-      <img style="width:300px; margin-top:50px; margin-bottom:60px" src='placeholder.jpg'/>
+      <img style="width:300px; margin-top:50px; margin-bottom:60px" src='logo.png'/>
       <el-row>
       <el-row>
       <el-col :md=6 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>

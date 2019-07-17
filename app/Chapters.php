@@ -8,7 +8,7 @@ class Chapters extends Model
 {
     //
     protected $fillable = [
-        'name','aurthor_id','content','question','previous_chapter_id','book_id','answer','endchapter','additionalinfo'
+        'level','name','aurthor_id','content','question','previous_chapter_id','book_id','answer','endchapter','additionalinfo'
     ];
 
     public function aurthor(){
@@ -17,5 +17,9 @@ class Chapters extends Model
 
     public function book(){
     	return $this->belongsTo('App\Books','book_id');
+    }
+
+    public function previous_chapter(){
+        return $this->belongsTo('App\Chapters','previous_chapter_id');
     }
 }

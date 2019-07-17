@@ -27,7 +27,8 @@ class MemberController extends Controller
             'type' => ['required','int'],
             'chaptername' => ['required', 'string', 'max:8', 'min:2'],
             'content' => ['required', 'string', 'min:100', 'max:3000'],
-            'question' => ['required', 'string', 'min:2', 'max:50']
+            'question' => ['required', 'string', 'min:2', 'max:50'],
+            'cover' => ['required']
         ]);
     }
 
@@ -41,14 +42,17 @@ class MemberController extends Controller
             'author_id' => $id,
             'desc' => $data['desc'],
             'type_id' => $data['type'],
-            'cover' => $data['cover']
+            'cover' => $data['cover'],
+            'total_chapter_numbers' => 0
         ]);
     }
 
     protected function createchapter(array $data){
 
         $id = Auth::user()->id;
-        return Chapters::create([
+
+
+        $chapter = Chapters::create([
             'name' => $data['chaptername'],
             'aurthor_id' => $id,
             'content' => $data['content'],
@@ -57,8 +61,19 @@ class MemberController extends Controller
             'endchapter' => $data['endchapter'],
             'previous_chapter_id' =>$data['previous_chapter_id'],
             'book_id' => $data['book_id'],
-            'additionalinfo' =>$data['additionalinfo']
+            'additionalinfo' =>$data['additionalinfo'],
+            'level'=> $data['level']
         ]);
+
+        if($chapter){
+            $book = Books::find($data['book_id']);
+            if($data['level'] > $book->max_level){
+                $book->max_level = $data['level'];
+            }
+            $book->total_chapter_numbers += 1;
+
+            $book->save();
+        }
 
     }
 
@@ -77,17 +92,22 @@ class MemberController extends Controller
     public function createbook_post(Request $request)
     {
         $data =  $request->all();
-        $file = $request->file->store('public');
-        $filename = $request->file->hashName();
+        if($request->file){
+            $file = $request->file->store('public');
+            $filename = $request->file->hashName();
+            $data['cover'] = $filename;
+        }
+        
         $this->createbbok_validator($data)->validate();
-        $data['cover'] = $filename;
+        
         $book = $this->createbook($data);
         $data['book_id'] = $book->id;
         $data['endchapter'] = false;
         $data['previous_chapter_id'] = 0;
         $data['answer'] = '';
+        $data['level'] = 1;
         $chapter = $this->createchapter($data);
-        return $chapter;
+        return $book;
 
     }
 
@@ -125,6 +145,7 @@ class MemberController extends Controller
             $data = $request->all();
             $this->createchapter_validator($data)->validate();
             $data['previous_chapter_id'] = $previous_chapter_id;
+            $data['level'] = $previous_chapter->level +1;
             $data['book_id'] = $previous_chapter->book_id;
             $chapter = $this->createchapter($data);
             return $chapter;

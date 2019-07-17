@@ -407,7 +407,8 @@ var app = new Vue({
         }]
       },
       options: options,
-      booknameerror: ''
+      booknameerror: '',
+      covernameerror: ''
     };
   },
   methods: {
@@ -417,6 +418,10 @@ var app = new Vue({
     promptError: function promptError(msg) {
       if (msg.name) {
         this.booknameerror = msg.name[0];
+      }
+
+      if (msg.cover) {
+        this.covernameerror = msg.cover[0];
       }
     },
     onSubmit: function onSubmit(formName) {
@@ -443,6 +448,8 @@ var app = new Vue({
             }
           }).then(function (response) {
             console.log('success');
+            console.log(response.data);
+            window.location = '/book/' + response.data.id;
           })["catch"](function (error) {
             // console.log(error.response.data);
             self.promptError(error.response.data.errors);
@@ -466,7 +473,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\projects\youransweris\laravel-app\resources\js\createbook.js */"./resources/js/createbook.js");
+module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\createbook.js */"./resources/js/createbook.js");
 
 
 /***/ })

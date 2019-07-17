@@ -14,9 +14,6 @@
 Route::get('/', 'HomeController@index');
 
 
-Route::get('/book', function () {
-    return view('bookdetail');
-});
 
 Route::get('/category', function () {
     return view('category');

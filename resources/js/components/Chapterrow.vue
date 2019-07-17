@@ -1,19 +1,22 @@
 <template>
     <div class="chapter-row">
-        <a href='#'>
+
             <el-row>
-        <el-col :span="4"> 06/25 14:02 </el-col>
-        <el-col :span="8"> {{ book }} </el-col>
-        <el-col :span="8"> {{chapter}} </el-col>
+        <!-- <el-col :span="3"> {{updatedat}} </el-col> -->
+        <el-col :span="6"><a :href="'/book/'+book_id"> {{ book }} </a></el-col>
+        <el-col :span="7"><a :href="'/chapter/'+chapter_id"> {{chapter}}</a> </el-col>
+
+        <el-col v-if="previous_chapter_id" :span="7"><a :href="'/chapter/'+previous_chapter_id"> {{previouschapter}}</a>  </el-col>
+        <el-col v-else="previous_chapter_id" :span="7">{{previouschapter}} </el-col>
         <el-col :span="4"> {{aurthor}} </el-col>
         </el-row>
-        </a>
+     
     </div>
 </template>
 
 <script>
     export default {
-        props: ['aurthor','book','chapter'],
+        props: ['aurthor','book','chapter', 'updatedat','previouschapter','book_id', 'chapter_id','previous_chapter_id'],
         data () {
             return {
                
