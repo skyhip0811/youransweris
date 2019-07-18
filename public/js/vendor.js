@@ -107437,37 +107437,37 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-2" } }, [
-                        _c("a", { attrs: { href: "/category/1" } }, [
+                        _c("a", { attrs: { href: "/category/2" } }, [
                           _vm._v("都市社會")
                         ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                        _c("a", { attrs: { href: "/category/1" } }, [
+                        _c("a", { attrs: { href: "/category/3" } }, [
                           _vm._v("玄幻奇幻")
                         ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                        _c("a", { attrs: { href: "/category/1" } }, [
+                        _c("a", { attrs: { href: "/category/4" } }, [
                           _vm._v("搞笑故事")
                         ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                        _c("a", { attrs: { href: "/category/1" } }, [
+                        _c("a", { attrs: { href: "/category/5" } }, [
                           _vm._v("遊戲人生")
                         ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                        _c("a", { attrs: { href: "/category/1" } }, [
+                        _c("a", { attrs: { href: "/category/6" } }, [
                           _vm._v("浪漫愛情")
                         ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                        _c("a", { attrs: { href: "/category/1" } }, [
+                        _c("a", { attrs: { href: "/category/7" } }, [
                           _vm._v("熱血冒險")
                         ])
                       ])

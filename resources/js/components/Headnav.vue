@@ -50,12 +50,12 @@
     <el-submenu index="1-1">
 	    <template slot="title">故事分類</template>
 	    <el-menu-item index="1-1"><a href="/category/1">懸疑故事</a></el-menu-item>
-      <el-menu-item index="1-2"><a href="/category/1">都市社會</a></el-menu-item>
-      <el-menu-item index="1-3"><a href="/category/1">玄幻奇幻</a></el-menu-item>
-      <el-menu-item index="1-3"><a href="/category/1">搞笑故事</a></el-menu-item>
-      <el-menu-item index="1-3"><a href="/category/1">遊戲人生</a></el-menu-item>
-      <el-menu-item index="1-3"><a href="/category/1">浪漫愛情</a></el-menu-item>
-      <el-menu-item index="1-3"><a href="/category/1">熱血冒險</a></el-menu-item>
+      <el-menu-item index="1-2"><a href="/category/2">都市社會</a></el-menu-item>
+      <el-menu-item index="1-3"><a href="/category/3">玄幻奇幻</a></el-menu-item>
+      <el-menu-item index="1-3"><a href="/category/4">搞笑故事</a></el-menu-item>
+      <el-menu-item index="1-3"><a href="/category/5">遊戲人生</a></el-menu-item>
+      <el-menu-item index="1-3"><a href="/category/6">浪漫愛情</a></el-menu-item>
+      <el-menu-item index="1-3"><a href="/category/7">熱血冒險</a></el-menu-item>
   	</el-submenu>
 <!--   	<el-submenu index="1-2">
 	  <template slot="title">你追蹤的</template>
