@@ -65,9 +65,9 @@ __webpack_require__.r(__webpack_exports__);
           message: '請輸入筆名, 有名有姓才是品質保證',
           trigger: 'blur'
         }, {
-          min: 3,
+          min: 2,
           max: 8,
-          message: '長度必須是6-8位',
+          message: '長度必須是2-8位',
           trigger: 'change'
         }],
         gender: [{
