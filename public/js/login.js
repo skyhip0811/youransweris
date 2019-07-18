@@ -169,9 +169,7 @@ var render = function() {
             [_vm._v("登入")]
           ),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/register" } }, [_vm._v("注冊 ")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("忘記密碼")])
+          _c("a", { attrs: { href: "/register" } }, [_vm._v("注冊 ")])
         ],
         1
       )

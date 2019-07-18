@@ -6,6 +6,8 @@ use App\Chapters;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use App\User;
+use App\BooksType;
+
 
 class ChapterController extends Controller
 {
@@ -39,7 +41,7 @@ class ChapterController extends Controller
 
 		if($book){
 			$aurthor = User::where('id',$book->author_id)->first();
-			$other_aurthors = Chapters::select('aurthor_id')->where('book_id',$book_id)->groupBy('aurthor_id')->get();
+			$other_aurthors = Chapters::select('aurthor_id')->where('book_id',$book_id)->where('aurthor_id','!=',$book->author_id)->groupBy('aurthor_id')->get();
 			$count = Chapters::where('book_id',$book_id)->count();
 			// return $all_chapters;
 			$first_chapter = Chapters::where('previous_chapter_id',0)->where('book_id',$book->id)->first();
@@ -53,4 +55,15 @@ class ChapterController extends Controller
 			return abort(404);
 		}
 	}
+
+	public function categorylist(Request $request,$category_id){
+		$category = BooksType::where('id',$category_id)->first();
+		if($category){
+			$books = Books::where('type_id',$category_id)->get();
+			return response()->view('category',['category'=>$category, 'books'=>$books]);
+		}else{
+			return abort(404);
+		}
+		
+	}	
 }

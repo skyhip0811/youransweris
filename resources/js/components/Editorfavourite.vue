@@ -1,7 +1,7 @@
 <template>
     <div class='editorfavourite'>
     <a :href='link'>
-        <img src="/placeholder-image.jpg" />
+        <img :src="'/storage/'+image" />
         <br>
         <h4>{{book}}</h4>
         <p>第一作者: {{aurthor}}</p>
@@ -12,7 +12,7 @@
 
 <script>
     export default {
-        props: ['aurthor','book','desc', 'link'],
+        props: ['aurthor','book','desc', 'link','image'],
         data () {
             return {
                
@@ -23,6 +23,8 @@
 <style scoped>
 .editorfavourite{
     padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #eee;
 }
 
 a{

@@ -14,7 +14,12 @@
 <body>
 	<div id="app">
     <el-container>
-    <el-header  class='head-menu'><headnav></headnav></el-header>
+    <el-header  class='head-menu'><headnav
+
+    @auth
+        loggedin
+      @endauth
+    ></headnav></el-header>
     <el-main>
       <el-row >
         <el-col :md=4 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
@@ -22,39 +27,17 @@
         <el-col :md=16>
           <el-card class="box-card">
          <div slot="header" class="clearfix">
-            <span><h4>懸疑故事</h4></span>
+            <span><h4>{{$category->cn_name}}</h4></span>
           </div>
           <el-row>
+          @if($books)
+          @foreach($books as $book)
           <el-col :md=6>
-            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
+            <editorfavourite image='{{$book->cover}}' link='/book/{{$book->id}}'  aurthor="{{$book->aurthor->name}}" book="{{$book->name}}" desc="{{$book->desc}}"></editorfavourite>
           </el-col>
-          <el-col :md=6>
-            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
-          </el-col>
-          <el-col :md=6>
-            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
-          </el-col>
-          <el-col :md=6>
-            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
-          </el-col>
-          <el-col :md=6>
-            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
-          </el-col>
-          <el-col :md=6>
-            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
-          </el-col>
-          <el-col :md=6>
-            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
-          </el-col>
-          <el-col :md=6>
-            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
-          </el-col>
-          <el-col :md=6>
-            <editorfavourite link='book'  aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
-          </el-col>
-          <el-col :md=6>
-            <editorfavourite link='/book' aurthor="作者一號" book="我是高手" desc="我是高手高手高高手,打遍天下无敌手,斟满美酒,今夜不醉不罢休,我会传球带球任意球,还有狮子滚绣球,蹴鞠当头,照亮满天的星斗"></editorfavourite>
-          </el-col>
+
+          @endforeach
+          @endif
 
         </el-row>
         </el-card>

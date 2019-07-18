@@ -83,7 +83,7 @@ class ChaptersController extends AdminController
         $form->number('aurthor_id', __('Aurthor id'));
         $form->number('book_id', __('Book id'));
         $form->text('question', __('Question'));
-        $form->text('additionalinfo', __('Additionalinfo'));
+        $form->textarea('additionalinfo', __('Additionalinfo'));
         $form->textarea('content', __('Content'));
         $form->number('previous_chapter_id', __('Previous chapter id'));
         $form->switch('endchapter', __('Endchapter'));

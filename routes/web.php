@@ -15,9 +15,9 @@ Route::get('/', 'HomeController@index');
 
 
 
-Route::get('/category', function () {
-    return view('category');
-});
+// Route::get('/category', function () {
+//     return view('category');
+// });
 
 Route::get('/searchbooks', function () {
     return view('searchbooks');
@@ -33,6 +33,7 @@ Route::get('/chapter/{chapter_id}','ChapterController@chapterdetail');
 
 Route::get('/book/{book_id}','ChapterController@bookdetail');
 
+Route::get('/category/{category_id}','ChapterController@categorylist');
 
 Route::get('/login', function () {
     return view('login');

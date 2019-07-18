@@ -16,7 +16,7 @@
     <el-form-item>
       <el-button type="primary" @click="onSubmit('form')">登入</el-button>
       <a href="/register">注冊 </a>
-      <a href="#">忘記密碼</a>
+   <!--    <a href="#">忘記密碼</a> -->
     </el-form-item>
   </el-form>
 </template>

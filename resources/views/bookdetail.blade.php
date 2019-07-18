@@ -92,7 +92,7 @@
       </el-row>  
     </el-main>
     </el-container>
-    <chapteractionmenu chapterid='{{$chapter->id}}'></chapteractionmenu>
+    <chapteractionmenu chapterid='{{$chapter->id}}' text ='{{$chapter->additionalinfo}}'></chapteractionmenu>
   </div>
 </body>
   <script src="/js/chapterdetail.js"></script>

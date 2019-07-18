@@ -95,15 +95,20 @@ var render = function() {
     _c(
       "div",
       { staticClass: "clearfix", attrs: { slot: "header" }, slot: "header" },
-      [_c("span", [_c("h4", [_vm._v("蝴說的話:")])])]
+      [
+        _c("span", [
+          _c("h4", [
+            _c("img", {
+              staticStyle: { height: "25px", display: "inline" },
+              attrs: { src: "/logo_no_text.png" }
+            }),
+            _vm._v("蝴說的話:")
+          ])
+        ])
+      ]
     ),
     _vm._v(" "),
     _c("p", [
-      _vm._v(
-        "一直以來，很喜歡看故事，不論是小說漫畫，或是電影。曾經幻想成為導演，編劇，曾經拿起筆嘗試寫小說。曾經為了成為導演去讀創意媒體，最後卻成為了一名程序猿。"
-      ),
-      _c("br"),
-      _c("br"),
       _vm._v(
         "一個人成就一個偉大故事很不容易。那麼一幫人一齊努力會不會更有趣。"
       ),

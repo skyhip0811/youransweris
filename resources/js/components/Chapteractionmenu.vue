@@ -13,7 +13,12 @@
 		<el-col :span='6'><a href='#'><div class='center'><font-awesome-icon icon="bookmark" /><span class='action_number'>追蹤</span></div></a></el-col>
 	-->
 		<el-col :span='6'><a :href="'/createchapter/'+chapterid"><div class='center'><font-awesome-icon icon="plus" /><span class='action_number'>加分支</span></div></a></el-col>
-		<el-col :span='6'><a href='#'><div class='center'><font-awesome-icon icon="file-alt" /><span class='action_number'>資料</span></div></a></el-col>
+		<el-col :span='6'>
+
+<!-- 		<a href='#'><div class='center'><font-awesome-icon icon="file-alt" /><span class='action_number'>資料</span></div></a> -->
+		<infoboxbutton :text=text ></infoboxbutton>
+
+	</el-col>
 	</el-col>
 	</el-row>
 	</el-menu>	
@@ -23,7 +28,7 @@
 
 <script>
     export default {
-        props: ['chapterid'],
+        props: ['chapterid','text'],
         data () {
             return {
                

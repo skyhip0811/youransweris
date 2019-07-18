@@ -13075,7 +13075,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['aurthor', 'book', 'desc', 'link'],
+  props: ['aurthor', 'book', 'desc', 'link', 'image'],
   data: function data() {
     return {};
   }
@@ -13093,6 +13093,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Remotesearch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Remotesearch */ "./resources/js/components/Remotesearch.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -19585,7 +19590,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.editorfavourite[data-v-76bf8841]{\r\n    padding: 10px;\n}\na[data-v-76bf8841]{\r\n    color:#333;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.editorfavourite[data-v-76bf8841]{\r\n    padding: 10px;\r\n    border-radius: 10px;\r\n    box-shadow: 5px 5px 5px #eee;\n}\na[data-v-76bf8841]{\r\n    color:#333;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -107263,7 +107268,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "editorfavourite" }, [
     _c("a", { attrs: { href: _vm.link } }, [
-      _c("img", { attrs: { src: "/placeholder-image.jpg" } }),
+      _c("img", { attrs: { src: "/storage/" + _vm.image } }),
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
@@ -107326,48 +107331,45 @@ var render = function() {
                   _c("template", { slot: "title" }, [_vm._v("故事分類")]),
                   _vm._v(" "),
                   _c("el-menu-item", { attrs: { index: "1-1" } }, [
-                    _vm._v("懸疑故事")
+                    _c("a", { attrs: { href: "/category/1" } }, [
+                      _vm._v("懸疑故事")
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("el-menu-item", { attrs: { index: "1-2" } }, [
-                    _vm._v("都市社會")
+                    _c("a", { attrs: { href: "/category/2" } }, [
+                      _vm._v("都市社會")
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                    _vm._v("玄幻奇幻")
+                    _c("a", { attrs: { href: "/category/3" } }, [
+                      _vm._v("玄幻奇幻")
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                    _vm._v("搞笑故事")
+                    _c("a", { attrs: { href: "/category/4" } }, [
+                      _vm._v("搞笑故事")
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                    _vm._v("遊戲人生")
+                    _c("a", { attrs: { href: "/category/5" } }, [
+                      _vm._v("遊戲人生")
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                    _vm._v("浪漫愛情")
+                    _c("a", { attrs: { href: "/category/6" } }, [
+                      _vm._v("浪漫愛情")
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                    _vm._v("熱血冒險")
-                  ])
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "el-submenu",
-                { attrs: { index: "2" } },
-                [
-                  _c("template", { slot: "title" }, [_vm._v("搜尋")]),
-                  _vm._v(" "),
-                  _c("el-menu-item", { attrs: { index: "2-1" } }, [
-                    _vm._v("作者")
-                  ]),
-                  _vm._v(" "),
-                  _c("el-menu-item", { attrs: { index: "2-2" } }, [
-                    _vm._v("故事")
+                    _c("a", { attrs: { href: "/category/7" } }, [
+                      _vm._v("熱血冒險")
+                    ])
                   ])
                 ],
                 2
@@ -107379,10 +107381,6 @@ var render = function() {
                     { attrs: { index: "4" } },
                     [
                       _c("template", { slot: "title" }, [_vm._v("會員管理")]),
-                      _vm._v(" "),
-                      _c("el-menu-item", { attrs: { index: "4-1" } }, [
-                        _vm._v("你的創作")
-                      ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "4-2" } }, [
                         _c("a", { attrs: { href: "/createbook" } }, [
@@ -107463,39 +107461,34 @@ var render = function() {
                     2
                   ),
                   _vm._v(" "),
-                  _c(
-                    "el-submenu",
-                    { attrs: { index: "1-2" } },
-                    [
-                      _c("template", { slot: "title" }, [_vm._v("你追蹤的")]),
-                      _vm._v(" "),
-                      _c("el-menu-item", { attrs: { index: "1-2-1" } }, [
-                        _vm._v("作者")
-                      ]),
-                      _vm._v(" "),
-                      _c("el-menu-item", { attrs: { index: "1-2-2" } }, [
-                        _vm._v("故事進度")
+                  _vm.loggedin
+                    ? _c(
+                        "el-submenu",
+                        { attrs: { index: "1-3" } },
+                        [
+                          _c("template", { slot: "title" }, [
+                            _vm._v("會員管理")
+                          ]),
+                          _vm._v(" "),
+                          _c("el-menu-item", { attrs: { index: "1-3-3" } }, [
+                            _c("a", { attrs: { href: "/createbook" } }, [
+                              _vm._v("創作新故事")
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("el-menu-item", { attrs: { index: "1-3-4" } }, [
+                            _c("a", { attrs: { href: "/logout" } }, [
+                              _vm._v("登出")
+                            ])
+                          ])
+                        ],
+                        2
+                      )
+                    : _c("el-menu-item", { attrs: { index: "1-4" } }, [
+                        _c("a", { attrs: { href: "/login" } }, [
+                          _vm._v("會員登入")
+                        ])
                       ])
-                    ],
-                    2
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "el-submenu",
-                    { attrs: { index: "1-3" } },
-                    [
-                      _c("template", { slot: "title" }, [_vm._v("會員管理")]),
-                      _vm._v(" "),
-                      _c("el-menu-item", { attrs: { index: "1-3-1" } }, [
-                        _vm._v("你的創作")
-                      ]),
-                      _vm._v(" "),
-                      _c("el-menu-item", { attrs: { index: "1-3-2" } }, [
-                        _vm._v("更改會員資料")
-                      ])
-                    ],
-                    2
-                  )
                 ],
                 2
               ),
