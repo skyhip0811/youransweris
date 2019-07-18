@@ -107431,31 +107431,45 @@ var render = function() {
                       _c("template", { slot: "title" }, [_vm._v("故事分類")]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-1" } }, [
-                        _vm._v("懸疑故事")
+                        _c("a", { attrs: { href: "/category/1" } }, [
+                          _vm._v("懸疑故事")
+                        ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-2" } }, [
-                        _vm._v("都市社會")
+                        _c("a", { attrs: { href: "/category/1" } }, [
+                          _vm._v("都市社會")
+                        ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                        _vm._v("玄幻奇幻")
+                        _c("a", { attrs: { href: "/category/1" } }, [
+                          _vm._v("玄幻奇幻")
+                        ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                        _vm._v("搞笑故事")
+                        _c("a", { attrs: { href: "/category/1" } }, [
+                          _vm._v("搞笑故事")
+                        ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                        _vm._v("遊戲人生")
+                        _c("a", { attrs: { href: "/category/1" } }, [
+                          _vm._v("遊戲人生")
+                        ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                        _vm._v("浪漫愛情")
+                        _c("a", { attrs: { href: "/category/1" } }, [
+                          _vm._v("浪漫愛情")
+                        ])
                       ]),
                       _vm._v(" "),
                       _c("el-menu-item", { attrs: { index: "1-3" } }, [
-                        _vm._v("熱血冒險")
+                        _c("a", { attrs: { href: "/category/1" } }, [
+                          _vm._v("熱血冒險")
+                        ])
                       ])
                     ],
                     2

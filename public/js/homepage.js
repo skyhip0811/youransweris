@@ -293,9 +293,9 @@ new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\homepage.js */"./resources/js/homepage.js");
-__webpack_require__(/*! D:\projects\youransweris\youransweris\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\sass\chapterdetail.scss */"./resources/sass/chapterdetail.scss");
+__webpack_require__(/*! C:\projects\youransweris\laravel-app\resources\js\homepage.js */"./resources/js/homepage.js");
+__webpack_require__(/*! C:\projects\youransweris\laravel-app\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\projects\youransweris\laravel-app\resources\sass\chapterdetail.scss */"./resources/sass/chapterdetail.scss");
 
 
 /***/ })
