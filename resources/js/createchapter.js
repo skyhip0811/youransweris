@@ -1,17 +1,20 @@
 require('./bootstrap');
 import Headnav from './components/Headnav'
+import Remotesearch from './components/Remotesearch'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHeart , faBookmark, faPlus, faFileAlt} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 library.add(faHeart,faBookmark,faPlus,faFileAlt)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 
 var app = new Vue({
   el: '#app',
-  components: { Headnav },
+  components: { Headnav,Remotesearch },
   data: function() {
      var validateQuestion = (rule, value, callback) => {
           if (this.form.endchapter == false) {
@@ -30,6 +33,7 @@ var app = new Vue({
           }
       }; 
     return {
+      chapters_options:chapters_options,
 
       rules: {
 
@@ -64,7 +68,9 @@ var app = new Vue({
           chaptername:'',
           endchapter:false,
           question:'',
-          previouschapterid:''
+          previouschapterid:'',
+          redirect_option:false,
+          redirect_id:''
         } 
     }
   },
@@ -75,9 +81,12 @@ var app = new Vue({
   	onSubmit(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
+          if(this.$refs['redirectselect']){
+            this.form.redirect_id = this.$refs['redirectselect'].value;
+          }
           console.log('submit!');
           window.axios.post('/createchapter/'+this.form.previouschapterid, this.form).then(function (response) {
-                        window.history.back();
+                         window.location=document.referrer;
                       })
                       .catch(function (error) {
                         // console.log(error.response.data);

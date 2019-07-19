@@ -8,7 +8,7 @@ class Chapters extends Model
 {
     //
     protected $fillable = [
-        'level','name','aurthor_id','content','question','previous_chapter_id','book_id','answer','endchapter','additionalinfo'
+        'redirect','level','name','aurthor_id','content','question','previous_chapter_id','book_id','answer','endchapter','additionalinfo'
     ];
 
     public function aurthor(){

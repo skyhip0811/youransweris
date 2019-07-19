@@ -30,7 +30,11 @@ class ChapterController extends Controller
 	    		$answers = Chapters::where('previous_chapter_id',$chapter_id)->get();
 
 	    	}
-	    	return response()->view('chapterdetail',['answers'=>$answers,'chapter'=>$chapter, 'book'=>$book, 'previous_chapter'=>$previous_chapter,'first_chapter_name'=>$first_chapter_name,'aurthor'=>$aurthor]);
+	    	$redirect_chapter = '';
+	    	if($chapter->redirect){
+	    		$redirect_chapter = Chapters::where('id',$chapter->redirect)->first();
+	    	}
+	    	return response()->view('chapterdetail',['redirect_chapter'=>$redirect_chapter,'answers'=>$answers,'chapter'=>$chapter, 'book'=>$book, 'previous_chapter'=>$previous_chapter,'first_chapter_name'=>$first_chapter_name,'aurthor'=>$aurthor]);
     	}else{
     		return abort(404);
     	}

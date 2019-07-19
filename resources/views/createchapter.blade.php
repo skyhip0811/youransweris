@@ -68,10 +68,20 @@
         <el-checkbox v-model="form.endchapter">是</el-checkbox>
         <span>如是最終回將沒有章節問題及往下發展的分支章節</span>
         </el-form-item>
-        <el-form-item v-if="form.endchapter!=true" label="章節問題" prop="question">
+        <el-form-item v-if="form.endchapter!=true" label="章節導向?">
+        <el-checkbox v-model="form.redirect_option">是</el-checkbox>
+        <span>章節導向是把此章節直接導向另一章節。</span>
+        </el-form-item>
+        <el-form-item v-if="form.redirect_option==true " label="章節" prop="redirect_id">
+        <!--   <el-input  placeholder="章節問題"  v-model="form.redirect_id"></el-input> -->
+        <remotesearch :states='chapters_options' ref='redirectselect' ></remotesearch>
+          <span>選擇被導向的章節。</span>
+        </el-form-item>
+        <el-form-item v-if="form.endchapter!=true && form.redirect_option==false" label="章節問題" prop="question">
           <el-input  placeholder="章節問題"  v-model="form.question"></el-input>
           <span>章節問題是給下一手作者的引導問題</span>
         </el-form-item>
+
          <el-form-item>
             <el-button type="primary" @click="onSubmit('form')">遞交</el-button>
             <br><span style="color:red">**一經遞交，將不能修改，因為會有其他作者會基於此章節創作。</span>
@@ -93,6 +103,8 @@
 
 
 </body>
-
+<script>    
+    var chapters_options =   JSON.parse('{!! json_encode($chapters_options, JSON_HEX_TAG) !!}');
+</script>
   <script src="/js/createchapter.js"></script>
 </html>

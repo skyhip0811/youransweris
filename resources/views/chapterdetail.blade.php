@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="csrf-token">
+  <title>{{$book->name}} | {{$chapter->name}}</title>
   <!-- import CSS -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" type="text/css" href="/css/app.css">
@@ -50,32 +51,38 @@
           <el-row class='chapter-text'  style="white-space: pre-line">
           {{$chapter->content}}
           </el-row>
-          @if (!$chapter->endchapter)
-          <el-row class='chapter-question'>
-            <i class='el-icon-question'></i>{{$chapter->question}}
-          </el-row>
-          <el-row>
-          @if (count($answers) >=1)
-          @foreach( $answers as $answer)
-            <el-col :md=8 :xs=24>
-              <answerbox 
-              @if($answer->aurthor->id == $book->author_id)
-              bookaurthor=true
-              @endif
-               chapterid='{{$answer->id}}' answer='{{$answer->answer}}' aurthor='{{$answer->aurthor->name}}' love_num=14></answerbox>
-            </el-col>
-          @endforeach
-          @else
-            <br><br>
-            <h4>還沒有下一章 ! <a href='/createchapter/{{$chapter->id}}'>創作下一章節 </a></h4>
-          @endif
-          </el-row>
+          @if (!$chapter->endchapter && !$chapter->redirect)
 
-          @else
-          <el-row>
-          <br><br>
-          <h4>此故事線完 ! <a href='javascript:history.back()'>回上一頁 </a></h4>
-          </el-row>
+                <el-row class='chapter-question'>
+                  <i class='el-icon-question'></i>{{$chapter->question}}
+                </el-row>
+                <el-row>
+                @if (count($answers) >=1)
+                  @foreach( $answers as $answer)
+                    <el-col :md=8 :xs=24>
+                      <answerbox 
+                      @if($answer->aurthor->id == $book->author_id)
+                      bookaurthor=true
+                      @endif
+                       chapterid='{{$answer->id}}' answer='{{$answer->answer}}' aurthor='{{$answer->aurthor->name}}' love_num=14></answerbox>
+                    </el-col>
+                  @endforeach
+                @else
+                  <br><br>
+                  <h4>還沒有下一章 ! <a href='/createchapter/{{$chapter->id}}'>創作下一章節 </a></h4>
+                @endif
+                </el-row>
+
+                @else
+                <el-row>
+                <br><br>
+                @if($chapter->redirect)
+                <h4>此故事線導向另一章節 >>> <a href='/chapter/{{$chapter->redirect}}'>{{$redirect_chapter->name}} </a></h4>
+                @else
+                <h4>此故事線完 ! <a href='javascript:history.back()'>回上一頁 </a></h4>
+                @endif
+                </el-row>
+              
           @endif
 
         </el-col>

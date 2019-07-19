@@ -50,7 +50,11 @@ class MemberController extends Controller
     protected function createchapter(array $data){
 
         $id = Auth::user()->id;
-
+        if($data['redirect_option']){
+            $data['redirect'] = $data['redirect_id'];
+        }else{
+            $data['redirect'] =null;
+        }
 
         $chapter = Chapters::create([
             'name' => $data['chaptername'],
@@ -62,7 +66,9 @@ class MemberController extends Controller
             'previous_chapter_id' =>$data['previous_chapter_id'],
             'book_id' => $data['book_id'],
             'additionalinfo' =>$data['additionalinfo'],
-            'level'=> $data['level']
+            'level'=> $data['level'],
+            'redirect'=>$data['redirect']
+
         ]);
 
         if($chapter){
@@ -114,11 +120,21 @@ class MemberController extends Controller
     public function createchapter_get(Request $request, $previous_chapter_id)
     {
         $previous_chapter = Chapters::where('id',$previous_chapter_id)->first();
+        $chapters = Chapters::select('id','name')->where('book_id',$previous_chapter->book_id)->get();
+        $chapters_options = [];
+
+        foreach ($chapters as $key => $value) {
+            $chapter =  new \stdClass();
+            $chapter->label = $value->name;
+            $chapter->value = $value->id;
+          array_push($chapters_options,$chapter);
+        }
         if($previous_chapter){
             $book = Books::where('id',$previous_chapter->book_id)->first();
             return response()->view('createchapter', [
             'previous_chapter' => $previous_chapter,
-            'book_name' => $book->name
+            'book_name' => $book->name,
+            'chapters_options' =>  $chapters_options
             ]);
 
         }else{
