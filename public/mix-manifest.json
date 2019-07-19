@@ -1,4 +1,6 @@
 {
+    "/js/manifest.js": "/js/manifest.js",
+    "/js/vendor.js": "/js/vendor.js",
     "/js/chapterdetail.js": "/js/chapterdetail.js",
     "/js/createbook.js": "/js/createbook.js",
     "/js/createchapter.js": "/js/createchapter.js",
@@ -6,9 +8,7 @@
     "/css/app.css": "/css/app.css",
     "/css/chapterdetail.css": "/css/chapterdetail.css",
     "/js/login.js": "/js/login.js",
-    "/js/manifest.js": "/js/manifest.js",
     "/js/register.js": "/js/register.js",
     "/js/searchbook.js": "/js/searchbook.js",
-    "/js/template.js": "/js/template.js",
-    "/js/vendor.js": "/js/vendor.js"
+    "/js/template.js": "/js/template.js"
 }
