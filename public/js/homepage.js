@@ -236,6 +236,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Bookrow__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Bookrow */ "./resources/js/components/Bookrow.vue");
 /* harmony import */ var _components_Editorfavourite__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Editorfavourite */ "./resources/js/components/Editorfavourite.vue");
 /* harmony import */ var _components_Mastercomment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Mastercomment */ "./resources/js/components/Mastercomment.vue");
+/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.es.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fortawesome/vue-fontawesome */ "./node_modules/@fortawesome/vue-fontawesome/index.es.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -243,7 +246,12 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
- // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+
+
+
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_6__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__["faHeart"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__["faBookmark"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__["faPlus"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_7__["faFileAlt"]);
+Vue.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_8__["FontAwesomeIcon"]); // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 new Vue({
   el: '#app',

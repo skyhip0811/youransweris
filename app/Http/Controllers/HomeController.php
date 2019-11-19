@@ -37,8 +37,10 @@ class HomeController extends Controller
             $latest_chapters[$key]->newdate = $newformat;
         }
 
+        $most_like_chapters = Chapters::withCount('like')->orderBy('like_count', 'desc')->paginate(5); 
+
         $books_with_most_chapters = Books::orderBy('total_chapter_numbers','desc')->take(10)->get();
 
-        return view('homepage', ['latest_chapters'=>$latest_chapters,'books_with_most_chapters'=>$books_with_most_chapters]);
+        return view('homepage', ['most_like_chapters'=>$most_like_chapters,'latest_chapters'=>$latest_chapters,'books_with_most_chapters'=>$books_with_most_chapters]);
     }
 }

@@ -79,6 +79,23 @@
           </div>
 
         </el-card>
+        <el-card class="box-card">
+         <div slot="header" class="clearfix">
+            <span><h4>最多Like章節</h4></span>
+          </div>
+          <div  class="text item">
+           <el-row>
+              <el-col :span="14"><h5> 書名 </h5></el-col>
+              <el-col :span="6"><h5> 作者 </h5></el-col>
+              <el-col :span="4"><h5> <font-awesome-icon  icon="heart" /> </h5></el-col>
+            </el-row>
+            @foreach($most_like_chapters as $chapter)
+            <bookrow book_id="{{$chapter->id}}" book="{{$chapter->name}}" aurthor='{{$chapter->aurthor->name}}' ticket='{{$chapter->like_count}}'></bookrow>
+            @endforeach
+
+          </div>
+
+        </el-card>
       </el-col>
       </el-row>
       </el-col>
