@@ -90,7 +90,7 @@
               <el-col :span="4"><h5> <font-awesome-icon  icon="heart" /> </h5></el-col>
             </el-row>
             @foreach($most_like_chapters as $chapter)
-            <bookrow book_id="{{$chapter->id}}" book="{{$chapter->name}}" aurthor='{{$chapter->aurthor->name}}' ticket='{{$chapter->like_count}}'></bookrow>
+            <chapterlikerow chapter_id="{{$chapter->id}}" chapter="{{$chapter->name}}" aurthor='{{$chapter->aurthor->name}}' like='{{$chapter->like_count}}'></chapterlikerow>
             @endforeach
 
           </div>
