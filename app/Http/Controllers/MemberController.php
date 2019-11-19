@@ -51,10 +51,12 @@ class MemberController extends Controller
     protected function createchapter(array $data){
 
         $id = Auth::user()->id;
-        if($data['redirect_option']){
+        if(array_key_exists('redirect_option', $data)){
+           
             $data['redirect'] = $data['redirect_id'];
         }else{
-            $data['redirect'] =null;
+            
+             $data['redirect'] =null;
         }
 
         $chapter = Chapters::create([

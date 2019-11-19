@@ -86,9 +86,10 @@ __webpack_require__.r(__webpack_exports__);
         var img = new Image();
 
         img.onload = function () {
-          console.log([this.width, this.height]);
-          var valid = img.width == width && img.height == height;
-          valid ? resolve() : reject();
+          console.log([this.width, this.height]); // let valid = img.width == width && img.height == height;
+          // valid ? resolve() : reject();
+
+          resolve();
         };
 
         img.src = _URL.createObjectURL(file);

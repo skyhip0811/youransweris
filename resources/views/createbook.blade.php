@@ -46,7 +46,7 @@
         </el-form-item>
          <el-form-item label="故事封面"  prop='bookcover' :error='covernameerror'>
           <imageupload @uploaded="onUploaded" ref='image' name='bookcover' width="400" height='300' icon-width="200" icon-height="150"></imageupload>
-          <span>封面必須是jpg format, 1 mb以下, 400 x 300px</span>
+          <span>封面必須是jpg format, 1 mb以下</span>
         </el-form-item>
         <el-form-item label="第一章節" prop ='chaptername'>
           <el-input  placeholder="章節名稱"  v-model="form.chaptername"></el-input>

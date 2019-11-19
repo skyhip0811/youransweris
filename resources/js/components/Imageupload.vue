@@ -72,8 +72,9 @@
             let img = new Image();
             img.onload = function() {
               console.log([this.width,this.height]);
-                let valid = img.width == width && img.height == height;
-                valid ? resolve() : reject();
+                // let valid = img.width == width && img.height == height;
+                // valid ? resolve() : reject();
+                resolve();
             }
             img.src = _URL.createObjectURL(file);
         }).then(() => {
