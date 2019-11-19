@@ -64,7 +64,7 @@
                       @if($answer->aurthor->id == $book->author_id)
                       bookaurthor=true
                       @endif
-                       chapterid='{{$answer->id}}' answer='{{$answer->answer}}' aurthor='{{$answer->aurthor->name}}' love_num=14></answerbox>
+                       chapterid='{{$answer->id}}' answer='{{$answer->answer}}' aurthor='{{$answer->aurthor->name}}' love_num={{$answer->like_count}}></answerbox>
                     </el-col>
                   @endforeach
                 @else
@@ -91,7 +91,17 @@
     </el-main>
 
     </el-container>
-    <chapteractionmenu chapterid='{{$chapter->id}}' text ='{{$chapter->additionalinfo}}'></chapteractionmenu>
+    <chapteractionmenu chapterid='{{$chapter->id}}' text ='{{$chapter->additionalinfo}}' 
+      likes = {{$likes}} 
+      liked = {{$liked}} 
+      @auth
+          logined = "1"
+      @endauth
+
+      @guest
+          logined = "0"
+      @endguest
+      ></chapteractionmenu>
   </div>
 
 

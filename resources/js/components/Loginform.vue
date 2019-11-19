@@ -36,17 +36,17 @@
         onSubmit(formName) {
             this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        alert('submit!');
+                        // alert('submit!');
                         window.axios.post('/login', this.form)
-                      .then(function (response) {
-                        window.location=document.referrer;
-                      })
-                      .catch(function (error) {
-                        // console.log(error)
-                        // console.log(error.response.data);
-                        if(error.response.status == 401){
-                          alert("錯誤的電郵或密碼")
-                        }
+                        .then(function (response) {
+                            window.location=document.referrer;
+                        })
+                        .catch(function (error) {
+                            // console.log(error)
+                            // console.log(error.response.data);
+                            if(error.response.status == 401){
+                              alert("錯誤的電郵或密碼")
+                            }
                         
                         // self.promptError(error.response.data.errors);
                       });

@@ -22,6 +22,8 @@ class UserController extends Controller
             'gender' => $data['gender'],
             'password' => Hash::make($data['pass']),
         ]);
+
+
 	}
 
 }

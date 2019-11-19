@@ -22,4 +22,8 @@ class Chapters extends Model
     public function previous_chapter(){
         return $this->belongsTo('App\Chapters','previous_chapter_id');
     }
+
+    public function like(){
+        return $this->hasMany('App\Likes','chapter_id')->where('status', '=', 1);
+    }
 }

@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Response;
 use App\BooksType;
 use App\Books;
+use App\Likes;
 use App\Chapters;
 use Illuminate\Support\Facades\Validator;
 
@@ -117,6 +118,7 @@ class MemberController extends Controller
 
     }
 
+
     public function createchapter_get(Request $request, $previous_chapter_id)
     {
         $previous_chapter = Chapters::where('id',$previous_chapter_id)->first();
@@ -171,5 +173,19 @@ class MemberController extends Controller
         }
         
 
+    }
+
+    public function likechapter_post(Request $request, $chapter_id)
+    {   $user_id = Auth::user()->id;
+        $like = Likes::where('chapter_id',$chapter_id)->where("user_id",$user_id)->first();
+        if(!$like){
+            $like = Likes::create(['user_id'=>$user_id,'chapter_id'=>$chapter_id,'status'=>1]);
+            return $like;
+        }else{
+            
+            $like->status = $like->status?0:1;
+            $like->save();
+            return $like;
+        }
     }
 }

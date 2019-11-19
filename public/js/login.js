@@ -47,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.$refs[formName].validate(function (valid) {
         if (valid) {
-          alert('submit!');
+          // alert('submit!');
           window.axios.post('/login', _this.form).then(function (response) {
             window.location = document.referrer;
           })["catch"](function (error) {

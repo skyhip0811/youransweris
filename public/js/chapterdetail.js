@@ -71,10 +71,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['chapterid', 'text'],
+  props: ['chapterid', 'text', 'likes', 'liked', 'logined'],
   data: function data() {
-    return {};
+    return {
+      isLiked: this.liked == '1',
+      likescount: this.likes ? parseInt(this.likes) : 0
+    };
+  },
+  methods: {
+    likechapter: function likechapter(event) {
+      var _this = this;
+
+      window.axios.get('/likechapter/' + this.chapterid).then(function (response) {
+        if (response.data.status) {
+          _this.isLiked = true;
+          _this.likescount += 1;
+        } else {
+          _this.isLiked = false;
+          _this.likescount -= 1;
+        }
+
+        ;
+      })["catch"](function (error) {
+        console.log(error);
+
+        if (error.response.status == 401) {
+          //alert("請先登入。");
+          window.location = '/login';
+        }
+
+        ;
+      });
+    }
   }
 });
 
@@ -135,7 +166,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.menu_action{\r\n\twidth: 100%;\r\n\tposition: fixed;\r\n\theight: 60px;\r\n\tbackground: white;\r\n\tfont-size: 15px;\r\n\tpadding-top:15px;\n}\n.menu_action_content{\r\n\tposition: absolute;\r\n\twidth: 100%;\n}\n.center {\r\n  margin: auto;\r\n  text-align: center;\n}\n.action_number{\r\n\tmargin-left: 10px;\n}\r\n", ""]);
+exports.push([module.i, "\n.menu_action{\r\n\twidth: 100%;\r\n\tposition: fixed;\r\n\theight: 60px;\r\n\tbackground: white;\r\n\tfont-size: 15px;\r\n\tpadding-top:15px;\n}\n.menu_action_content{\r\n\tposition: absolute;\r\n\twidth: 100%;\n}\n.liked{\r\n\tcolor:red;\n}\n.center {\r\n  margin: auto;\r\n  text-align: center;\n}\n.action_number{\r\n\tmargin-left: 10px;\n}\r\n", ""]);
 
 // exports
 
@@ -276,25 +307,36 @@ var render = function() {
         [
           _c("el-row", [_vm._v(_vm._s(_vm.answer))]),
           _vm._v(" "),
-          _c("el-row", { staticClass: "secondrow" }, [
-            _c("span", { staticClass: "ansbox-aurthor" }, [
-              _vm._v("作者: " + _vm._s(_vm.aurthor)),
-              _c(
-                "span",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.bookaurthor,
-                      expression: "bookaurthor"
-                    }
-                  ]
-                },
-                [_vm._v(" (第一作者)")]
-              )
-            ])
-          ])
+          _c(
+            "el-row",
+            { staticClass: "secondrow" },
+            [
+              _c("font-awesome-icon", { attrs: { icon: "heart" } }),
+              _vm._v(" "),
+              _c("span", { staticClass: "love_num" }, [
+                _vm._v(_vm._s(_vm.love_num))
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "ansbox-aurthor" }, [
+                _vm._v("作者: " + _vm._s(_vm.aurthor)),
+                _c(
+                  "span",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.bookaurthor,
+                        expression: "bookaurthor"
+                      }
+                    ]
+                  },
+                  [_vm._v(" (第一作者)")]
+                )
+              ])
+            ],
+            1
+          )
         ],
         1
       )
@@ -346,6 +388,29 @@ var render = function() {
             "el-col",
             { attrs: { md: 8 } },
             [
+              _c("el-col", { attrs: { span: 6 } }, [
+                _c(
+                  "a",
+                  { attrs: { href: "#" }, on: { click: _vm.likechapter } },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "center" },
+                      [
+                        _c("font-awesome-icon", {
+                          class: { liked: _vm.isLiked },
+                          attrs: { icon: "heart" }
+                        }),
+                        _c("span", { staticClass: "action_number" }, [
+                          _vm._v(_vm._s(_vm.likescount))
+                        ])
+                      ],
+                      1
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
               _c("el-col", { attrs: { span: 6 } }, [
                 _c(
                   "a",

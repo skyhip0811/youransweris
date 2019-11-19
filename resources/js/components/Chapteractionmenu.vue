@@ -4,11 +4,13 @@
 	<el-row class='menu_action_content'>
 		<el-col :md=8 class="hidden-md-and-down"><div style="visibility:hidden">.</div></el-col>
 	<el-col :md='8'>
-	<!-- disable the like function
-		<el-col :span='6'><a href='#'><div class='center'>
-		<font-awesome-icon icon="heart" /><span class='action_number'>20</span>
+
+		<el-col :span='6' ><a @click="likechapter" href='#' ><div class='center'>
+
+		<font-awesome-icon v-bind:class="{ liked: isLiked }"  icon="heart" /><span class='action_number'>{{likescount}}</span>
+
 		</div></a></el-col>
-	-->
+	
 	<!-- disable the follow function
 		<el-col :span='6'><a href='#'><div class='center'><font-awesome-icon icon="bookmark" /><span class='action_number'>追蹤</span></div></a></el-col>
 	-->
@@ -28,12 +30,37 @@
 
 <script>
     export default {
-        props: ['chapterid','text'],
+        props: ['chapterid','text', 'likes' , 'liked' , 'logined'],
         data () {
             return {
-               
+               isLiked:this.liked == '1',
+               likescount : this.likes?parseInt(this.likes):0
             }
-        }
+        },
+        methods:{
+	        likechapter(event){
+		  		window.axios.get('/likechapter/'+this.chapterid).then((response)=>{
+		  				
+                        if(response.data.status){
+                  
+                        	this.isLiked = true;
+                        	this.likescount+=1;
+                     	}else{
+                     		
+                     		this.isLiked = false;
+                     		this.likescount-=1;
+                     	};
+                         
+                      })
+                      .catch(function (error) {
+                 		console.log(error);
+                        if(error.response.status == 401){
+                        	//alert("請先登入。");
+                        	window.location='/login';
+                    	};
+                      });
+		  	}
+    	}
     }
 </script>
 
@@ -52,7 +79,9 @@
 	width: 100%;
 }
 
-
+.liked{
+	color:red;
+}
 
 .center {
   margin: auto;

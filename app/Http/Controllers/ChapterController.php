@@ -7,15 +7,17 @@ use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use App\User;
 use App\BooksType;
+use App\Likes;
 
+use Illuminate\Support\Facades\Auth;
 
 class ChapterController extends Controller
 {
     //
     public function chapterdetail(Request $request,$chapter_id)
-    {
-    	$chapter = Chapters::where('id',$chapter_id)->first();
+    {	
 
+    	$chapter = Chapters::where('id',$chapter_id)->first();
     	if($chapter){
     		$aurthor = User::where('id',$chapter->aurthor_id)->first();
     		$previous_chapter = Chapters::where('id',$chapter->previous_chapter_id)->first();
@@ -27,14 +29,27 @@ class ChapterController extends Controller
 	    	}
 	    	$answers = [];
 	    	if(!$chapter->endchapter){
-	    		$answers = Chapters::where('previous_chapter_id',$chapter_id)->get();
+	    		$answers = Chapters::where('previous_chapter_id',$chapter_id)->withCount('like')->get();
 
 	    	}
 	    	$redirect_chapter = '';
 	    	if($chapter->redirect){
 	    		$redirect_chapter = Chapters::where('id',$chapter->redirect)->first();
 	    	}
-	    	return response()->view('chapterdetail',['redirect_chapter'=>$redirect_chapter,'answers'=>$answers,'chapter'=>$chapter, 'book'=>$book, 'previous_chapter'=>$previous_chapter,'first_chapter_name'=>$first_chapter_name,'aurthor'=>$aurthor]);
+
+	    	if(Auth::check()){
+	    		$user = Auth::user();
+	    		$like = Likes::where("user_id",$user->id)->where("chapter_id",$chapter_id)->where('status',1)->first();
+	    		if($like){
+	    			$liked = 1;
+	    		}else{
+	    			$liked = 0;
+	    		}
+	    	}else{
+	    		$liked = 0;
+	    	}
+
+	    	return response()->view('chapterdetail',['liked'=>$liked ,'likes'=>$chapter->like->count(), 'redirect_chapter'=>$redirect_chapter,'answers'=>$answers,'chapter'=>$chapter, 'book'=>$book, 'previous_chapter'=>$previous_chapter,'first_chapter_name'=>$first_chapter_name,'aurthor'=>$aurthor]);
     	}else{
     		return abort(404);
     	}
@@ -51,10 +66,22 @@ class ChapterController extends Controller
 			$first_chapter = Chapters::where('previous_chapter_id',0)->where('book_id',$book->id)->first();
 			$answers = [];
 			if(!$first_chapter->endchapter){
-	    		$answers = Chapters::where('previous_chapter_id',$first_chapter->id)->get();
+	    		$answers = Chapters::where('previous_chapter_id',$first_chapter->id)->withCount("like")->get();
 	    	}
 
-	    	return response()->view('bookdetail',['answers'=>$answers,'chapter'=>$first_chapter, 'book'=>$book,'aurthor'=>$aurthor ,'other_aurthors'=>$other_aurthors, 'chapter_count'=>$count]);
+	    	if(Auth::check()){
+	    		$user = Auth::user();
+	    		$like = Likes::where("user_id",$user->id)->where("chapter_id",$first_chapter->id)->where('status',1)->first();
+	    		if($like){
+	    			$liked = 1;
+	    		}else{
+	    			$liked = 0;
+	    		}
+	    	}else{
+	    		$liked = 0;
+	    	}
+
+	    	return response()->view('bookdetail',['liked'=>$liked ,'likes'=>$first_chapter->like->count(),'answers'=>$answers,'chapter'=>$first_chapter, 'book'=>$book,'aurthor'=>$aurthor ,'other_aurthors'=>$other_aurthors, 'chapter_count'=>$count]);
 		}else{
 			return abort(404);
 		}
