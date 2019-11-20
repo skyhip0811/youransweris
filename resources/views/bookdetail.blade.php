@@ -56,7 +56,7 @@
   
         閱讀數: <span style="margin-right:50px">{{$chapter->readnum}}</span>
     
-        <i class='el-icon-s-custom'></i> 更新日期: <span style="margin-right:50px">{{$chapter->updated_at}}</span>
+        <i class='el-icon-s-custom'></i> 更新日期: <span style="margin-right:50px">{{$chapter->created_at}}</span>
           </el-row>
           <el-row class='chapter-text'  style="white-space: pre-line">
             {{$chapter->content}}
