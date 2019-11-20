@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $latest_chapters = Chapters::orderBy('updated_at', 'desc')->take(10)->get();
+        $latest_chapters = Chapters::orderBy('created_at', 'desc')->take(10)->get();
         foreach ($latest_chapters as $key => $value) {
             $time = strtotime($value->updated_at);
             $newformat = date('m-d H:i',$time);
