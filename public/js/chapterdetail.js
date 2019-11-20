@@ -25,8 +25,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['aurthor', 'answer', 'love_num', 'seen', 'chapterid', 'bookaurthor'],
+  props: ['aurthor', 'answer', 'love_num', 'seen', 'chapterid', 'bookaurthor', 'readnum'],
   data: function data() {
     return {};
   }
@@ -317,7 +320,9 @@ var render = function() {
                 _vm._v(_vm._s(_vm.love_num))
               ]),
               _vm._v(" "),
-              _c("span", { staticClass: "ansbox-aurthor" }, [
+              _c("br"),
+              _vm._v(" "),
+              _c("span", [
                 _vm._v("作者: " + _vm._s(_vm.aurthor)),
                 _c(
                   "span",
@@ -332,11 +337,16 @@ var render = function() {
                     ]
                   },
                   [_vm._v(" (第一作者)")]
-                )
+                ),
+                _c("br"),
+                _vm._v(" "),
+                _c("span", [_vm._v("閱讀數: " + _vm._s(_vm.readnum))])
               ])
             ],
             1
-          )
+          ),
+          _vm._v(" "),
+          _c("el-row")
         ],
         1
       )

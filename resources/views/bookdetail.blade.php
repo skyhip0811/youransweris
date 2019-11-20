@@ -54,7 +54,7 @@
           <el-row  class="small-text">
             <i class='el-icon-s-custom'></i> 此章節作者: <span style="margin-right:50px">{{$chapter->aurthor->name}}</span>
   
-        <!--<i class='el-icon-s-custom'></i> 讚賞數: <span style="margin-right:50px">98</span>-->
+        閱讀數: <span style="margin-right:50px">{{$chapter->readnum}}</span>
     
         <i class='el-icon-s-custom'></i> 更新日期: <span style="margin-right:50px">{{$chapter->updated_at}}</span>
           </el-row>

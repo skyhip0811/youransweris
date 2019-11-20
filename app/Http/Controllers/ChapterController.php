@@ -18,6 +18,8 @@ class ChapterController extends Controller
     {	
 
     	$chapter = Chapters::where('id',$chapter_id)->first();
+    	$chapter->readnum+=1;
+    	$chapter->save();
     	if($chapter){
     		$aurthor = User::where('id',$chapter->aurthor_id)->first();
     		$previous_chapter = Chapters::where('id',$chapter->previous_chapter_id)->first();
@@ -64,6 +66,8 @@ class ChapterController extends Controller
 			$count = Chapters::where('book_id',$book_id)->count();
 			// return $all_chapters;
 			$first_chapter = Chapters::where('previous_chapter_id',0)->where('book_id',$book->id)->first();
+			$first_chapter->readnum+=1;
+    		$first_chapter->save();
 			$answers = [];
 			if(!$first_chapter->endchapter){
 	    		$answers = Chapters::where('previous_chapter_id',$first_chapter->id)->withCount("like")->get();

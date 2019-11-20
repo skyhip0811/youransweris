@@ -42,11 +42,12 @@
 
           </el-row>
           <el-row  class="small-text">
+
             <i class='el-icon-s-custom'></i> 此章節作者: <span style="margin-right:50px">{{$aurthor->name}}</span>
-        <!-- disable the like function 
-        <i class='el-icon-s-custom'></i> 讚賞數: <span style="margin-right:50px">98</span>
-        -->
-        <i class='el-icon-s-custom'></i> 更新日期: <span style="margin-right:50px">{{$chapter->updated_at}}</span>
+        <!-- disable the like function  -->
+        閱讀數: <span style="margin-right:50px">{{$chapter->readnum}}</span>
+       
+            <i class='el-icon-s-custom'></i> 更新日期: <span style="margin-right:50px">{{$chapter->updated_at}}</span>
           </el-row>
           <el-row class='chapter-text'  style="white-space: pre-line">
           {{$chapter->content}}
@@ -64,7 +65,7 @@
                       @if($answer->aurthor->id == $book->author_id)
                       bookaurthor=true
                       @endif
-                       chapterid='{{$answer->id}}' answer='{{$answer->answer}}' aurthor='{{$answer->aurthor->name}}' love_num={{$answer->like_count}}></answerbox>
+                      readnum={{$answer->readnum}}  chapterid='{{$answer->id}}' answer='{{$answer->answer}}' aurthor='{{$answer->aurthor->name}}' love_num={{$answer->like_count}}></answerbox>
                     </el-col>
                   @endforeach
                 @else

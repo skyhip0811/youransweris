@@ -7,8 +7,11 @@
  
 <font-awesome-icon icon="heart"></font-awesome-icon>
 <span class='love_num'>{{love_num}}</span>
-
-<span class='ansbox-aurthor'>作者: {{aurthor}}<span v-show="bookaurthor"> (第一作者)</span> </span></el-row>
+<br>
+<span >作者: {{aurthor}}<span v-show="bookaurthor"> (第一作者)</span><br>
+<span >閱讀數: {{readnum}}</span>
+ </span></el-row>
+<el-row></el-row>
 </el-card>    
 </a>
 
@@ -16,7 +19,7 @@
 
 <script>
     export default {
-        props: ['aurthor','answer','love_num','seen','chapterid','bookaurthor'],
+        props: ['aurthor','answer','love_num','seen','chapterid','bookaurthor','readnum'],
         data () {
             return {
                
