@@ -8,8 +8,8 @@
   <link rel="stylesheet" type="text/css" href="/css/app.css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="/js/manifest.js"></script>
- <script src="/js/vendor.js"></script>
+  <script src="/js/manifest.js?v={{ env('js_version_number') }}"></script>
+ <script src="/js/vendor.js?v={{ env('js_version_number') }}"></script>
 </head>
 <body>
 	<div id="app">
@@ -48,5 +48,5 @@
 
   </div>
 </body>
-  <script src="/js/chapterdetail.js"></script>
+  <script src="/js/chapterdetail.js?v={{ env('js_version_number') }}"></script>
 </html>

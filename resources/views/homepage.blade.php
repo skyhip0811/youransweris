@@ -6,11 +6,11 @@
   <title>蝴說 - 集體創作互動小說平台</title>
   <meta name='description' content ="蝴說是一個集體創作互動小說平台，每個章節後面都有一個問題，每個人可以有不同答案，不同答案成就不同的故事，最後匯聚成無限的平行世界。">
   <!-- import CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-  <link rel="stylesheet" type="text/css" href="/css/app.css">
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css?v={{ env('js_version_number') }}">
+  <link rel="stylesheet" type="text/css" href="/css/app.css?v={{ env('js_version_number') }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="/js/manifest.js"></script>
- <script src="/js/vendor.js"></script>
+  <script src="/js/manifest.js?v={{ env('js_version_number') }}"></script>
+ <script src="/js/vendor.js?v={{ env('js_version_number') }}"></script>
 
 
 </head>
@@ -132,5 +132,5 @@
     </el-container>
   </div>
 </body>
-  <script src="/js/homepage.js"></script>
+  <script src="/js/homepage.js?v={{ env('js_version_number') }}"></script>
 </html>
