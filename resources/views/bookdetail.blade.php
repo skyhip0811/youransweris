@@ -73,7 +73,7 @@
               @if($answer->aurthor->id == $book->author_id)
               bookaurthor=true
               @endif
-               chapterid='{{$answer->id}}' answer='{{$answer->answer}}' aurthor='{{$answer->aurthor->name}}' love_num={{$answer->like_count}}></answerbox>
+               readnum={{$answer->readnum}} chapterid='{{$answer->id}}' answer='{{$answer->answer}}' aurthor='{{$answer->aurthor->name}}' love_num={{$answer->like_count}}></answerbox>
             </el-col>
           @endforeach
           @else
