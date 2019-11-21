@@ -10,10 +10,11 @@
 		<font-awesome-icon v-bind:class="{ liked: isLiked }"  icon="heart" /><span class='action_number'>{{likescount}}</span>
 
 		</div></a></el-col>
+		
+
+		
+		<el-col :span='6'><commentboxbutton :text=text ></commentboxbutton></el-col>
 	
-	<!-- disable the follow function
-		<el-col :span='6'><a href='#'><div class='center'><font-awesome-icon icon="bookmark" /><span class='action_number'>追蹤</span></div></a></el-col>
-	-->
 		<el-col :span='6'><a :href="'/createchapter/'+chapterid"><div class='center'><font-awesome-icon icon="plus" /><span class='action_number'>加分支</span></div></a></el-col>
 		<el-col :span='6'>
 
