@@ -28,18 +28,19 @@ class ChaptersController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        // $grid->column('updated_at', __('Updated at'));
         $grid->column('name', __('Name'));
-        $grid->column('aurthor_id', __('Aurthor id'));
-        $grid->column('book_id', __('Book id'));
-        $grid->column('question', __('Question'));
-        $grid->column('additionalinfo', __('Additionalinfo'));
-        $grid->column('content', __('Content'));
+        $grid->column('aurthor.name', __('Aurthor'));
+        $grid->column('book.name', __('Book'));
+        // $grid->column('question', __('Question'));
+        // $grid->column('additionalinfo', __('Additionalinfo'));
+        // $grid->column('content', __('Content'));
         $grid->column('previous_chapter_id', __('Previous chapter id'));
         $grid->column('endchapter', __('Endchapter'));
-        $grid->column('answer', __('Answer'));
+        // $grid->column('answer', __('Answer'));
         $grid->column('level', __('Level'));
         $grid->column('redirect', __('Redirect'));
+        $grid->column('readnum', __('Views'));
 
         return $grid;
     }
