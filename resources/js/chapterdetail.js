@@ -23,6 +23,6 @@ new Vue({
   el: '#app',
   components: { Headnav ,Chapterrow,Commentboxbutton,Bookrow,Remotesearch,Chapteractionmenu,Answerbox,Editorfavourite},
   data: function() {
-    return { visible: false ,dialogTableVisible :false}
+    return { visible: false ,dialogTableVisible :false , gridData :[]}
   }
 })
