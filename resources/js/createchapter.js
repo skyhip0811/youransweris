@@ -109,6 +109,7 @@ var app = new Vue({
       this.$alert("Saved");
     },
   	onSubmit(formName) {
+      this.saveForm();
       this.$refs[formName].validate((valid) => {
         if (valid) {
           if(this.$refs['redirectselect']){
