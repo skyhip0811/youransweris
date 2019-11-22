@@ -20,7 +20,7 @@
             <el-input type="password" v-model="ruleForm.password_confirmation" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">註冊會員</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')">註冊</el-button>
             <el-button @click="resetForm('ruleForm')">重置</el-button><br>
             <a href="login">已成為會員請按此登入</a>
         </el-form-item>

@@ -57,7 +57,7 @@
                  		console.log(error);
                         if(error.response.status == 401){
                         	//alert("請先登入。");
-                        	window.location='/login';
+                        	window.location='/register';
                     	};
                       });
 		  	}
