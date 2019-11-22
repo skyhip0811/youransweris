@@ -35,7 +35,7 @@
 
   <el-menu-item index ="5" v-else='loggedin'><a href="/login">會員登入</a></el-menu-item>
 
-
+<el-menu-item index ="6" ><a href="https://m.me/butterfliessay?fbclid=IwAR0nxyyODL7WsUQvm0XkpGqlBZUKTiBkfD_ik9om1B2pINF86nfNXkQf0Jo">聯絡蝴說</a></el-menu-item>
 
 
 
@@ -72,7 +72,7 @@
   </el-submenu>
 
   <el-menu-item v-else='loggedin' index ="1-4" ><a href="/login">會員登入</a></el-menu-item>
-
+  <el-menu-item index ="1-5" ><a href="https://m.me/butterfliessay?fbclid=IwAR0nxyyODL7WsUQvm0XkpGqlBZUKTiBkfD_ik9om1B2pINF86nfNXkQf0Jo">聯絡蝴說</a></el-menu-item>
   </el-submenu>
 
   <el-menu-item style="width:50%;padding:auto">

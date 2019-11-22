@@ -13,7 +13,7 @@
 		
 
 		
-		<el-col :span='6'><commentboxbutton :text=text ></commentboxbutton></el-col>
+		<!-- <el-col :span='6'><commentboxbutton :text=text ></commentboxbutton></el-col> -->
 	
 		<el-col :span='6'><a :href="'/createchapter/'+chapterid"><div class='center'><font-awesome-icon icon="plus" /><span class='action_number'>加分支</span></div></a></el-col>
 		<el-col :span='6'>
