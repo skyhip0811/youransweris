@@ -100,5 +100,33 @@ class ChapterController extends Controller
 			return abort(404);
 		}
 		
-	}	
+	}
+
+	public function createchapter_get(Request $request, $previous_chapter_id)
+    {
+        $previous_chapter = Chapters::where('id',$previous_chapter_id)->first();
+        $chapters = Chapters::select('id','name')->where('book_id',$previous_chapter->book_id)->get();
+        $chapters_options = [];
+
+        foreach ($chapters as $key => $value) {
+            $chapter =  new \stdClass();
+            $chapter->label = $value->name;
+            $chapter->value = $value->id;
+          array_push($chapters_options,$chapter);
+        }
+        if($previous_chapter){
+            $book = Books::where('id',$previous_chapter->book_id)->first();
+            return response()->view('createchapter', [
+            'previous_chapter' => $previous_chapter,
+            'book_name' => $book->name,
+            'chapters_options' =>  $chapters_options
+            ]);
+
+        }else{
+            return abort(404);
+        }
+        
+
+        
+    }
 }

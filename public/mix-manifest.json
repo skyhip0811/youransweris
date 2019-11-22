@@ -1,14 +1,14 @@
 {
     "/js/manifest.js": "/js/manifest.js?id=01c8731923a46c30aaed",
-    "/js/vendor.js": "/js/vendor.js?id=ef6cbddd89b2ccbc6521",
+    "/js/vendor.js": "/js/vendor.js?id=6a1eae867189eb423dad",
     "/js/chapterdetail.js": "/js/chapterdetail.js?id=fc3203256c529c6b9cfa",
     "/js/createbook.js": "/js/createbook.js?id=4fcb0c6d553ca7ed835d",
-    "/js/createchapter.js": "/js/createchapter.js?id=b2f0dc4b2fd4ea318fda",
+    "/js/createchapter.js": "/js/createchapter.js?id=cfa4ccb987aa9ce22fd2",
     "/js/homepage.js": "/js/homepage.js?id=fda1050bce852399c484",
     "/css/app.css": "/css/app.css?id=5fc96e1bcf3231ee38d8",
     "/css/chapterdetail.css": "/css/chapterdetail.css?id=fcc40acf9bef4df3259b",
     "/js/login.js": "/js/login.js?id=08226ec98306d55b5d1b",
-    "/js/register.js": "/js/register.js?id=ec7c2f64aa0e5ee0b366",
+    "/js/register.js": "/js/register.js?id=be9ed41fa18e4a267040",
     "/js/searchbook.js": "/js/searchbook.js?id=1edddd73c297ac76ec2a",
     "/js/template.js": "/js/template.js?id=83fb1d4d324a4da7f564"
 }
