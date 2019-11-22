@@ -29,13 +29,13 @@
             <el-breadcrumb-item><a href="/">首頁</a></el-breadcrumb-item>
             <el-breadcrumb-item><a href="/book/{{$book->id}}">{{$book->name}}</a></el-breadcrumb-item>
             @if ($chapter->previous_chapter_id != 0)
-            <el-breadcrumb-item>{{$first_chapter_name}}</el-breadcrumb-item>
+            <el-breadcrumb-item><a href="/book/{{$book->id}}">{{$first_chapter_name}}</a></el-breadcrumb-item>
             @endif
             @if ($previous_chapter && $previous_chapter->previous_chapter_id!=0)
             <el-breadcrumb-item>...</el-breadcrumb-item>
             
             
-            <el-breadcrumb-item>{{$previous_chapter->name}}</el-breadcrumb-item>
+            <el-breadcrumb-item><a href="/chapter/{{$previous_chapter->id}}">{{$previous_chapter->name}}</a></el-breadcrumb-item>
             @endif
             <el-breadcrumb-item>{{$chapter->name}}</el-breadcrumb-item>
           </el-breadcrumb>
