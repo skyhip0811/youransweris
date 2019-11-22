@@ -98,6 +98,16 @@ var app = new Vue({
     onQuestionChange(text){
       document.cookie = this.form.previouschapterid+"_question="+text;
     },
+
+    saveForm(){
+      if(this.form.question) document.cookie = this.form.previouschapterid+"_question="+this.form.question;
+      if(this.form.answer) document.cookie = this.form.previouschapterid+"_answer="+this.form.answer;
+      if(this.form.additionalinfo) document.cookie = this.form.previouschapterid+"_additionalinfo="+this.form.additionalinfo;
+      if(this.form.content) document.cookie = this.form.previouschapterid+"_content="+this.form.content;
+      if(this.form.endchapter) document.cookie = this.form.previouschapterid+"_endchapter="+this.form.endchapter;
+      if(this.form.chaptername) document.cookie = this.form.previouschapterid+"_name="+this.form.chaptername;
+      this.$alert("Saved");
+    },
   	onSubmit(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
@@ -136,7 +146,7 @@ var app = new Vue({
         this.form.periouscontent = unescape(this.$el.attributes.periouscontent.value);
         this.form.periouschaptername = this.$el.attributes.periouschaptername.value;
         this.form.periousquestion = this.$el.attributes.previousquestion.value;
-        this.form.additionalinfo =  Cookies.get(this.form.previouschapterid+"_additionalinfo")?Cookies.get(this.form.previouschapterid+"_answer"):this.$el.attributes.additionalinfo.value;
+        this.form.additionalinfo =  Cookies.get(this.form.previouschapterid+"_additionalinfo")?Cookies.get(this.form.previouschapterid+"_additionalinfo"):this.$el.attributes.additionalinfo.value;
         this.form.answer = Cookies.get(this.form.previouschapterid+"_answer");
         this.form.question = Cookies.get(this.form.previouschapterid+"_question")?Cookies.get(this.form.previouschapterid+"_question"):"";
         this.form.endchapter = (Cookies.get(this.form.previouschapterid+"_endchapter") == 'true');
