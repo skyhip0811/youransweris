@@ -84,7 +84,7 @@
 
          <el-form-item>
             <el-button type="primary" @click="onSubmit('form')">遞交</el-button>
-            <!-- <el-button @click="saveForm">暫儲</el-button> -->
+            <el-button @click="saveForm">暫儲</el-button>
             <br><span style="color:red">**一經遞交，將不能修改，因為會有其他作者會基於此章節創作。</span>
            <!--  <el-button>取消</el-button> -->
           </el-form-item>
