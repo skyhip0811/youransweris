@@ -80,24 +80,6 @@ var app = new Vue({
   	test:function(bookname){
   		this.form.name = bookname;
   	},
-    onAnswerChange(text){
-      document.cookie = this.form.previouschapterid+"_answer="+text;
-    },
-    onNameChange(text){
-      document.cookie = this.form.previouschapterid+"_name="+text;
-    },
-    onContentChange(text){
-      document.cookie = this.form.previouschapterid+"_content="+text;
-    },
-    onAdditionalInfoChange(text){
-      document.cookie = this.form.previouschapterid+"_additionalinfo="+text;
-    },
-    onEndChapterChange(text){
-      document.cookie = this.form.previouschapterid+"_endchapter="+text;
-    },
-    onQuestionChange(text){
-      document.cookie = this.form.previouschapterid+"_question="+text;
-    },
 
     saveForm(){
       if(this.form.question) document.cookie = this.form.previouschapterid+"_question="+this.form.question;
