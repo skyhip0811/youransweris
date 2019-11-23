@@ -53,19 +53,19 @@
         </el-form-item>
 
         <el-form-item label="你的答案" prop="answer" >
-          <el-input @change="onAnswerChange"  placeholder="你的答案是..."   v-model="form.answer" value = ></el-input>
+          <el-input   placeholder="你的答案是..."   v-model="form.answer" value = ></el-input>
         </el-form-item>
         <el-form-item  label="章節名稱" prop="chaptername">
-          <el-input @change="onNameChange"  placeholder="章節名稱"  v-model="form.chaptername"></el-input>
+          <el-input  placeholder="章節名稱"  v-model="form.chaptername"></el-input>
         </el-form-item>
         <el-form-item label="章節內容" prop="content">
-          <el-input @change="onContentChange" type="textarea" :rows="30" placeholder="章節內容"  v-model="form.content" value = ''></el-input>
+          <el-input type="textarea" :rows="30" placeholder="章節內容"  v-model="form.content" value = ''></el-input>
         </el-form-item>
 
 
 
         <el-form-item label="最終回?">
-        <el-checkbox @change="onEndChapterChange" v-model="form.endchapter">是</el-checkbox>
+        <el-checkbox v-model="form.endchapter">是</el-checkbox>
         <span>如是最終回將沒有章節問題及往下發展的分支章節</span>
         </el-form-item>
         <el-form-item v-if="form.endchapter!=true" label="章節導向?">
@@ -78,7 +78,7 @@
           <span>選擇被導向的章節。</span>
         </el-form-item>
         <el-form-item v-if="form.endchapter!=true && form.redirect_option==false" label="章節問題" prop="question">
-          <el-input @change="onQuestionChange" placeholder="章節問題"  v-model="form.question"></el-input>
+          <el-input  placeholder="章節問題"  v-model="form.question"></el-input>
           <span>章節問題是給下一手作者的引導問題</span>
         </el-form-item>
 
