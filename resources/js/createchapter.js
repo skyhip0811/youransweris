@@ -152,6 +152,7 @@ var app = new Vue({
         this.form.question = Cookies.get(this.form.previouschapterid+"_question")?Cookies.get(this.form.previouschapterid+"_question"):"";
         this.form.endchapter = (Cookies.get(this.form.previouschapterid+"_endchapter") == 'true');
         this.form.content = Cookies.get(this.form.previouschapterid+"_content");
+        
         this.form.chaptername = Cookies.get(this.form.previouschapterid+"_name");
 
   }
