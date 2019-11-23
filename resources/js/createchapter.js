@@ -100,12 +100,15 @@ var app = new Vue({
           console.log('submit!');
 
           window.axios.post('/createchapter/'+this.form.previouschapterid, this.form).then((response)=> {
-                         Cookies.remove(this.form.previouschapterid+"_answer", { path: '' });
-                         Cookies.remove(this.form.previouschapterid+"_additionalinfo", { path: '' });
-                         Cookies.remove(this.form.previouschapterid+"_content", { path: '' });
-                         Cookies.remove(this.form.previouschapterid+"_name", { path: '' });
-                         Cookies.remove(this.form.previouschapterid+"_question", { path: '' });
-                         Cookies.remove(this.form.previouschapterid+"_endchapter", { path: '' });
+                         
+                        localStorage.removeItem(this.form.previouschapterid+"_additionalinfo");
+                        localStorage.removeItem(this.form.previouschapterid+"_answer");
+                        localStorage.removeItem(this.form.previouschapterid+"_question");
+                        localStorage.removeItem(this.form.previouschapterid+"_chaptername");
+                        localStorage.removeItem(this.form.previouschapterid+"_content");
+                        localStorage.removeItem(this.form.previouschapterid+"_endchapter");
+
+
                          window.location=document.referrer;
                       })
                       .catch(function (error) {
