@@ -129,7 +129,7 @@ var app = new Vue({
         this.form.periouscontent = unescape(this.$el.attributes.periouscontent.value);
         this.form.periouschaptername = this.$el.attributes.periouschaptername.value;
         this.form.periousquestion = this.$el.attributes.previousquestion.value;
-        this.form.additionalinfo =  localStorage.getItem(this.form.previouschapterid+"_additionalinfo")?decodeURIComponent(localStorage.getItem(this.form.previouschapterid+"_additionalinfo")):"";
+        this.form.additionalinfo =  localStorage.getItem(this.form.previouschapterid+"_additionalinfo")?decodeURIComponent(localStorage.getItem(this.form.previouschapterid+"_additionalinfo")):this.$el.attributes.additionalinfo.value;
         this.form.answer = localStorage.getItem(this.form.previouschapterid+"_answer")?decodeURIComponent(localStorage.getItem(this.form.previouschapterid+"_answer")):"";
         this.form.question = localStorage.getItem(this.form.previouschapterid+"_question")?decodeURIComponent(localStorage.getItem(this.form.previouschapterid+"_question")):"";
         this.form.endchapter = (localStorage.getItem(this.form.previouschapterid+"_endchapter") == 'true');
