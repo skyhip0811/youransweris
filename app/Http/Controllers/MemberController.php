@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use App\BooksType;
 use App\Books;
 use App\Likes;
+use App\comments;
 use App\Chapters;
 use Illuminate\Support\Facades\Validator;
 
@@ -189,5 +190,23 @@ class MemberController extends Controller
             $like->save();
             return $like;
         }
+    }
+
+    public function leavecomment(Request $request, $chapter_id)
+    {
+        $user_id = Auth::user()->id;
+        $text = $request->text?$request->text:null;
+        if($text){
+            $comment = Comments::create([
+            'user_id'=>$user_id,
+            'chapter_id'=>$chapter_id,
+            "comment"=>$text
+
+            ]);
+
+            return response()->json(['comment'=>$comment, "username"=>Auth::user()->name]);
+        }
+
+
     }
 }

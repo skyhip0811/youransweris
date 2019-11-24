@@ -21,8 +21,43 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 new Vue({
   el: '#app',
-  components: { Headnav ,Chapterrow,Commentboxbutton,Bookrow,Remotesearch,Chapteractionmenu,Answerbox,Editorfavourite},
+  components: { Headnav ,Chapterrow,Bookrow,Remotesearch,Chapteractionmenu,Answerbox,Editorfavourite},
   data: function() {
-    return { visible: false ,dialogTableVisible :false , gridData :[]}
+    return { visible: false ,dialogTableVisible :false , gridData :[], comment:"",chapterid:null}
+  },
+  methods:{
+  	triggerComments(){
+  		console.log("comment clicked");
+  		this.dialogTableVisible = true;
+  	},
+  	leavecomment(){
+  		window.axios.post('/leavecomment/'+this.chapterid,
+  			{
+  				text:this.comment
+  			}
+
+  			).then((response)=>{
+		  				console.log(response.data);
+		  				document.getElementById("comments-box").innerHTML += 
+
+		  				"<div class='el-row' style='padding: 20px 0px;''><div class='el-col el-col-6'>"+response.data.username+":</div><div class='el-col el-col-18' style='text-align: left;''>"+response.data.comment.comment+" </div></div>"+
+		  				"<div class='el-row' style='text-align: right; border-bottom: 1px dotted grey;''>"+response.data.comment.created_at+"</div>";
+
+		  				document.getElementById("comments-box").scrollTop = document.getElementById("comments-box").scrollHeight;
+		  				this.comment = '';
+
+                      })
+                      .catch(function (error) {
+                 		console.log(error);
+                        if(error.response.status == 401){
+                        	//alert("請先登入。");
+                        	window.location='/register';
+                    	};
+                      });
+  	}
+  },
+  mounted: function () {
+
+        this.chapterid = this.$el.attributes.chapterid.value;
   }
 })

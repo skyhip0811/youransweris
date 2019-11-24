@@ -31,3 +31,11 @@
 .el-container{
 	padding-bottom: 60px;
 }
+
+.comment-dialog > .el-dialog{
+	width:94%;
+	padding:0 10px;
+
+	max-width:600px;
+	height:600px;
+}

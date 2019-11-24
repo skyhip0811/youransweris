@@ -31,6 +31,8 @@ Route::post('/createbook','MemberController@createbook_post');
 Route::get('/createchapter/{previous_chapter_id}','MemberController@createchapter_get');
 Route::post('/createchapter/{previous_chapter_id}','MemberController@createchapter_post');
 Route::get('/likechapter/{chapter_id}','MemberController@likechapter_post');
+Route::post('leavecomment/{chapter_id}','MemberController@leavecomment');
+
 Route::get('/chapter/{chapter_id}','ChapterController@chapterdetail');
 
 Route::get('/book/{book_id}','ChapterController@bookdetail');

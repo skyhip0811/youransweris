@@ -13,7 +13,7 @@
  <script src="/js/vendor.js?v={{ env('js_version_number') }}"></script>
 </head>
 <body>
-  <div id="app">
+  <div id="app" chapterid = {{$chapter->id}}>
     <el-container>
     <el-header  class='head-menu'><headnav
           @auth
@@ -93,14 +93,25 @@
 
     </el-container>
 
-    <el-dialog title="收货地址" :visible.sync="dialogTableVisible">
-    <el-table :data="gridData">
-      <el-table-column property="date" label="日期" width="150"></el-table-column>
-      <el-table-column property="name" label="姓名" width="200"></el-table-column>
-      <el-table-column property="address" label="地址"></el-table-column>
-    </el-table>
-  </el-dialog>
-    <chapteractionmenu chapterid='{{$chapter->id}}' text ='{{$chapter->additionalinfo}}' 
+    <el-dialog title="留言" :visible.sync="dialogTableVisible" class="comment-dialog">
+
+      <el-row>
+        <div style="overflow-x: hidden; overflow-y:scroll;height: 450px;" id='comments-box'>
+        @foreach($comments as $comment)
+        <el-row style="padding:20px 0px;"><el-col :span=6>{{$comment->user->name}} :</el-col><el-col :span=18 style="text-align: left;">{{$comment->comment}} </el-col></el-row>
+        <el-row style="text-align:right;border-bottom: 1px dotted grey;">{{$comment->created_at}}</el-row>
+        @endforeach
+
+        
+        </div>
+      </el-row>
+      <el-row>
+        <el-col :span=18 ><el-input maxlength="100" show-word-limit style="padding:0 5px" v-model='comment'></el-input></el-col><el-col :span=6> <el-button @click='leavecomment'>提交</el-button></el-col>
+      </el-row>
+     
+    </el-dialog>
+
+    <chapteractionmenu v-on:commentbtnclicked='triggerComments'  chapterid='{{$chapter->id}}' text ='{{$chapter->additionalinfo}}' 
       likes = {{$likes}} 
       liked = {{$liked}} 
       @auth
@@ -110,6 +121,8 @@
       @guest
           logined = "0"
       @endguest
+
+      commentsnum = {{sizeof($comments)}}
       ></chapteractionmenu>
   </div>
 

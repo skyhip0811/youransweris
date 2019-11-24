@@ -13,7 +13,13 @@
 		
 
 		
-		<!-- <el-col :span='6'><commentboxbutton :text=text ></commentboxbutton></el-col> -->
+		<el-col :span='6'>
+		<a href="#">
+		<div class='center'><font-awesome-icon icon="comment" /> 
+			<span v-on:click="$emit('commentbtnclicked')" type="text">留言 ({{commentscount}}) </span> 
+		</div>
+		</a>
+		</el-col> 
 	
 		<el-col :span='6'><a :href="'/createchapter/'+chapterid"><div class='center'><font-awesome-icon icon="plus" /><span class='action_number'>加分支</span></div></a></el-col>
 		<el-col :span='6'>
@@ -31,11 +37,12 @@
 
 <script>
     export default {
-        props: ['chapterid','text', 'likes' , 'liked' , 'logined'],
+        props: ['chapterid','text', 'likes' , 'liked' , 'logined' ,'commentsnum'],
         data () {
             return {
                isLiked:this.liked == '1',
-               likescount : this.likes?parseInt(this.likes):0
+               likescount : this.likes?parseInt(this.likes):0,
+               commentscount : this.commentsnum
             }
         },
         methods:{

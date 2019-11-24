@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\BooksType;
 use App\Likes;
+use App\comments;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -51,7 +52,10 @@ class ChapterController extends Controller
 	    		$liked = 0;
 	    	}
 
-	    	return response()->view('chapterdetail',['liked'=>$liked ,'likes'=>$chapter->like->count(), 'redirect_chapter'=>$redirect_chapter,'answers'=>$answers,'chapter'=>$chapter, 'book'=>$book, 'previous_chapter'=>$previous_chapter,'first_chapter_name'=>$first_chapter_name,'aurthor'=>$aurthor]);
+	    	$comments = comments::where('chapter_id',$chapter->id)->with("user")->get();
+
+
+	    	return response()->view('chapterdetail',['liked'=>$liked ,'likes'=>$chapter->like->count(), 'redirect_chapter'=>$redirect_chapter,'answers'=>$answers,'chapter'=>$chapter, 'book'=>$book, 'previous_chapter'=>$previous_chapter,'first_chapter_name'=>$first_chapter_name,'aurthor'=>$aurthor ,'comments'=>$comments]);
     	}else{
     		return abort(404);
     	}
