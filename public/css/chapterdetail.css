@@ -1,1 +1,41 @@
-.breadcrumb-row>.el-breadcrumb{margin:20px 0;font-size:20px;line-height:30px}.chapter-text{font-size:20px;overflow-wrap:break-word}.chapter-question{margin-top:10px;font-size:25px}.answer-box{height:140px}.menu_action{width:100%;position:absolute;bottom:0}.menu_action_content{width:100%}.el-container{padding-bottom:60px}.comment-dialog>.el-dialog{width:94%;padding:0 10px;max-width:600px;height:600px}
+.breadcrumb-row > .el-breadcrumb {
+  margin: 20px 0px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.chapter-text {
+  font-size: 20px;
+  overflow-wrap: break-word;
+}
+
+.chapter-question {
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.answer-box {
+  height: 140px;
+}
+
+.menu_action {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.menu_action_content {
+  width: 100%;
+}
+
+.el-container {
+  padding-bottom: 60px;
+}
+
+.comment-dialog > .el-dialog {
+  width: 94%;
+  padding: 0 10px;
+  max-width: 600px;
+  height: 600px;
+}
+

@@ -89,7 +89,12 @@ class ChapterController extends Controller
 	    		$liked = 0;
 	    	}
 
-	    	return response()->view('bookdetail',['liked'=>$liked ,'likes'=>$first_chapter->like->count(),'answers'=>$answers,'chapter'=>$first_chapter, 'book'=>$book,'aurthor'=>$aurthor ,'other_aurthors'=>$other_aurthors, 'chapter_count'=>$count]);
+
+
+	    	$comments = comments::where('chapter_id',$first_chapter->id)->with("user")->get();
+
+
+	    	return response()->view('bookdetail',['liked'=>$liked ,'likes'=>$first_chapter->like->count(),'answers'=>$answers,'chapter'=>$first_chapter, 'book'=>$book,'aurthor'=>$aurthor ,'other_aurthors'=>$other_aurthors, 'chapter_count'=>$count,'comments'=>$comments]);
 		}else{
 			return abort(404);
 		}
