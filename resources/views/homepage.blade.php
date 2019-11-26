@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="csrf-token">
+  <meta name="google-site-verification" content="-aHBTAJnBgoPa3Gi8-Uaugq7p3JYXj7rqZUxXrFb1ig" />
   <title>蝴說 - 集體創作互動小說平台</title>
   <meta name='description' content ="蝴說是一個集體創作互動小說平台，每個章節後面都有一個問題，每個人可以有不同答案，不同答案成就不同的故事，最後匯聚成無限的平行世界。">
   <!-- import CSS -->
