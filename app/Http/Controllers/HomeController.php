@@ -30,6 +30,7 @@ class HomeController extends Controller
 
     public function index()
     {
+
         $latest_chapters = Chapters::orderBy('created_at', 'desc')->take(10)->get();
         foreach ($latest_chapters as $key => $value) {
             $time = strtotime($value->updated_at);
@@ -42,5 +43,9 @@ class HomeController extends Controller
         $books_with_most_chapters = Books::orderBy('total_chapter_numbers','desc')->take(10)->get();
 
         return view('homepage', ['most_like_chapters'=>$most_like_chapters,'latest_chapters'=>$latest_chapters,'books_with_most_chapters'=>$books_with_most_chapters]);
+    }
+
+    public function recent(){
+        return view('recent',['recent_chapters'=>[]]);
     }
 }

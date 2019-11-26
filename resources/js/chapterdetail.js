@@ -30,6 +30,14 @@ new Vue({
   		console.log("comment clicked");
   		this.dialogTableVisible = true;
   	},
+    removeItem(array, item){
+      for(var i in array){
+          if(array[i]==item){
+              array.splice(i,1);
+              break;
+          }
+      }
+    },
   	leavecomment(){
   		window.axios.post('/leavecomment/'+this.chapterid,
   			{
@@ -59,5 +67,24 @@ new Vue({
   mounted: function () {
 
         this.chapterid = this.$el.attributes.chapterid.value;
+        let last20chapters = JSON.parse(localStorage.getItem("last_20_chapters"));
+        if(last20chapters){
+          console.log(last20chapters)
+          if(last20chapters.includes(this.chapterid)){
+            this.removeItem(last20chapters,this.chapterid);
+          }
+          
+          last20chapters.unshift(this.chapterid);
+
+          if(last20chapters.length>20){
+            last20chapters.pop();
+          }
+          
+          localStorage.setItem("last_20_chapters",JSON.stringify(last20chapters));
+        }else{
+          last20chapters = [];
+          last20chapters.unshift(this.chapterid);
+          localStorage.setItem("last_20_chapters",JSON.stringify(last20chapters));
+        }
   }
 })

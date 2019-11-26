@@ -52,6 +52,8 @@
           <el-row class='chapter-text'  style="white-space: pre-line">
           {{$chapter->content}}
           </el-row>
+
+          
           @if (!$chapter->endchapter && !$chapter->redirect)
 
                 <el-row class='chapter-question'>
@@ -83,6 +85,8 @@
                 <h4>此故事線完 ! <a href='javascript:history.back()'>回上一頁 </a></h4>
                 @endif
                 </el-row>
+
+
               
           @endif
 

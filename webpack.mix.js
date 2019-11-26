@@ -16,6 +16,7 @@ mix.extract();
 mix.js('resources/js/homepage.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css').version();
 
+
 mix.js('resources/js/chapterdetail.js', 'public/js')
     .sass('resources/sass/chapterdetail.scss', 'public/css').version();
 
@@ -27,3 +28,4 @@ mix.js('resources/js/createchapter.js', 'public/js').version();
 mix.js('resources/js/createbook.js', 'public/js').version();
 mix.js('resources/js/login.js', 'public/js').version();
 mix.js('resources/js/register.js', 'public/js').version();
+mix.js('resources/js/recent.js', 'public/js').version();
