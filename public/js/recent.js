@@ -1,9 +1,9 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["/js/homepage"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["/js/recent"],{
 
-/***/ "./resources/js/homepage.js":
-/*!**********************************!*\
-  !*** ./resources/js/homepage.js ***!
-  \**********************************/
+/***/ "./resources/js/recent.js":
+/*!********************************!*\
+  !*** ./resources/js/recent.js ***!
+  \********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -54,40 +54,16 @@ new Vue({
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/chapterdetail.scss":
-/*!*******************************************!*\
-  !*** ./resources/sass/chapterdetail.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!******************************************************************************************************!*\
-  !*** multi ./resources/js/homepage.js ./resources/sass/app.scss ./resources/sass/chapterdetail.scss ***!
-  \******************************************************************************************************/
+/***/ 8:
+/*!**************************************!*\
+  !*** multi ./resources/js/recent.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\homepage.js */"./resources/js/homepage.js");
-__webpack_require__(/*! D:\projects\youransweris\youransweris\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\sass\chapterdetail.scss */"./resources/sass/chapterdetail.scss");
+module.exports = __webpack_require__(/*! D:\projects\youransweris\youransweris\resources\js\recent.js */"./resources/js/recent.js");
 
 
 /***/ })
 
-},[[0,"/js/manifest","/js/vendor"]]]);
+},[[8,"/js/manifest","/js/vendor"]]]);

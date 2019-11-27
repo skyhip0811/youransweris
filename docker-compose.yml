@@ -32,6 +32,7 @@ services:
     volumes:
       - ./:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./data/certs:/etc/nginx/certs
     networks:
       - youransweris-app-network
 

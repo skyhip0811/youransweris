@@ -66,6 +66,8 @@ new Vue({
   },
   mounted: function () {
 
+
+        
         this.chapterid = this.$el.attributes.chapterid.value;
         let last20chapters = JSON.parse(localStorage.getItem("last_20_chapters"));
         if(last20chapters){
