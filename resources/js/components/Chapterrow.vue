@@ -8,7 +8,7 @@
 
         <el-col v-if="previous_chapter_id" :span="7"><a :href="'/chapter/'+previous_chapter_id"> {{previouschapter}}</a>  </el-col>
         <el-col v-else="previous_chapter_id" :span="7">{{previouschapter}} </el-col>
-        <el-col :span="4"> {{aurthor}} </el-col>
+        <el-col :span="4" style="word-wrap: break-word;"> {{aurthor}} </el-col>
         </el-row>
      
     </div>
