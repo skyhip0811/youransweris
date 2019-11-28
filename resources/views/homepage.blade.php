@@ -39,26 +39,34 @@
          <div slot="header" class="clearfix">
             <span><h4>最近更新</h4></span>
           </div>
-          <div  class="text item">
-            <el-row>
-              <!-- <el-col :span="3"><h5> 更新時間 </h5></el-col> -->
-              <el-col :span="6"><h5> 書名 </h5></el-col>
-              <el-col :span="7"><h5> 章節 </h5></el-col>
-              <el-col :span="7"><h5> 前章節 </h5></el-col>
-              <el-col :span="4"><h5> 作者 </h5></el-col>
-            </el-row>
-            @foreach($latest_chapters as $chapter)
-            <chapterrow updatedat="{{ $chapter->newdate}}" 
-              @if($chapter->previous_chapter)
-              previouschapter='{{$chapter->previous_chapter->name}}' 
-              previous_chapter_id='{{$chapter->previous_chapter->id}}'
-              @else
-              previouschapter='-'
-              @endif
-               chapter_id = '{{$chapter->id}}' book_id='{{$chapter->book->id}}' book='{{$chapter->book->name}}' chapter='{{$chapter->name}}' aurthor='{{$chapter->aurthor->name}}'></chapterrow>
-            @endforeach
+          <el-carousel  indicator-position="outside" height='700px' arrow='never' :autoplay="false">
+            @foreach($latest_chapters as $latest_chapter)
+            <el-carousel-item>
+              <div  class="text item">
+                <el-row>
+                  <!-- <el-col :span="3"><h5> 更新時間 </h5></el-col> -->
+                  <el-col :span="6"><h5> 書名 </h5></el-col>
+                  <el-col :span="7"><h5> 章節 </h5></el-col>
+                  <el-col :span="7"><h5> 前章節 </h5></el-col>
+                  <el-col :span="4"><h5> 作者 </h5></el-col>
+                </el-row>
+                @foreach($latest_chapter as $chapter)
+                <chapterrow updatedat="{{ $chapter->newdate}}" 
+                  @if($chapter->previous_chapter)
+                  previouschapter='{{$chapter->previous_chapter->name}}' 
+                  previous_chapter_id='{{$chapter->previous_chapter->id}}'
+                  @else
+                  previouschapter='-'
+                  @endif
+                   chapter_id = '{{$chapter->id}}' book_id='{{$chapter->book->id}}' book='{{$chapter->book->name}}' chapter='{{$chapter->name}}' aurthor='{{$chapter->aurthor->name}}'></chapterrow>
+                @endforeach
+           
 
-          </div>
+              </div>
+            </el-carousel-item>
+             @endforeach
+          </el-carousel>
+          
         </el-card>
       </el-col>
 

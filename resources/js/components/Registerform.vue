@@ -7,7 +7,7 @@
             <el-input  v-model="ruleForm.name" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item label="性別" prop="gender">
-        <el-select v-model="ruleForm.gender" placeholder="请选择">
+        <el-select v-model="ruleForm.gender" placeholder="請選擇">
           <el-option key="m" label="男" value="m"></el-option>
           <el-option key="f" label="女" value="f"></el-option>
         </el-select>
