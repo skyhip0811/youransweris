@@ -35,11 +35,11 @@
         <el-col :lg=14 :sm=24>
 
         
-        <el-card class="box-card">
+        <el-card class="box-card" style="margin: 5px 0px">
          <div slot="header" class="clearfix">
             <span><h4>最近更新</h4></span>
           </div>
-          <el-carousel  indicator-position="outside" height='750px' arrow='never' :autoplay="false">
+          <el-carousel indicator-position="outside" height='750px' arrow='never' :autoplay="false">
             @foreach($latest_chapters as $latest_chapter)
             <el-carousel-item>
               <div  class="text item">
@@ -71,7 +71,7 @@
       </el-col>
 
       <el-col :lg=10 :sm=24>
-        <el-card class="box-card">
+        <el-card class="box-card" style="margin: 5px 0px">
          <div slot="header" class="clearfix">
             <span><h4>最多章節故事</h4></span>
           </div>
@@ -88,7 +88,7 @@
           </div>
 
         </el-card>
-        <el-card class="box-card">
+        <el-card class="box-card" style="margin: 5px 0px">
          <div slot="header" class="clearfix">
             <span><h4>最多Like章節</h4></span>
           </div>
