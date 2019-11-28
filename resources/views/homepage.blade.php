@@ -39,7 +39,7 @@
          <div slot="header" class="clearfix">
             <span><h4>最近更新</h4></span>
           </div>
-          <el-carousel  indicator-position="outside" height='700px' arrow='never' :autoplay="false">
+          <el-carousel  indicator-position="outside" height='750px' arrow='never' :autoplay="false">
             @foreach($latest_chapters as $latest_chapter)
             <el-carousel-item>
               <div  class="text item">
