@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="csrf-token">
   <meta name="google-site-verification" content="-aHBTAJnBgoPa3Gi8-Uaugq7p3JYXj7rqZUxXrFb1ig" />
-  <title>蝴說 - 集體創作互動小說平台</title>
+  <title>蝴說 - {{$title}}</title>
   <meta name='description' content ="蝴說是一個集體創作互動小說平台，每個章節後面都有一個問題，每個人可以有不同答案，不同答案成就不同的故事，最後匯聚成無限的平行世界。">
   <!-- import CSS -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css?v={{ env('js_version_number') }}">
@@ -31,7 +31,7 @@
         
         <el-card class="box-card">
          <div slot="header" class="clearfix">
-            <span><h4>最近30條觀看歷史章節</h4></span>
+            <span><h4>{{$title}}</h4></span>
           </div>
           <div  class="text item">
             <el-row>
@@ -39,17 +39,17 @@
               <el-col :span="6"><h5> 書名 </h5></el-col>
               <el-col :span="7"><h5> 章節 </h5></el-col>
               <el-col :span="7"><h5> 前章節 </h5></el-col>
-              <el-col :span="4"><h5> 作者 </h5></el-col>
+              <el-col :span="4"><h5> 層數 </h5></el-col>
             </el-row>
-            @foreach($recent_chapters as $recent)
-            <chapterrow updatedat="{{ $recent->chapter->newdate}}" 
-              @if($recent->chapter->previous_chapter)
-              previouschapter='{{$recent->chapter->previous_chapter->name}}' 
-              previous_chapter_id='{{$recent->chapter->previous_chapter->id}}'
+            @foreach($recent_chapters as $chapter)
+            <chapterrow updatedat="{{ $chapter->newdate}}" 
+              @if($chapter->previous_chapter)
+              previouschapter='{{$chapter->previous_chapter->name}}' 
+              previous_chapter_id='{{$chapter->previous_chapter->id}}'
               @else
               previouschapter='-'
               @endif
-               chapter_id = '{{$recent->chapter->id}}' book_id='{{$recent->chapter->book->id}}' book='{{$recent->chapter->book->name}}' chapter='{{$recent->chapter->name}}' aurthor='{{$recent->chapter->aurthor->name}}'></chapterrow>
+               chapter_id = '{{$chapter->id}}' book_id='{{$chapter->book->id}}' book='{{$chapter->book->name}}' chapter='{{$chapter->name}}' aurthor='{{$chapter->level}}'></chapterrow>
             @endforeach
 
           </div>

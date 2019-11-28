@@ -31,7 +31,7 @@
         
         <el-card class="box-card">
          <div slot="header" class="clearfix">
-            <span><h4>最近30條觀看歷史章節</h4></span>
+            <span><h4>最近30條你愛過的章節</h4></span>
           </div>
           <div  class="text item">
             <el-row>

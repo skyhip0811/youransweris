@@ -12,8 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/recent', 'HomeController@recent');
-
+Route::get('/recent', 'MemberController@recent');
+Route::get('/liked', 'MemberController@likedpage');
+Route::get('/published', 'MemberController@publishedpage');
 
 
 

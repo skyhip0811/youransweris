@@ -13,3 +13,4 @@ yarn-error.log
 composer.phar
 composer.lock
 /data/certs/*
+/nginx/conf.d/app.conf

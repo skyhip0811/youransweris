@@ -52,9 +52,11 @@
           <el-row class='chapter-text'  style="white-space: pre-line">
           {{$chapter->content}}
           </el-row>
-          <el-row>
+
+          <!--likecoin button not launch yet-->
+          <!-- <el-row>
           <iframe id="likecoin_btn" scrolling="no" frameborder="0" src = "https://button.like.co/in/embed/butterfliessay/button?referrer={{Request::url()}}&type=omit"></iframe>
-          </el-row>
+          </el-row> -->
           
           @if (!$chapter->endchapter && !$chapter->redirect)
 

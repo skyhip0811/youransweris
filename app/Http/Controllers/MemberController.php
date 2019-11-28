@@ -12,6 +12,7 @@ use App\Likes;
 use App\comments;
 use App\Chapters;
 use Illuminate\Support\Facades\Validator;
+use App\UserRead;
 
 class MemberController extends Controller
 {
@@ -20,6 +21,8 @@ class MemberController extends Controller
     {
         $this->middleware('auth');
     }
+
+
 
     protected function createbbok_validator(array $data)
     {
@@ -208,5 +211,35 @@ class MemberController extends Controller
         }
 
 
+    }
+
+    protected function recent(Request $request){
+
+        $user = Auth::user();
+        $recent_read = UserRead::where("user_id",$user->id)->orderBy("updated_at","desc")->with("chapter")->limit(30)->get();
+
+        return response()->view('recent',['recent_chapters'=>$recent_read]);
+
+        
+    }
+
+    protected function likedpage(Request $request){
+
+        $user = Auth::user();
+        $recent_read = Likes::where("user_id",$user->id)->where("status",1)->orderBy("updated_at","desc")->with("chapter")->limit(30)->get();
+
+        return response()->view('likedpage',['recent_chapters'=>$recent_read]);
+
+        
+    }
+
+    protected function publishedpage(Request $request){
+
+        $user = Auth::user();
+        $chapters = Chapters::where("aurthor_id",$user->id)->orderBy("created_at","desc")->get();
+
+        return response()->view('chapterslist',['title'=>"你發表的章節",'recent_chapters'=>$chapters]);
+
+        
     }
 }

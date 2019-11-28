@@ -29,13 +29,15 @@
     <template slot="title">會員管理</template>
 <!--     <el-menu-item index="4-1">你的創作</el-menu-item> -->
     <el-menu-item index="4-2"><a href="/createbook">創作新故事</a></el-menu-item>
+    <el-menu-item index="4-3"><a href="/published">你的章節</a></el-menu-item>
     <!-- <el-menu-item index="4-2">更改會員資料</el-menu-item> -->
-    <el-menu-item index="4-3"><a href="/logout">登出</a></el-menu-item>
+    <el-menu-item index="4-4"><a href="/logout">登出</a></el-menu-item>
   </el-submenu>
 
   <el-menu-item index ="5" v-else='loggedin'><a href="/login">會員登入</a></el-menu-item>
-
-<el-menu-item index ="6" ><a href="https://m.me/butterfliessay?fbclid=IwAR0nxyyODL7WsUQvm0XkpGqlBZUKTiBkfD_ik9om1B2pINF86nfNXkQf0Jo">聯絡蝴說</a></el-menu-item>
+  <el-menu-item index ="6"><a href="/recent">觀看記錄</a></el-menu-item>
+  <el-menu-item index ="7"><a href="/liked">你愛過的</a></el-menu-item>
+<el-menu-item index ="8" ><a href="https://m.me/butterfliessay?fbclid=IwAR0nxyyODL7WsUQvm0XkpGqlBZUKTiBkfD_ik9om1B2pINF86nfNXkQf0Jo">聯絡蝴說</a></el-menu-item>
 
 
 
@@ -67,12 +69,15 @@
 <!--     <el-menu-item index="1-3-1">你的創作</el-menu-item> -->
     <!-- <el-menu-item index="1-3-2">更改會員資料</el-menu-item> -->
     <el-menu-item index="1-3-3"><a href="/createbook">創作新故事</a></el-menu-item>
+    <el-menu-item index="1-3-3"><a href="/published">你的章節</a></el-menu-item>
     <!-- <el-menu-item index="4-2">更改會員資料</el-menu-item> -->
     <el-menu-item index="1-3-4"><a href="/logout">登出</a></el-menu-item>
   </el-submenu>
 
   <el-menu-item v-else='loggedin' index ="1-4" ><a href="/login">會員登入</a></el-menu-item>
-  <el-menu-item index ="1-5" ><a href="https://m.me/butterfliessay?fbclid=IwAR0nxyyODL7WsUQvm0XkpGqlBZUKTiBkfD_ik9om1B2pINF86nfNXkQf0Jo">聯絡蝴說</a></el-menu-item>
+  <el-menu-item index ="1-5"><a href="/recent">觀看記錄</a></el-menu-item>
+  <el-menu-item index ="1-6"><a href="/liked">你愛過的</a></el-menu-item>
+  <el-menu-item index ="1-7" ><a href="https://m.me/butterfliessay?fbclid=IwAR0nxyyODL7WsUQvm0XkpGqlBZUKTiBkfD_ik9om1B2pINF86nfNXkQf0Jo">聯絡蝴說</a></el-menu-item>
   </el-submenu>
 
   <el-menu-item style="width:50%;padding:auto">

@@ -9,6 +9,8 @@ use App\User;
 use App\BooksType;
 use App\Likes;
 use App\comments;
+use App\UserRead;
+use Carbon\Carbon;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -41,12 +43,23 @@ class ChapterController extends Controller
 	    	}
 
 	    	if(Auth::check()){
+
+	    		# check liked button
 	    		$user = Auth::user();
 	    		$like = Likes::where("user_id",$user->id)->where("chapter_id",$chapter_id)->where('status',1)->first();
 	    		if($like){
 	    			$liked = 1;
 	    		}else{
 	    			$liked = 0;
+	    		}
+
+	    		#mark read
+	    		$userread = UserRead::where("user_id",$user->id)->where("chapter_id",$chapter_id)->first();
+	    		if($userread){
+	    			$userread->updated_at = now();
+	    			$userread->save();
+	    		}else{
+	    			UserRead::create(["user_id"=>$user->id, "chapter_id"=>$chapter->id]);
 	    		}
 	    	}else{
 	    		$liked = 0;
@@ -85,6 +98,16 @@ class ChapterController extends Controller
 	    		}else{
 	    			$liked = 0;
 	    		}
+
+	    		#mark read
+	    		$userread = UserRead::where("user_id",$user->id)->where("chapter_id",$first_chapter->id)->first();
+	    		if($userread){
+	    			$userread->updated_at = now();
+	    			$userread->save();
+	    		}else{
+	    			UserRead::create(["user_id"=>$user->id, "chapter_id"=>$first_chapter->id]);
+	    		}
+
 	    	}else{
 	    		$liked = 0;
 	    	}
