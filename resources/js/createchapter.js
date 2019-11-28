@@ -12,7 +12,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-
+ga('send', 'pageview');
 var app = new Vue({
   el: '#app',
   components: { Headnav,Remotesearch },

@@ -8,6 +8,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+ga('send', 'pageview');
 
 new Vue({
   el: '#app',
