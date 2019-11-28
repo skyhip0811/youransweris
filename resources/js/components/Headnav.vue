@@ -38,6 +38,7 @@
   <el-menu-item index ="6"><a href="/recent">觀看記錄</a></el-menu-item>
   <el-menu-item index ="7"><a href="/liked">你愛過的</a></el-menu-item>
 <el-menu-item index ="8" ><a href="https://m.me/butterfliessay?fbclid=IwAR0nxyyODL7WsUQvm0XkpGqlBZUKTiBkfD_ik9om1B2pINF86nfNXkQf0Jo">聯絡蝴說</a></el-menu-item>
+<el-menu-item index ="9" ><a target="_blank" href="https://t.me/butterfliessay">Telegram 膠流</a></el-menu-item>
 
 
 
@@ -78,6 +79,9 @@
   <el-menu-item index ="1-5"><a href="/recent">觀看記錄</a></el-menu-item>
   <el-menu-item index ="1-6"><a href="/liked">你愛過的</a></el-menu-item>
   <el-menu-item index ="1-7" ><a href="https://m.me/butterfliessay?fbclid=IwAR0nxyyODL7WsUQvm0XkpGqlBZUKTiBkfD_ik9om1B2pINF86nfNXkQf0Jo">聯絡蝴說</a></el-menu-item>
+    <el-menu-item index ="1-8" ><a target="_blank" href="https://t.me/butterfliessay">Telegram 膠流</a></el-menu-item>
+  </el-submenu>
+
   </el-submenu>
 
   <el-menu-item style="width:50%;padding:auto">
