@@ -12,6 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/js/manifest.js?v={{ env('js_version_number') }}"></script>
  <script src="/js/vendor.js?v={{ env('js_version_number') }}"></script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+ <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=1033646243639089&autoLogAppEvents=1"></script> <!-- Your like button code -->
 
 
 </head>
@@ -30,6 +32,7 @@
       <el-col :md=18>
         <el-row>
         <mastercomment></mastercomment>
+        
         </el-row>
         <el-row>
         <el-col :lg=14 :sm=24>
@@ -68,7 +71,9 @@
           </el-carousel>
           
         </el-card>
-      </el-col>
+        <div id="fb-root"></div>
+        
+         </el-col>
 
       <el-col :lg=10 :sm=24>
         <el-card class="box-card" style="margin: 5px 0px">
