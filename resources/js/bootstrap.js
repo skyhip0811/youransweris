@@ -64,3 +64,17 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-144193337-1', 'auto');
+
+
+
+//facebook
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1033646243639089',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v5.0'
+    });
+  };
+

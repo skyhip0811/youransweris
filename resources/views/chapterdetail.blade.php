@@ -21,6 +21,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <script src="/js/manifest.js?v={{ env('js_version_number') }}"></script>
  <script src="/js/vendor.js?v={{ env('js_version_number') }}"></script>
+ <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+ <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=1033646243639089&autoLogAppEvents=1"></script> <!-- Your like button code -->
 </head>
 <body>
   <div id="app" chapterid = {{$chapter->id}}>
@@ -62,15 +64,15 @@
           <el-row class='chapter-text'  style="white-space: pre-line">
           {{$chapter->content}}
           </el-row>
+          <br><br>
            <!-- Load Facebook SDK for JavaScript -->
-           <el-row >
+          <el-row>
           <div id="fb-root"></div>
-          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=279978962516425&autoLogAppEvents=1"></script>
-          <!-- Your like button code -->
-
-
+          
+          <!-- <div class="fb-like" data-href="https://butterfliessay/chapter/{{$chapter->id}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div> -->
+       
           <div class="fb-like" data-href="https://butterfliessay/chapter/{{$chapter->id}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-          </el-row>
+         </el-row>
           <!--likecoin button not launch yet-->
           <!-- <el-row>
           <iframe id="likecoin_btn" scrolling="no" frameborder="0" src = "https://button.like.co/in/embed/butterfliessay/button?referrer={{Request::url()}}&type=omit"></iframe>
