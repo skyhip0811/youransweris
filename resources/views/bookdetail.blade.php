@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="csrf-token">
+  <meta property="og:url"           content="https://butterfliessay.com/chapter/{{$chapter->id}}" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="蝴說 | {{$book->name}} | {{$chapter->name}}" />
+  <meta property="og:description"   content="{{substr($chapter->content, 0, 100)}}" />
+  <meta property="og:image"         content="{{asset('storage/'.$book->cover)}}" />
+  <meta property="fb:app_id"        content="1033646243639089"/>
   <title>{{$book->name}} | {{$chapter->name}}</title>
   <!-- import CSS -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -11,6 +17,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/js/manifest.js?v={{ env('js_version_number') }}"></script>
  <script src="/js/vendor.js?v={{ env('js_version_number') }}"></script>
+ <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+ <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=1033646243639089&autoLogAppEvents=1"></script> <!-- Your like button code -->
+
 </head>
 <body>
 	<div id="app" chapterid = {{$chapter->id}}>
@@ -59,8 +68,17 @@
         <i class='el-icon-s-custom'></i> 更新日期: <span style="margin-right:50px">{{$chapter->created_at}}</span>
           </el-row>
           <el-row class='chapter-text'  style="white-space: pre-line">
+          
             {{$chapter->content}}
           </el-row>
+          <br><br>
+          <el-row>
+          <div id="fb-root"></div>
+          
+          <!-- <div class="fb-like" data-href="https://butterfliessay/chapter/{{$chapter->id}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div> -->
+       
+          <div class="fb-like" data-href="https://butterfliessay.com/chapter/{{$chapter->id}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+         </el-row>
           @if (!$chapter->endchapter)
           <el-row class='chapter-question'>
             <i class='el-icon-question'></i>{{$chapter->question}}
