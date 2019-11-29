@@ -71,7 +71,7 @@
           
           <!-- <div class="fb-like" data-href="https://butterfliessay/chapter/{{$chapter->id}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div> -->
        
-          <div class="fb-like" data-href="https://butterfliessay/chapter/{{$chapter->id}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+          <div class="fb-like" data-href="https://butterfliessay.com/chapter/{{$chapter->id}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
          </el-row>
           <!--likecoin button not launch yet-->
           <!-- <el-row>
