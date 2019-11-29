@@ -9,7 +9,7 @@
 
    <!-- You can use open graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-  <meta property="og:url"           content="https://butterfliessay/chapter/{{$chapter->id}}" />
+  <meta property="og:url"           content="https://butterfliessay.com/chapter/{{$chapter->id}}" />
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="蝴說 | {{$book->name}} | {{$chapter->name}}" />
   <meta property="og:description"   content="{{substr ($chapter->content, 0, 100)}}" />
