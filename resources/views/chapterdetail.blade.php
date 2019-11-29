@@ -5,12 +5,12 @@
   <meta name="csrf-token">
   <meta property="og:url"           content="https://butterfliessay.com/chapter/{{$chapter->id}}" />
   <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="蝴說 | {{$book->name}} | {{$chapter->name}}" />
+  <meta property="og:title"         content="蝴說 X {{$aurthor->name}} | {{$book->name}} | {{$chapter->name}}" />
   <meta property="og:description"   content="{{substr($chapter->content, 0, 100)}}" />
   <meta property="og:image"         content="{{asset('storage/'.$book->cover)}}" />
   <meta property="fb:app_id"        content="1033646243639089"/>
 
-  <title> 蝴說 | {{$book->name}} | {{$chapter->name}}</title>
+  <title> 蝴說 X {{$aurthor->name}} | {{$book->name}} | {{$chapter->name}}</title>
 
    <!-- You can use open graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
