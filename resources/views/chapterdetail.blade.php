@@ -12,7 +12,7 @@
   <meta property="og:url"           content="https://butterfliessay.com/chapter/{{$chapter->id}}" />
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="蝴說 | {{$book->name}} | {{$chapter->name}}" />
-  <meta property="og:description"   content="{{substr ($chapter->content, 0, 100)}}" />
+  <meta property="og:description"   content="{{substr($chapter->content, 0, 100)}}" />
   <meta property="og:image"         content="{{asset('storage/'.$book->cover)}}" />
   <!-- import CSS -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
