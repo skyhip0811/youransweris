@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="csrf-token">
-  <title>{{$book->name}} | {{$chapter->name}}</title>
+
+
+  <title> 蝴說 | {{$book->name}} | {{$chapter->name}}</title>
+
+   <!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+  <meta property="og:url"           content="https://butterfliessay/chapter/{{$chapter->id}}" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="蝴說 | {{$book->name}} | {{$chapter->name}}" />
+  <meta property="og:description"   content="{{substr ($chapter->content, 0, 100)}}" />
+  <meta property="og:image"         content="{{asset('storage/'.$book->cover)}}" />
   <!-- import CSS -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" type="text/css" href="/css/app.css?v={{ env('js_version_number') }}">
@@ -52,7 +62,15 @@
           <el-row class='chapter-text'  style="white-space: pre-line">
           {{$chapter->content}}
           </el-row>
+           <!-- Load Facebook SDK for JavaScript -->
+           <el-row >
+          <div id="fb-root"></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=279978962516425&autoLogAppEvents=1"></script>
+          <!-- Your like button code -->
 
+
+          <div class="fb-like" data-href="https://butterfliessay/chapter/{{$chapter->id}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+          </el-row>
           <!--likecoin button not launch yet-->
           <!-- <el-row>
           <iframe id="likecoin_btn" scrolling="no" frameborder="0" src = "https://button.like.co/in/embed/butterfliessay/button?referrer={{Request::url()}}&type=omit"></iframe>
