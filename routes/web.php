@@ -16,7 +16,9 @@ Route::get('/recent', 'MemberController@recent');
 Route::get('/liked', 'MemberController@likedpage');
 Route::get('/published', 'MemberController@publishedpage');
 
-
+Route::get('/term',function(){
+	return view("term");
+});
 
 // Route::get('/category', function () {
 //     return view('category');

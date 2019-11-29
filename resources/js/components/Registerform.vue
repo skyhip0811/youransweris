@@ -19,6 +19,12 @@
         <el-form-item label="確認密碼" prop="password_confirmation">
             <el-input type="password" v-model="ruleForm.password_confirmation" auto-complete="off"></el-input>
         </el-form-item>
+
+        <el-form-item label="" prop="agreeterm" ref="agreeterm" :error='agreetermerror'>
+            <el-checkbox v-model="ruleForm.agreeterm"></el-checkbox> <span style="word-break:break-all;">您已閱讀、瞭解並同意接受本約定書與及本站的使用條款及免責聲明 <a target="_blank" href ="/term">(https://butterfliessay.com/term )</a> 之所有內容。
+        </span>
+            
+        </el-form-item>
         <el-form-item>
             <el-button type="primary" @click="submitForm('ruleForm')">註冊</el-button>
             <el-button @click="resetForm('ruleForm')">重置</el-button><br>
@@ -38,15 +44,27 @@
                 callback();
             }
         };
+
+        var checkedAgreeTerm = (rule, value, callback) => {
+            if (value !== true) {
+                callback(new Error('請閱讀並接受約定書及免責聲明內容'));
+            } else {
+                callback();
+            }
+        };
+
         return {
             emailerror:'',
             nameerror:'',
+
+            agreetermerror:"",
             ruleForm: {
                 password: '',
                 password_confirmation: '',
                 email:'',
                 name:'',
-                gender:''
+                gender:'',
+                agreeterm:""
             },
             rules: {
                 name:[
@@ -67,6 +85,10 @@
                 password_confirmation: [
                     { required: true, message: '請再次輸入密碼', trigger: 'blur' },
                     { validator: validatePass, trigger: 'change' }
+                ],
+                agreeterm:[
+                    { required: true, message: '請閱讀並接受約定書及免責聲明內容' , trigger: 'submit' },
+                    { validator: checkedAgreeTerm, trigger: 'change' }
                 ]
             }
         };
