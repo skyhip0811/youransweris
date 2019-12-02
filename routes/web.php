@@ -61,3 +61,6 @@ Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('upload',function(){
 	return response()->json(['message'=>"success"]);
 });
+
+Route::get('/sitemap', 'SitemapController@index');
+Route::get('/sitemap/chapters', 'SitemapController@chapters');
