@@ -22,7 +22,7 @@
 
 </head>
 <body>
-	<div id="app" chapterid = {{$chapter->id}}>
+	<div id="app" chapterid = {{$chapter->id}} aurthorid = {{$aurthor->id}}>
     <el-container>
     <el-header  class='head-menu'><headnav
      @auth

@@ -26,7 +26,7 @@
  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=1033646243639089&autoLogAppEvents=1"></script> <!-- Your like button code -->
 </head>
 <body>
-  <div id="app" chapterid = {{$chapter->id}}>
+  <div id="app" chapterid = {{$chapter->id}} aurthorid = {{$aurthor->id}}>
     <el-container>
     <el-header  class='head-menu'><headnav
           @auth

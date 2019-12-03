@@ -17,13 +17,13 @@ Vue.component('Commentboxbutton', Commentboxbutton)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-ga('send', 'pageview');
+
 
 new Vue({
   el: '#app',
   components: { Headnav ,Chapterrow,Bookrow,Remotesearch,Chapteractionmenu,Answerbox,Editorfavourite},
   data: function() {
-    return { visible: false ,dialogTableVisible :false , gridData :[], comment:"",chapterid:null}
+    return { visible: false ,dialogTableVisible :false , gridData :[], comment:"",chapterid:null,aurthorid:null}
   },
   methods:{
   	triggerComments(){
@@ -69,6 +69,13 @@ new Vue({
 
         
         this.chapterid = this.$el.attributes.chapterid.value;
+        this.aurthorid = this.$el.attributes.aurthorid.value;
+        //GA record chapter and aurthor id
+        ga('send', 'pageview',{
+          "chapterid":this.chapterid,
+          "aurthorid":this.aurthorid
+        });
+
         let last20chapters = JSON.parse(localStorage.getItem("last_20_chapters"));
         if(last20chapters){
           console.log(last20chapters)
