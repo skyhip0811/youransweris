@@ -26,6 +26,7 @@
     padding: 10px;
     border-radius: 10px;
     box-shadow: 5px 5px 5px #eee;
+    height: 400px;
 }
 
 a{

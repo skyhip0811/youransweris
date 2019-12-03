@@ -1,15 +1,15 @@
 {
-    "/js/manifest.js": "/js/manifest.js?id=01c8731923a46c30aaed",
-    "/js/vendor.js": "/js/vendor.js?id=47fb04bfb48716fbdd8f",
-    "/js/chapterdetail.js": "/js/chapterdetail.js?id=f7ab6c0b7d690e7c7e28",
-    "/js/createbook.js": "/js/createbook.js?id=247299f8ccb21ef69c56",
-    "/js/createchapter.js": "/js/createchapter.js?id=9f0c503c5f13332b7be7",
-    "/js/homepage.js": "/js/homepage.js?id=589fe750ee1962e64ec7",
-    "/css/app.css": "/css/app.css?id=fffa1f59c183a6128bdb",
-    "/css/chapterdetail.css": "/css/chapterdetail.css?id=ccd2d0bc67919244a42b",
-    "/js/login.js": "/js/login.js?id=46f8650fc371ff230e57",
-    "/js/recent.js": "/js/recent.js?id=68ea4bafaf412244664c",
-    "/js/register.js": "/js/register.js?id=5a0923c9fb1d1375bb12",
-    "/js/searchbook.js": "/js/searchbook.js?id=318b9c176583561f044e",
-    "/js/template.js": "/js/template.js?id=1dc406cf6a6d0d74a839"
+    "/js/chapterdetail.js": "/js/chapterdetail.js?id=a65bf45a32fbd5a3f0d6",
+    "/js/createbook.js": "/js/createbook.js?id=7bcfe98aca634294ce2e",
+    "/js/createchapter.js": "/js/createchapter.js?id=9897b4283fed23ee44a4",
+    "/js/homepage.js": "/js/homepage.js?id=510db73784615e912d18",
+    "/css/app.css": "/css/app.css?id=c5bc742cfd1f4e87649f",
+    "/css/chapterdetail.css": "/css/chapterdetail.css?id=090a7582271ba4b839cd",
+    "/js/login.js": "/js/login.js?id=53dc497dd44c97d8fc7f",
+    "/js/manifest.js": "/js/manifest.js?id=628b6c021bf632771e19",
+    "/js/recent.js": "/js/recent.js?id=1d8ccd1530d8337c3e2e",
+    "/js/register.js": "/js/register.js?id=082a2d7c0f3dd846a66c",
+    "/js/searchbook.js": "/js/searchbook.js?id=2390571a9e8ef6982500",
+    "/js/template.js": "/js/template.js?id=163e2efd026361ad6c30",
+    "/js/vendor.js": "/js/vendor.js?id=bb9dc792e89213a67db2"
 }
