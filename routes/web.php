@@ -11,6 +11,11 @@
 |
 */
 
+
+if (env('APP_ENV') == 'production') {
+    URL::forceScheme('https');
+}
+
 Route::get('/', 'HomeController@index');
 Route::get('/recent', 'MemberController@recent');
 Route::get('/liked', 'MemberController@likedpage');
