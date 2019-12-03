@@ -1,7 +1,8 @@
 <template>
     <div class='editorfavourite'>
     <a :href='link'>
-        <img :src="'/storage/'+image" />
+        <div :style="'background-repeat: no-repeat;background-size: cover;background-position: center;width: 100%;padding-bottom: 75%;background-image: url(/storage/'+image+');'"></div>
+<!--         <img :src="'/storage/'+image" /> -->
         <br>
         <h4>{{book}}</h4>
         <p>第一作者: {{aurthor}}</p>
