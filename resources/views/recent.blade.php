@@ -42,7 +42,7 @@
               <el-col :span="4"><h5> 作者 </h5></el-col>
             </el-row>
             @foreach($recent_chapters as $recent)
-            @if($recent->chapter)
+            @if($recent->chapter != null)
               <chapterrow updatedat="{{ $recent->chapter->newdate}}" 
                 @if($recent->chapter->previous_chapter)
                 previouschapter='{{$recent->chapter->previous_chapter->name}}' 
