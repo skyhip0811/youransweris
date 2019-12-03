@@ -42,14 +42,16 @@
               <el-col :span="4"><h5> 作者 </h5></el-col>
             </el-row>
             @foreach($recent_chapters as $recent)
-            <chapterrow updatedat="{{ $recent->chapter->newdate}}" 
-              @if($recent->chapter->previous_chapter)
-              previouschapter='{{$recent->chapter->previous_chapter->name}}' 
-              previous_chapter_id='{{$recent->chapter->previous_chapter->id}}'
-              @else
-              previouschapter='-'
-              @endif
-               chapter_id = '{{$recent->chapter->id}}' book_id='{{$recent->chapter->book->id}}' book='{{$recent->chapter->book->name}}' chapter='{{$recent->chapter->name}}' aurthor='{{$recent->chapter->aurthor->name}}'></chapterrow>
+            @if($recent->chapter)
+              <chapterrow updatedat="{{ $recent->chapter->newdate}}" 
+                @if($recent->chapter->previous_chapter)
+                previouschapter='{{$recent->chapter->previous_chapter->name}}' 
+                previous_chapter_id='{{$recent->chapter->previous_chapter->id}}'
+                @else
+                previouschapter='-'
+                @endif
+                 chapter_id = '{{$recent->chapter->id}}' book_id='{{$recent->chapter->book->id}}' book='{{$recent->chapter->book->name}}' chapter='{{$recent->chapter->name}}' aurthor='{{$recent->chapter->aurthor->name}}'></chapterrow>
+            @endif
             @endforeach
 
           </div>
