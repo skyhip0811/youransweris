@@ -15,5 +15,7 @@ Route::group([
     $router->resource('books', BooksController::class);
     $router->resource('books-types', BooksTypeController::class);
     $router->resource('chapters', ChaptersController::class);
+    $router->resource('user-reads', UserReadController::class);
+    $router->resource('likes', LikesController::class);
 
 });
