@@ -72,8 +72,8 @@ new Vue({
         this.aurthorid = this.$el.attributes.aurthorid.value;
         //GA record chapter and aurthor id
         ga('send', 'pageview',{
-          "chapterid":this.chapterid,
-          "aurthorid":this.aurthorid
+          "dimension1":this.chapterid,
+          "dimension2":this.aurthorid
         });
 
         let last20chapters = JSON.parse(localStorage.getItem("last_20_chapters"));
